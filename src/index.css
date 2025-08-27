@@ -45,7 +45,7 @@ All colors MUST be HSL.
     --foreground: 222.2 84% 4.9%;
 
     --color-primary: 185, 100%, 50%; /* adjust this HSL as needed */
-    --font-Montserrat: 'Montserrat' ;
+    --font-Montserrat: 'Montserrat';
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;

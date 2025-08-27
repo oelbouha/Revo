@@ -59,7 +59,7 @@ const HeaderWithCircle = () => {
           exit={{ opacity: 0, x: -20 }}
           whileInView={{ x: 20 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute top-[24%] font-Montserrat font-bold z-10 text-3xl md:text-5xl lg:text-8xl tracking-tight text-[#000014]   "
+          className="absolute top-[24%] font-Montserrat font-bold z-10 text-3xl md:text-5xl lg:text-8xl tracking-tight text-primary   "
             style={{ right: circleWidth * 0.6 }} 
         >
           WE ARE REVO
@@ -115,7 +115,7 @@ const ImageSection = () => {
           className="object-cover absolute top-0 left-0 h-[25rem] lg:h-[32rem] w-[50%]"
         />
        
-        <div className="flex justify-end items-center mt-20 h-[25rem] lg:h-[36rem] pl-[12rem] lg:pl-[18rem] p-8 lg:p-24 md:max-w-[55%] lg:max-w-[60%] bg-black text-white">
+        <div className="flex justify-end items-center mt-20 h-[25rem] lg:h-[36rem] pl-[12rem] lg:pl-[18rem] p-8 lg:p-24 md:max-w-[60%] lg:max-w-[60%] bg-black text-white">
           <div className="max-w- mx-auto w-full flex justify-end">
             <h3 className="text-lg lg:text-2xl xl:text-3xl leading-relaxed font-Montserrat font-semibold px-8 text-right text-white">
               As an independent voice in strategic design and communication, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
