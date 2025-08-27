@@ -1,0 +1,29 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+const ScrollingTextBanner = () => {
+  const text =
+    "Events & PR and Strategy • Operational • Audiovisual Production • Digital & Social Media •";
+
+  return (
+    <div className="w-full h-12 md:h-16 bg-[#4D4D4D] border border-[#707070] overflow-hidden relative flex items-center">
+      <motion.div
+        className="flex whitespace-nowrap"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 20,
+          ease: "linear",
+        }}
+      >
+        <span className="text-white text-xl font-medium">{text}</span>
+        <span className="text-white text-xl font-medium">{text}</span>
+        <span className="text-white text-xl font-medium">{text}</span>
+        <span className="text-white text-xl font-medium">{text}</span>
+      </motion.div>
+    </div>
+  );
+};
+
+export default ScrollingTextBanner;

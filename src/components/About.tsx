@@ -1,0 +1,130 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+
+const About: React.FC = () => {
+  return (
+    <section id="about" className=" w-full  flex flex-col overflow-hidden items-center justify-center relative ">
+      <div className='max-w-7xl  px-2 h-[25rem] md:h-[40rem]  bg- w-full flex items-center'>
+        <HeaderWithCircle />
+      </div>
+      <ImageSection />
+    </section>
+  );
+};
+
+export default About;
+
+const HeaderWithCircle = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+
+  const circleRef = useRef<HTMLDivElement | null>(null);
+  const [circleWidth, setCircleWidth] = useState(0);
+
+  useEffect(() => {
+    if (circleRef.current) {
+      setCircleWidth(circleRef.current.offsetWidth);
+    }
+
+    const handleResize = () => {
+      if (circleRef.current) {
+        setCircleWidth(circleRef.current.offsetWidth);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div className="w-full flex flex-col items-center justify-center px-4 ">
+      <div className="relative w-full flex items- justify-end  20 md:h-24 lg:h-48 xl:h-60 z-10 bg-">
+        <motion.div
+          ref={circleRef}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          exit={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ scale: 1.2 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-48 lg:w-48 xl:h-60 xl:w-60 rounded-full bg-blue"
+        />
+
+        <motion.h2
+          ref={ref}
+          initial={{ opacity: 0, x: -20 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          exit={{ opacity: 0, x: -20 }}
+          whileInView={{ x: 20 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute top-[24%] font-Montserrat font-bold z-10 text-3xl md:text-5xl lg:text-8xl tracking-tight text-white "
+            style={{ right: circleWidth * 0.6 }} 
+        >
+          WE ARE REVO
+        </motion.h2>
+      </div>
+
+      <div className="relative w-full flex items-center justify-end  bg- h-32">
+        <h3
+          style={{ right: circleWidth }} 
+          className="absolute -top-6 md:-top-10 text-white font-Montserrat font-semibold   
+            text-[0.5rem] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right px-8 md:px-12 lg:px-16 "
+        >
+          As an independent voice in strategic design and communication,
+          REVO shapes powerful ideas that enable brands to exist differently,
+          above the noise and beyond fleeting trends.
+        </h3>
+      </div>
+    </div>
+  );
+};
+
+
+const ImageSection = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
+
+  return (
+    <section ref={ref} className="relative">
+      {/* Mobile Layout - Column */}
+      <div className="md:hidden flex flex-col w-full bg-white">
+        <motion.div className="w-full">
+          <img 
+            src="https://static.vecteezy.com/system/resources/previews/039/063/358/large_2x/ai-generated-ai-circuit-board-technology-background-central-computer-processors-cpu-concept-motherboard-digital-chip-tech-science-background-integrated-communication-processor-3d-illustration-photo.jpeg" 
+            alt="Studio workspace"
+            className="w-full h-50 object-cover"
+          />
+        </motion.div>
+        
+        <div className="w-full p-6 bg-[#4D4D4D] text-white font-Montserrat font-bold">
+          <h3 className="text-sm leading-relaxed text-center">
+            As an independent voice in strategic design and communication, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
+          </h3>
+        </div>
+      </div>
+
+      {/* Desktop Layout - Row */}
+      <div className="hidden md:flex justify-end w-full">
+        <motion.img 
+          src="https://static.vecteezy.com/system/resources/previews/039/063/358/large_2x/ai-generated-ai-circuit-board-technology-background-central-computer-processors-cpu-concept-motherboard-digital-chip-tech-science-background-integrated-communication-processor-3d-illustration-photo.jpeg" 
+          alt="Studio workspace"
+          className="object-cover absolute top-0 left-0 h-[25rem] lg:h-[32rem] w-[50%]"
+        />
+       
+        <div className="flex justify-end items-center mt-20 h-[25rem] lg:h-[36rem] pl-[12rem] lg:pl-[18rem] p-8 lg:p-24 md:max-w-[55%] lg:max-w-[60%] bg-[#707070]">
+          <div className="max-w-7xl mx-auto w-full flex justify-end">
+            <h3 className="text-lg lg:text-2xl xl:text-3xl leading-relaxed font-Montserrat font-semibold px-8 text-right text-white">
+              As an independent voice in strategic design and communication, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+

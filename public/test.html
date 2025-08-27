@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Image Dimensions</title>
+</head>
+<body>
+  <script>
+    const imagePaths = [
+'zouitina/107.png',
+'zouitina/108.png',
+'zouitina/109.png',
+'zouitina/110.png',
+'zouitina/111.png',
+'zouitina/112.png',
+'zouitina/113.png',
+'zouitina/114.png',
+'zouitina/115.png',
+'zouitina/116.png',
+'zouitina/117.png',
+'zouitina/118.png',
+'zouitina/120.png',
+'zouitina/130.png',
+'zouitina/131.png',
+'zouitina/132.png',
+'zouitina/133.png',
+'zouitina/134.png',
+'zouitina/135.png',
+'zouitina/136.png',
+'zouitina/137.png',
+'zouitina/138.png',
+'zouitina/141.png',
+'zouitina/144.png',
+'zouitina/145.png',
+'zouitina/146.png',
+'zouitina/147.png',
+'zouitina/148.png',
+'zouitina/162.png',
+'zouitina/163.png',
+'zouitina/165.png',
+'zouitina/180.png',
+'zouitina/181.png',
+'zouitina/182.png',
+'zouitina/183.png',
+'zouitina/184.png',
+'zouitina/200.jpg',
+'zouitina/201.jpg',
+
+    ];
+    
+
+    function loadImageDimensions(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+          resolve({
+            src: "/" + src,
+            width: img.naturalWidth,
+            height: img.naturalHeight
+          });
+        };
+        img.onerror = () => {
+          console.error(`Failed to load: ${src}`);
+          reject();
+        };
+      });
+    }
+
+    async function generatePhotoArray() {
+      try {
+        const results = await Promise.all(imagePaths.map(loadImageDimensions));
+        console.log("photos:", results);
+      } catch (error) {
+        console.error("Some images failed to load.");
+      }
+    }
+
+    generatePhotoArray();
+  </script>
+</body>
+</html>
