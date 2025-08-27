@@ -91,20 +91,20 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
               backgroundSize: 'cover',
             }}
           >
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
               transition={{ duration: 0.8, ease: 'easeInOut' }}
-              className="w-56 h-56 absolute -top-16  -right-12 z-0 rounded-full bg-blue flex justify-end">
-            </motion.div>
+              className="w-[20vw] h-[20vw] md:w-[30vw] md:h-[30vw]  absolute top-0 right-0  z-0 rounded-full bg-blue flex justify-end">
+            </motion.div> */}
             <button 
               className="p-4 z-10 sm:p-8 transition-colors duration-300 px-4 sm:px-8 md:px-16"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen && (
                 <div className="flex items-center space-x-3 ">
-                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">Close</span>
+                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-white" >Close</span>
                   <div className='flex items-center justify-center z-99'>
                     <X className={`items-end w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 ${isMenuOpen ? 'text-white' : 'text-black'}`} />
                   </div>
@@ -112,7 +112,7 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
               )}
             </button>
             
-            <nav className="w-full px-4 sm:px-8 md:px-16 overflow-hidden mt-6">
+            <nav className="w-full px-4 sm:px-8 md:px-16 overflow-hidden mt-6 z-10">
               <AnimatePresence>
                 {isMenuOpen && (
                   <motion.div

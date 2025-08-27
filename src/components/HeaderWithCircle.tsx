@@ -29,26 +29,22 @@ const HeaderWithCircle: React.FC<HeaderWithCircleProps> = ({title, circleClassNa
           className={`h-16 w-16 md:w-24 md:h-24 lg:w-[10rem] lg:h-[10rem] rounded-full bg-blue bg-opacity-80 ${circleClassName}`}>
         </motion.div>
         
-      {circlePostion === 'center' && (
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-    <motion.h2
-      initial={{ opacity: 0, x: -20 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
-      exit={{ opacity: 0, x: -20 }}
-      whileInView={{ x: 20 }}
-      transition={{ duration: 1.5, ease: 'easeInOut' }}
-      ref={ref}
-      className={`font-Montserrat font-bold z-10 text-xl md:text-4xl lg:text-5xl xl:text-5xl text-urok-gray-800 mb-4 ${titleClassName}`}
-    >
-      {title || 'About studio'}
-    </motion.h2>
-  </div>
-)}
-
-
-
+        <motion.h2 
+          initial={{ opacity: 0, x: -20 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          exit={{ opacity: 0, x: -20 }}
+          whileInView={{ x: 20 }}
+          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          ref={ref}
+          className={`absolute top-[15%] font-Montserrat font-bold z-10 text-xl md:text-4xl lg:text-5xl xl:text-5xl text-urok-gray-800 mb-4 
+            ${circlePostion === 'end' ? 'right-12' : ''} 
+            ${circlePostion === 'center' ? 'top-[40%] -translate-x-1/2' : ''}
+            ${titleClassName}`}>
+          {title || 'About studio'}
+        </motion.h2>
   </div>
   );
 }
 
 export default HeaderWithCircle;
+
