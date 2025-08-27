@@ -96,10 +96,10 @@ const ImageProjectDetail = ({ id }) => {
 
 
   return (
-    <div className="min-h-screen text-white ">
+    <div className="min-h-screen text-black ">
       {/* Simple Header Section */}
-      <Header />
-      <section className="relative py-16 bg-black ">
+      <Header isBlack={true} />
+      <section className="relative py-16 bg-white ">
         <div className="h-24"></div>
         <div className="text-center px-6 max-w-7xl mx-auto ">
           <motion.div
@@ -108,15 +108,15 @@ const ImageProjectDetail = ({ id }) => {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center items-center gap-16 "
           >
-            <HeaderWithCircle title= {project.title} titleClassName="text-white font-bold text-8xl lowercase" circlePostion={"center"}/>
-            <p className="text-l md:text-lg lg:text-xl text-white mb-8 max-w-4xl mx-auto ">
+            <HeaderWithCircle title= {project.title} titleClassName="text-black font-bold text-8xl lowercase" circlePostion={"center"}/>
+            <p className="text-l md:text-lg lg:text-xl text-black mb-8 max-w-4xl mx-auto ">
               {project.description}
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="bg-black pb-16  overflow-hidden ">
+      <section className="bg-white py-16  overflow-hidden ">
         <div className="max-w-7xl mx-auto h-[50rem] px-6">
           <div className="h-full w-full overflow-hidden rounded-lg  relative flex items-center justify-center bg-white">
             {/* Image */
@@ -285,10 +285,10 @@ const VideoProjectDetail = ({id}) => {
 
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white">
       {/* Simple Header Section */}
-        <Header />
-      <section className="relative py-16 bg-black">
+        <Header isBlack={true} />
+      <section className="relative py-16 bg-white">
        {/* <section className="relative py-16 bg-black "></section> */}
         <div className="h-24"></div>
 
@@ -300,12 +300,12 @@ const VideoProjectDetail = ({id}) => {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center justify-center gap-10"
           >
-            <HeaderWithCircle title="Production Video" titleClassName="text-white font-bold " circlePostion={"center"}/>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            <HeaderWithCircle title="Production Video" titleClassName="text-black font-bold " circlePostion={"center"}/>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
               {project.title}
             </h1>
             
-            <p className="text-lg text-white  max-w-2xl mx-auto">
+            <p className="text-lg text-black  max-w-2xl mx-auto">
               {project.description}
             </p>
           </motion.div>

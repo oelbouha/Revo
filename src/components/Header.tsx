@@ -6,8 +6,11 @@ import { IoMdClose } from "react-icons/io";
 import { AiOutlineMenu } from "react-icons/ai";
 
 
+type props = {
+  isBlack?: boolean;
+}
 
-const Header = () => {
+const Header: React.FC<props> = ({isBlack = false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -44,7 +47,7 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
           {/* Logo */}
           <div className="px-4">
             <img 
-              src="/Group 7.svg" 
+              src={isBlack ? '/Logo-revo-black.png' : '/Group 7.svg'} 
               alt="Revo Logo" 
               className='w-20 sm:w-24 md:w-32 lg:w-56 xl:w-64 h-auto'
             />
@@ -57,8 +60,8 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
               <X className={`w-6 h-6 z-99 md:w-15 md:h-15 ${isMenuOpen ? 'hidden' : 'text-black'}`} />
             ) : (
               <div className='flex items-center justify-center z-99 gap-2 sm:gap-4'>
-                <span className="text-sm sm:text-xl md:text-xl lg:text-xl font-semibold text-white">Menu</span>
-                <Menu className="w-4 h-4 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white" />
+                <span className={`text-sm sm:text-xl md:text-xl lg:text-xl font-semibold ${isBlack ? "text-black" : "text-white"}`}>Menu</span>
+                <Menu className={`w-4 h-4 sm:w-8 sm:h-8 md:w-12 md:h-12 ${isBlack ? "text-black" : "text-white"}`} />
               </div>
             )}
           </button>
