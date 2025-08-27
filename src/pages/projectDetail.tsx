@@ -116,9 +116,9 @@ const ImageProjectDetail = ({ id }) => {
         </div>
       </section>
 
-      <section className="bg-white py-16  overflow-hidden ">
-        <div className="max-w-7xl mx-auto h-[50rem] px-6">
-          <div className="h-full w-full overflow-hidden rounded-lg  relative flex items-center justify-center bg-white">
+      <section className="bg- md:py-16  overflow-hidden ">
+        <div className="max-w-7xl mx-auto h-[25rem] md:h-[50rem] px-">
+          <div className="h-full md:px-16 w-full overflow-hidden rounded-lg  relative flex items-center justify-center bg-white">
             {/* Image */
             project.photos &&
               <motion.img
