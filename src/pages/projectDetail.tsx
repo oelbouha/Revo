@@ -29,13 +29,10 @@ const ProjectDetail = () => {
 }
 
 export default ProjectDetail
-
-const ImageProjectDetail = ({ id }) => {
+const ImageProjectDetail = ({ id = 1 }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  
-  
   
   if (!id || isNaN(Number(id)) || Number(id) < 1 || Number(id) > portfolioItems.length) {
     return <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">Invalid project ID</div>;
@@ -53,80 +50,149 @@ const ImageProjectDetail = ({ id }) => {
   }, []);
 
 
+
+  // Function to render images in masonry layout
+  const renderMasonryImages = () => {
+    if (!project.photos || project.photos.length === 0) return null;
+
+    const rows = [];
+    let i = 0;
+
+    while (i < project.photos.length) {
+      // First row: One full-width image
+      if (project.photos[i]) {
+        rows.push(
+          <motion.div
+            key={`row-${i}`}
+            className="w-full mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: rows.length * 0.1 }}
+          >
+            <img
+              src={project.photos[i]}
+              alt={`Project image ${i + 1}`}
+              className="w-full h-[400px] md:h-[600px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+              onClick={() => {
+                setSelectedImage(project.photos[i]);
+                setSelectedImageIndex(i);
+              }}
+            />
+          </motion.div>
+        );
+        i++;
+      }
+
+      // Second row: Two half-width images side by side
+      if (project.photos[i] || project.photos[i + 1]) {
+        rows.push(
+          <motion.div
+            key={`row-${i}`}
+            className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: rows.length * 0.1 }}
+          >
+            {project.photos[i] && (
+              <img
+                src={project.photos[i]}
+                alt={`Project image ${i + 1}`}
+                className="w-full h-[300px] md:h-[400px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => {
+                  setSelectedImage(project.photos[i]);
+                  setSelectedImageIndex(i);
+                }}
+              />
+            )}
+            {project.photos[i + 1] && (
+              <img
+                src={project.photos[i + 1]}
+                alt={`Project image ${i + 2}`}
+                className="w-full h-[300px] md:h-[400px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => {
+                  setSelectedImage(project.photos[i + 1]);
+                  setSelectedImageIndex(i + 1);
+                }}
+              />
+            )}
+          </motion.div>
+        );
+        i += 2;
+      }
+    }
+
+    return rows;
+  };
+
   return (
     <div className="min-h-screen text-black">
       {/* Simple Header Section */}
-      <section className=" py-16 bg-black border- border-gray-200">
-        <Header  />
+      <section className="py-16 bg-black border- border-gray-200">
+        <Header />
       </section>
-        <div className="h-[351px]  w-full bg-black px-8 sm:px-16 md:px-0">
-            <div className="bg-white h-[401px] w-full flex items-center justify-center max-w-7xl md:mx-auto  relative  z-10"
-               style={
-                {
-                  backgroundImage: `url(${project.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                }
-              }
-            >
-              <div className="absolute inset-0 bg-black/50 z-10 "></div>
-              <div className=" text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  {project.title}
-                </h1>
-                <p className="text-lg max-w-2xl">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-        </div>
-      <section className="max-w-7xl mx-auto    overflow-hidden">
-        <div className="w-full  flex flex-col ">
-          <p className="mt-[50px] pt-16 self-center text-[20px] font-bold text-red-500">Social Media SPOT TV  BRANDING  WEBSITE CREATION MEDIA</p>
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-16  py-16 mt-[50px] w-full   px-8 sm:px-16">
-          <div className="flex flex-col items-center justify- h-full  gap-8 md:gap-8 ">
-            <h3 className="text-2xl font-bold text-[30px] ">Challenge</h3>
-            <p className="text-gray-700 text-start text-[18px] bg">
-               Permettre à cette nouvelle marque d’eau de table de se faire connaître et de gagner rapidement des PDM.
-              Challenger les acteurs de la catégorie avec l’objectif de devenir un player majeur des eaux de table et plus largement des eaux en bouteilles.
+      
+      <div className="h-[351px] w-full bg-black px-8 sm:px-16 md:px-0">
+        <div 
+          className="bg-white h-[401px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
+          style={{
+            backgroundImage: `url(${project.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50 z-10"></div>
+          <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              {project.title}
+            </h1>
+            <p className="text-lg max-w-2xl">
+              {project.description}
             </p>
           </div>
-          
-          <div className="flex flex-col items-center justify- h-full  gap-8 md:gap-8 ">
-            <h3 className="text-2xl font-bold text-[30px] ">SOLUTIONS</h3>
-            <p className="text-gray-700 text-start text-[18px] bg">
-               Stratégie de communication pour lancement de produit
-              Spot TV – film equity
-              Conception et impression des supports de communication
-              Stratégie média online & offline
-              Stratégie d’influence
-              Brand content
-              Activation & drive to consumer
-            </p>
-          </div>
-         </div>
         </div>
-           <div className="h-[51rem]  w-full    "> 
-             {
-              project.photos &&
-                <motion.img
-                  key={selectedImageIndex}
-                  src={project.photos[selectedImageIndex]}
-                  alt={`Project image ${selectedImageIndex + 1}`}
-                  className="max-h-full w-full object-contain cursor-pointer"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.4 }}
-              />
-            } 
-          </div> 
-      </section>
       </div>
+
+      <section className="max-w-7xl mx-auto overflow-hidden">
+        <div className="w-full flex flex-col">
+          <p className="mt-[50px] pt-16 self-center text-[20px] font-bold text-red-500">
+            Social Media SPOT TV BRANDING WEBSITE CREATION MEDIA
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
+            <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
+              <h3 className="text-2xl font-bold text-[30px]">Challenge</h3>
+              <p className="text-gray-700 text-start text-[18px] bg">
+                Permettre à cette nouvelle marque d'eau de table de se faire connaître et de gagner rapidement des PDM.
+                Challenger les acteurs de la catégorie avec l'objectif de devenir un player majeur des eaux de table et plus largement des eaux en bouteilles.
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
+              <h3 className="text-2xl font-bold text-[30px]">SOLUTIONS</h3>
+              <p className="text-gray-700 text-start text-[18px] bg">
+                Stratégie de communication pour lancement de produit
+                Spot TV – film equity
+                Conception et impression des supports de communication
+                Stratégie média online & offline
+                Stratégie d'influence
+                Brand content
+                Activation & drive to consumer
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Masonry Image Gallery */}
+        <div className="px-8 sm:px-16 pb-16">
+          {renderMasonryImages()}
+        </div>
+      </section>
+
+    
+    </div>
   );
 };
-
 
 
 
