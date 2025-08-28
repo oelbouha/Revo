@@ -115,19 +115,17 @@ const PortfolioSection = () => {
     return showAll ? filtered : filtered.slice(0, 8);
   };
 
-  const shuffledItems = useMemo(() => {
-    const items = getFilteredItems();
-    return items
-      .map((value) => ({ value, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ value }) => value);
+  // Remove shuffling - keep original order
+  const filteredItems = useMemo(() => {
+    return getFilteredItems();
   }, [activeFilter, showAll]);
 
-  const whyChooseUsIndex = shuffledItems.length;
-  const finalItems: (PortfolioItem | 'WHY_CHOOSE_US')[] = [
-    ...shuffledItems.slice(0, whyChooseUsIndex),
-    'WHY_CHOOSE_US',
-    ...shuffledItems.slice(whyChooseUsIndex),
+  const whyChooseUsIndex = filteredItems.length;
+  
+  const finalItems: (PortfolioItem | 'MORE WORK')[] = [
+    ...filteredItems.slice(0, whyChooseUsIndex),
+    'MORE WORK',
+    ...filteredItems.slice(whyChooseUsIndex),
   ];
 
   const hasMoreItems = () => {
@@ -177,32 +175,22 @@ const PortfolioSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-12">
         <AnimatePresence>
           {finalItems.map((item, index) => {
-            if (item === 'WHY_CHOOSE_US') {
+            if (item === 'MORE WORK' && hasMoreItems()) {
               return (
                 <motion.div
+                  onClick={() => setShowAll(true)} 
                   layout
                   key="why-choose-us"
                   className=" relative flex aspect-[4/3] flex-col cursor-pointer bg-black hover:bg-black/50 p-10 md:p-20"
                 >
-                 
-                
-                  {hasMoreItems() && (
-                    // <button
-                    //   onClick={() => setShowAll(true)}
-                    //   className="mt-6 bg-blue text-white px-6 py-2 text-sm font-medium hover:bg-black transition-colors duration-300"
-                    // >
-                    //   MORE PROJECTS
-                    // </button>
-                    <div
-                      onClick={() => setShowAll(true)} 
-                      className="absolute flex items-center justify-between bottom-0  left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white ">
-                    <div className="">
-                      <h3 className="text-2xl font-semibold mb-1">See more</h3>
-                      <h4 className="text-lg">Of our work</h4>
-                    </div>
-                    <RiArrowRightSLine className="w-16 h-16 inline-block ml-2 text-white" />
+                  <div
+                    className="absolute flex items-center justify-between bottom-0  left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white ">
+                  <div className="">
+                    <h3 className="text-2xl font-semibold mb-1">See more</h3>
+                    <h4 className="text-lg">Of our work</h4>
                   </div>
-                  )}
+                  <RiArrowRightSLine className="w-16 h-16 inline-block ml-2 text-white" />
+                </div>
                 </motion.div>
               );
             }
@@ -216,31 +204,30 @@ const PortfolioSection = () => {
                 key={`${item.id}-${activeFilter}`}
                 className="group relative overflow-hidden cursor-pointer aspect-[4/3]"
                 onClick={() => {
-                  navigate(`/projectDetail?id=${item.id}`);
+                  navigate(`/project?id=${item.id}`);
                 }}
               >
-                {
-                activeFilter === 'Production vidéo' ||
-                  item.type === 'video' ? (
-                    <HoverVideo
-                      src={item.image}
-                      alt={item.title}
-                      poster={item.thumbnail}
-                      className="w-full h-full object-cover cursor-pointer"
-                    />
-                  ) : (
-                    <img
-                      src={
-                        activeFilter === 'Web' && item.webImage
-                          ? item.webImage
-                          : item.image
-                      }
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  )}
+                { activeFilter === 'Production vidéo' ||
+                    item.type === 'video' ? (
+                      <HoverVideo
+                        src={item.image}
+                        alt={item.title}
+                        poster={item.thumbnail}
+                        className="w-full h-full object-cover cursor-pointer"
+                      />
+                    ) : (
+                      <img
+                        src={
+                          activeFilter === 'Web' && item.webImage
+                            ? item.webImage
+                            : item.image
+                        }
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    )}
 
-                  <div className="absolute inset-0 bg-black/0 bg-black/50 group-hover:bg-black/0 transition-colors duration-300 pointer-events-none">
+                  <div className="absolute inset-0  bg-black/50 group-hover:bg-black/0 transition-colors duration-300 pointer-events-none">
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 

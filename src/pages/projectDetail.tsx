@@ -52,161 +52,78 @@ const ImageProjectDetail = ({ id }) => {
     setTimeout(() => setIsLoading(false), 800);
   }, []);
 
-  const openModal = (img, index) => {
-    setSelectedImage(img);
-    setSelectedImageIndex(index);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
-  const navigateImage = (direction) => {
-    const newIndex = direction === 'next' 
-      ? (selectedImageIndex + 1) % project.photos.length
-      : (selectedImageIndex - 1 + project.photos.length) % project.photos.length;
-    
-    setSelectedImageIndex(newIndex);
-    // setSelectedImage(project.photos[newIndex]);
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') closeModal();
-    if (e.key === 'ArrowRight') navigateImage('next');
-    if (e.key === 'ArrowLeft') navigateImage('prev');
-  };
-
-  const prevSlide = () => {
-
-  }
-
-  useEffect(() => {
-    if (selectedImage) {
-      document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
-    };
-  }, [selectedImage, selectedImageIndex]);
-
 
   return (
-    <div className="min-h-screen text-black ">
+    <div className="min-h-screen text-black">
       {/* Simple Header Section */}
-      <Header isBlack={true} />
-      <section className="relative py-16 bg-white ">
-        <div className="h-24"></div>
-        <div className="text-center px-6 max-w-7xl mx-auto ">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col justify-center items-center gap-16 "
-          >
-            <HeaderWithCircle title= {project.title} titleClassName="text-black font-bold text-8xl lowercase" circlePostion={"center"}/>
-            <p className="text-l md:text-lg lg:text-xl text-black mb-8 max-w-4xl mx-auto ">
-              {project.description}
+      <section className=" py-16 bg-black border- border-gray-200">
+        <Header  />
+      </section>
+        <div className="h-[351px]  w-full bg-black px-8 sm:px-16 md:px-0">
+            <div className="bg-white h-[401px] w-full flex items-center justify-center max-w-7xl md:mx-auto  relative  z-10"
+               style={
+                {
+                  backgroundImage: `url(${project.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }
+              }
+            >
+              <div className="absolute inset-0 bg-black/50 z-10 "></div>
+              <div className=" text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                  {project.title}
+                </h1>
+                <p className="text-lg max-w-2xl">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+        </div>
+      <section className="max-w-7xl mx-auto    overflow-hidden">
+        <div className="w-full  flex flex-col ">
+          <p className="mt-[50px] pt-16 self-center text-[20px] font-bold text-red-500">Social Media SPOT TV  BRANDING  WEBSITE CREATION MEDIA</p>
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-16  py-16 mt-[50px] w-full   px-8 sm:px-16">
+          <div className="flex flex-col items-center justify- h-full  gap-8 md:gap-8 ">
+            <h3 className="text-2xl font-bold text-[30px] ">Challenge</h3>
+            <p className="text-gray-700 text-start text-[18px] bg">
+               Permettre à cette nouvelle marque d’eau de table de se faire connaître et de gagner rapidement des PDM.
+              Challenger les acteurs de la catégorie avec l’objectif de devenir un player majeur des eaux de table et plus largement des eaux en bouteilles.
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="bg- md:py-16  overflow-hidden ">
-        <div className="max-w-7xl mx-auto h-[25rem] md:h-[50rem] px-">
-          <div className="h-full md:px-16 w-full overflow-hidden rounded-lg  relative flex items-center justify-center bg-white">
-            {/* Image */
-            project.photos &&
-              <motion.img
-                key={selectedImageIndex}
-                src={project.photos[selectedImageIndex]}
-                alt={`Project image ${selectedImageIndex + 1}`}
-                className="max-h-full max-w-full object-contain cursor-pointer"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.4 }}
-                onClick={() => openModal(project.photos[selectedImageIndex], selectedImageIndex)}
-            />
-            }
-            {/* Left Arrow */}
-            <button
-              onClick={() => navigateImage("prev")}
-              className="absolute top-1/2 left-0 -translate-y-1/2 w-[2rem] h-[2rem] lg:w-[4rem] lg:h-[4rem] "
-            >
-              <RiArrowRightSLine   className="w-full h-full rotate-180 text-black" />
-            </button>
-
-            {/* Right Arrow */}
-            <button
-              onClick={() => navigateImage("next")}
-              className="absolute top-1/2 right-0 -translate-y-1/2  w-[2rem] h-[2rem] lg:w-[4rem] lg:h-[4rem] text-white "
-            >
-              <RiArrowRightSLine   className="w-full h-full  text-black" />
-            </button>
           </div>
+          
+          <div className="flex flex-col items-center justify- h-full  gap-8 md:gap-8 ">
+            <h3 className="text-2xl font-bold text-[30px] ">SOLUTIONS</h3>
+            <p className="text-gray-700 text-start text-[18px] bg">
+               Stratégie de communication pour lancement de produit
+              Spot TV – film equity
+              Conception et impression des supports de communication
+              Stratégie média online & offline
+              Stratégie d’influence
+              Brand content
+              Activation & drive to consumer
+            </p>
+          </div>
+         </div>
         </div>
-      </section>
-
-
-      {/* Simple Modal */}
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-            onClick={closeModal}
-          >
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              className="absolute top-6 right-6 z-60 bg-white rounded-full p-2 text-gray-700 hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={(e) => { e.stopPropagation(); navigateImage('prev'); }}
-              className="absolute left-6 top-1/2 -translate-y-1/2 z-60 bg-white rounded-full p-2 text-gray-700 hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            
-            <button
-              onClick={(e) => { e.stopPropagation(); navigateImage('next'); }}
-              className="absolute right-6 top-1/2 -translate-y-1/2 z-60 bg-white rounded-full p-2 text-gray-700 hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-
-           
-
-            {/* Image */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="max-w-5xl h-[99dvh] w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img
-               src={project.photos[selectedImageIndex]}
-                alt="Enlarged project image"
-                className="w-full h-full object-contain rounded-lg"
+           <div className="h-[51rem]  w-full    "> 
+             {
+              project.photos &&
+                <motion.img
+                  key={selectedImageIndex}
+                  src={project.photos[selectedImageIndex]}
+                  alt={`Project image ${selectedImageIndex + 1}`}
+                  className="max-h-full w-full object-contain cursor-pointer"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.4 }}
               />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+            } 
+          </div> 
+      </section>
+      </div>
   );
 };
 
