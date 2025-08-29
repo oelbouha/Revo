@@ -7,6 +7,7 @@ import HeaderWithCircle from "@/components/HeaderWithCircle";
 import { RiArrowRightSLine } from "react-icons/ri";
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 
@@ -72,7 +73,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
             <img
               src={project.photos[i]}
               alt={`Project image ${i + 1}`}
-              className="w-full h-[400px] md:h-[600px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+              className="w-full h-[400px] md:h-[600px] object-cover  cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => {
                 setSelectedImage(project.photos[i]);
                 setSelectedImageIndex(i);
@@ -97,7 +98,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               <img
                 src={project.photos[i]}
                 alt={`Project image ${i + 1}`}
-                className="w-full h-[300px] md:h-[400px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                className="w-full h-[300px] md:h-[400px] object-cover  cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => {
                   setSelectedImage(project.photos[i]);
                   setSelectedImageIndex(i);
@@ -108,7 +109,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               <img
                 src={project.photos[i + 1]}
                 alt={`Project image ${i + 2}`}
-                className="w-full h-[300px] md:h-[400px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                className="w-full h-[300px] md:h-[400px] object-cover  cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => {
                   setSelectedImage(project.photos[i + 1]);
                   setSelectedImageIndex(i + 1);
@@ -143,9 +144,14 @@ const ImageProjectDetail = ({ id = 1 }) => {
         >
           <div className="absolute inset-0 bg-black/50 z-10"></div>
           <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <motion.h1
+              initial={{ opacity: 0,  }}
+              animate={{ opacity: 1,  }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+
+              className="text-4xl md:text-5xl font-bold mb-4">
               {project.title}
-            </h1>
+            </motion.h1>
             <p className="text-lg max-w-2xl">
               {project.description}
             </p>
@@ -189,7 +195,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
         </div>
       </section>
 
-    
+          <Footer />
     </div>
   );
 };
