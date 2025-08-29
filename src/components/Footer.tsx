@@ -3,7 +3,7 @@ import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 
-const linkStyle = "text-l md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
+const linkStyle = "text-sm md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
 
 const FaInstagram = () => (
   <svg className="w-3 h-3 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -35,18 +35,17 @@ const Footer = () => {
       <div className="absolute inset-0 bg-black bg-opacity-40 z-1"></div>
       
       {/* Content - Front Layer */}
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-8 md:px-0 flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-24 border-b border-[#FFFFFF30] ">
-        <div className="w-full">
-          <div className="flex  gap-12 items-center justify-between">
+      <div className="relative z-10 max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0  border-b border-[#FFFFFF30] ">
+        <div className="w-full  flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
             <div className="space-y-6">
-              <div className="text-3xl font-bold">
+              <div className="text-3xl font-bold flex items-center gap-4 justify-center md:justify-start">
                 <img src="/Group 7.svg" alt="Revo Logo"  className="filter brightness-0 invert h-10 md:h-12 lg:h-16" />
               </div>
-              <p className="text-gray-300 leading-relaxed pr-4 text-sm md:text-base max-w-[400px]">
+              <p className="text-gray-300 text-center md:text-start leading-relaxed pr-4 text-sm md:text-base max-w-[400px]">
                 Member of the Association of Professional Architects of Morocco
               </p>
             </div>
-            <div className=" flex items-center gap-12">
+            <div className=" flex   items-center gap-12">
                 <div className="">
                   <h3 className={linkStyle}>Agence</h3>
                 </div>
@@ -59,13 +58,12 @@ const Footer = () => {
                 <div className="">
                   <h3 className={linkStyle}>Studio</h3>
                 </div>
-            </div>
           </div>
         </div>
       </div>
 
       
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-8 md:px-0 flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-24 border-b border-[#FFFFFF30] ">
+      <div className="relative z-10 max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0 flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-24 border-b border-[#FFFFFF30] ">
             <div className="flex flex-col gap-4">
               <h3 className='text-l md:text-lg lg:text-2xl font-semibold text-white'>Adresse</h3>
               <p className="text-gray-300 leading-relaxed pr-4 text-sm md:text-base max-w-[400px] font-medium">
