@@ -305,56 +305,56 @@ export const portfolioItems = [
       ],
     description: "Création de site web pour une enseigne de boulangerie au Maroc"
   },
-  {
-    id: 21,
-    thumbnail: "providence.JPG",
-    image: "/videos/providence.mp4",
-    title: "PROVIDENCE VERTE FILM INSTITUTIONNEL",
-    subtitle: 'Production vidéo',
-    categories: ['Production vidéo'],
-    description: "Tournage et Production d'un film institutionnel pour Providence Verte",
+  // {
+  //   id: 21,
+  //   thumbnail: "providence.JPG",
+  //   image: "/videos/providence.mp4",
+  //   title: "PROVIDENCE VERTE FILM INSTITUTIONNEL",
+  //   subtitle: 'Production vidéo',
+  //   categories: ['Production vidéo'],
+  //   description: "Tournage et Production d'un film institutionnel pour Providence Verte",
     
-    videos: [
-      {
-        src: "videos/zouitina.mp4",
-        thumbnail: "zouitina/134.png",
-        title: "Main Brand Video",
-        duration: "2:45"
-      },
-      {
-        src: "videos/providence.mp4",
-        thumbnail:  "zouitina/138.png",
-        title: "Behind the Scenes",
-        duration: "1:30"
-      },
-    ],
-    type: 'video'
-  },
-  {
-    id: 22,
-    thumbnail: "zouitina/zouitina.JPG",
-    image: "/videos/zouitinaa.mp4",
-    title: "FILM INSTITUTIONNEL ZOUITINA ",
-    subtitle: 'Production vidéo',
-    categories: ['Production vidéo'],
-    description: "Tournage et Production d'un film institutionnel pour Zouitina",
+  //   videos: [
+  //     {
+  //       src: "videos/zouitina.mp4",
+  //       thumbnail: "zouitina/134.png",
+  //       title: "Main Brand Video",
+  //       duration: "2:45"
+  //     },
+  //     {
+  //       src: "videos/providence.mp4",
+  //       thumbnail:  "zouitina/138.png",
+  //       title: "Behind the Scenes",
+  //       duration: "1:30"
+  //     },
+  //   ],
+  //   type: 'video'
+  // },
+  // {
+  //   id: 22,
+  //   thumbnail: "zouitina/zouitina.JPG",
+  //   image: "/videos/zouitinaa.mp4",
+  //   title: "FILM INSTITUTIONNEL ZOUITINA ",
+  //   subtitle: 'Production vidéo',
+  //   categories: ['Production vidéo'],
+  //   description: "Tournage et Production d'un film institutionnel pour Zouitina",
     
-    videos: [
-      {
-        src: "videos/zouitina.mp4",
-        thumbnail: "zouitina/134.png",
-        title: "Main Brand Video",
-        duration: "2:45"
-      },
-      {
-        src: "videos/providence.mp4",
-        thumbnail:  "zouitina/138.png",
-        title: "Behind the Scenes",
-        duration: "1:30"
-      },
-    ],
-    type: 'video'
-  },
+  //   videos: [
+  //     {
+  //       src: "videos/zouitina.mp4",
+  //       thumbnail: "zouitina/134.png",
+  //       title: "Main Brand Video",
+  //       duration: "2:45"
+  //     },
+  //     {
+  //       src: "videos/providence.mp4",
+  //       thumbnail:  "zouitina/138.png",
+  //       title: "Behind the Scenes",
+  //       duration: "1:30"
+  //     },
+  //   ],
+  //   type: 'video'
+  // },
   {
     id: 23,
     image: '/164.png',
@@ -387,83 +387,83 @@ export const portfolioItems = [
       ],
     description: "Conception de keyvisual pour l'event DTS organisé par l'UM6P"
   },
-  {
-    id: 25,
-    thumbnail: "csdm.JPG",
-    image: "/videos/csdm.mp4",
-    title: "DEO/UM6P CSDM",
-    subtitle: 'Production vidéo',
-    categories: ['Production vidéo'],
+  // {
+  //   id: 25,
+  //   thumbnail: "csdm.JPG",
+  //   image: "/videos/csdm.mp4",
+  //   title: "DEO/UM6P CSDM",
+  //   subtitle: 'Production vidéo',
+  //   categories: ['Production vidéo'],
     
-    description: "Vidéos de présentation les Départements du DEO/UM6P à l’occasion du Digital day event",
+  //   description: "Vidéos de présentation les Départements du DEO/UM6P à l’occasion du Digital day event",
     
-    videos: [
-      {
-        src: "videos/zouitina.mp4",
-        thumbnail: "zouitina/134.png",
-      },
-      {
-        src: "videos/providence.mp4",
-        thumbnail:  "zouitina/138.png",
-      },
-    ],
-    type: 'video'
-  },
-  {
-    id: 26,
-    thumbnail: "recete.JPG",
-    image: "/videos/recete.mp4",
-    title: "LES RECETTES CREATIVES",
-    subtitle: 'Production vidéo',
-    categories: ['Production vidéo'],
-    description: "Production d'un série de capsules de recettes pour la promotion de la Marque zouitina sur le social media",
+  //   videos: [
+  //     {
+  //       src: "videos/zouitina.mp4",
+  //       thumbnail: "zouitina/134.png",
+  //     },
+  //     {
+  //       src: "videos/providence.mp4",
+  //       thumbnail:  "zouitina/138.png",
+  //     },
+  //   ],
+  //   type: 'video'
+  // },
+  // {
+  //   id: 26,
+  //   thumbnail: "recete.JPG",
+  //   image: "/videos/recete.mp4",
+  //   title: "LES RECETTES CREATIVES",
+  //   subtitle: 'Production vidéo',
+  //   categories: ['Production vidéo'],
+  //   description: "Production d'un série de capsules de recettes pour la promotion de la Marque zouitina sur le social media",
     
-    videos: [
-      {
-        src: "videos/zouitina.mp4",
-        thumbnail: "zouitina/134.png",
-      },
-      {
-        src: "videos/providence.mp4",
-        thumbnail:  "zouitina/138.png",
-      },
-    ],
-    type: 'video'
-  },
-  {
-    id: 27,
-    thumbnail: "zouitina/campagne.JPG",
-    image: "/videos/Campagne zouitina.mp4",
-    title: "COMMUNICATION DIGITAL ZOUITINA",
-    subtitle: 'Production vidéo',
-    categories: ['Campagne'],
+  //   videos: [
+  //     {
+  //       src: "videos/zouitina.mp4",
+  //       thumbnail: "zouitina/134.png",
+  //     },
+  //     {
+  //       src: "videos/providence.mp4",
+  //       thumbnail:  "zouitina/138.png",
+  //     },
+  //   ],
+  //   type: 'video'
+  // },
+  // {
+  //   id: 27,
+  //   thumbnail: "zouitina/campagne.JPG",
+  //   image: "/videos/Campagne zouitina.mp4",
+  //   title: "COMMUNICATION DIGITAL ZOUITINA",
+  //   subtitle: 'Production vidéo',
+  //   categories: ['Campagne'],
     
-    videos: [
-      {
-        src: "/videos/ocp solution.mp4",
-        thumbnail: "zouitina/134.png",
-      },
-      {
-        src: "videos/providence.mp4",
-        thumbnail:  "zouitina/138.png",
-      },
-    ],
-    type: 'video'
-  },
-  {
-    id: 28,
-    image: '/89.png',
-    title: 'ESCA',
-    subtitle: 'CAMPAGNE DIGITAL',
-    categories: ['Campagne'],
-       photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Campagne 4X3 outdoor multivisuelle pour le lancement du nouveau campus ESCA"
-  }
+  //   videos: [
+  //     {
+  //       src: "/videos/ocp solution.mp4",
+  //       thumbnail: "zouitina/134.png",
+  //     },
+  //     {
+  //       src: "videos/providence.mp4",
+  //       thumbnail:  "zouitina/138.png",
+  //     },
+  //   ],
+  //   type: 'video'
+  // },
+  // {
+  //   id: 28,
+  //   image: '/89.png',
+  //   title: 'ESCA',
+  //   subtitle: 'CAMPAGNE DIGITAL',
+  //   categories: ['Campagne'],
+  //      photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Campagne 4X3 outdoor multivisuelle pour le lancement du nouveau campus ESCA"
+  // }
 ];
