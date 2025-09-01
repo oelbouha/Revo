@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="w-full  flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
             <div className="space-y-6">
               <div className="text-3xl font-bold flex items-center gap-4 justify-center md:justify-start">
-                <img src="/Group 7.svg" alt="Revo Logo"  className="filter brightness-0 invert h-10 md:h-12 lg:h-16" />
+                <img src="/Group 7.svg" alt="Revo Logo"  className="filter  h-10 md:h-12 lg:h-16" />
               </div>
              
             </div>

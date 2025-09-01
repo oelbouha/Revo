@@ -13,8 +13,8 @@
     challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
     description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
     photos: [       
+      "/zouitina/120.png",
       "/zouitina/118.png",
-         "/zouitina/120.png",
           "/zouitina/117.png",
       ]
   },
@@ -133,19 +133,19 @@
       ],
     description: "ReBranding complet d'une grande enseigne Marocaine spécialisée en art floral haut de gamme"
   },
-  {
-    id: 9,
-    image: '/20.png',
-    title: 'CAVIAR & CO | IDENTITÉ VISUELLE',
-    subtitle: 'Branding',
-    categories: ['Branding', 'Activation', 'Direction Créative'],
-      photos: [       
-         "/21.png",
-        "/22.png",
-        "/20.png",
-      ],
-    description: "Création de d'ientité visuelle pour une maison de caviar et produits fins.",
-  },
+  // {
+  //   id: 9,
+  //   image: '/20.png',
+  //   title: 'CAVIAR & CO | IDENTITÉ VISUELLE',
+  //   subtitle: 'Branding',
+  //   categories: ['Branding', 'Activation', 'Direction Créative'],
+  //     photos: [       
+  //        "/21.png",
+  //       "/22.png",
+  //       "/20.png",
+  //     ],
+  //   description: "Création de d'ientité visuelle pour une maison de caviar et produits fins.",
+  // },
   // {
   //   id: 10,
   //   image: '/15.png',
@@ -446,37 +446,37 @@
   //   ],
   //   type: 'video'
   // },
-  {
-    id: 27,
-    thumbnail: "zouitina/campagne.JPG",
-    image: "/videos/Campagne zouitina.mp4",
-    title: "COMMUNICATION DIGITAL ZOUITINA",
-    subtitle: 'Production vidéo',
-    categories: ['Campagne'],
+  // {
+  //   id: 27,
+  //   thumbnail: "zouitina/campagne.JPG",
+  //   image: "/videos/Campagne zouitina.mp4",
+  //   title: "COMMUNICATION DIGITAL ZOUITINA",
+  //   subtitle: 'Production vidéo',
+  //   categories: ['Campagne'],
     
-    videos: [
-      {
-        src: "/videos/ocp solution.mp4",
-        thumbnail: "zouitina/134.png",
-      },
-      {
-        src: "videos/providence.mp4",
-        thumbnail:  "zouitina/138.png",
-      },
-    ],
-    type: 'video'
-  },
-  {
-    id: 28,
-    image: '/89.png',
-    title: 'ESCA',
-    subtitle: 'CAMPAGNE DIGITAL',
-    categories: ['Campagne'],
-       photos: [
+  //   videos: [
+  //     {
+  //       src: "/videos/ocp solution.mp4",
+  //       thumbnail: "zouitina/134.png",
+  //     },
+  //     {
+  //       src: "videos/providence.mp4",
+  //       thumbnail:  "zouitina/138.png",
+  //     },
+  //   ],
+  //   type: 'video'
+  // },
+  // {
+  //   id: 28,
+  //   image: '/89.png',
+  //   title: 'ESCA',
+  //   subtitle: 'CAMPAGNE DIGITAL',
+  //   categories: ['Campagne'],
+  //      photos: [
 
-      ],
-    description: "Campagne 4X3 outdoor multivisuelle pour le lancement du nouveau campus ESCA"
-  },
+  //     ],
+  //   description: "Campagne 4X3 outdoor multivisuelle pour le lancement du nouveau campus ESCA"
+  // },
 
     {
       id: 29,
