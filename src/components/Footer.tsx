@@ -58,10 +58,7 @@ const Footer = () => {
   return ( 
     <footer className="relative  text-white pt-16  ">
       {/* Background Image - Back Layer */}
-      <motion.div
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+      <div
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
           backgroundImage: "url('/footer.png')",
@@ -80,7 +77,7 @@ const Footer = () => {
               </div>
              
             </div>
-            <div className="flex items-center gap-12">
+            <div className="flex items-center gap-12 ">
                 <div>
                   <h3 onClick={() => handleNavigation('about')} className={linkStyle}>Agence</h3>
                 </div>

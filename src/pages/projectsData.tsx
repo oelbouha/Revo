@@ -1,4 +1,6 @@
-export const portfolioItems = [
+
+
+ const rawPortfolioItems  = [
   {
     id: 1,
     image: '/zouitina/120.png',
@@ -6,15 +8,14 @@ export const portfolioItems = [
     subtitle: 'Interior',
     webImage: '/zouitina/163.png',
     categories: ['Packaging', 'Print', 'Web'],
-    
+    classement: "9",
+    solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
+    challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
     description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
     photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
+      "/zouitina/118.png",
+         "/zouitina/120.png",
+          "/zouitina/117.png",
       ]
   },
   {
@@ -23,7 +24,11 @@ export const portfolioItems = [
     title: 'ENI GROUP',
     webImage: '/eni/152.png',
     subtitle: 'Website',
-    categories: ['Web','Print', ],
+    classement: "3",
+     solutions: "Créer une identité forte et distinctive pour un acteur majeur de l’intérim et des services associés, capable de traduire son expertise, sa fiabilité et son ancrage sur le marché.",
+    challenge: "Élaboration d’une charte graphique moderne et cohérente, déclinée sur l’ensemble des supports print et digitaux, accompagnée d’une stratégie de communication globale. Un dispositif pensé pour affirmer la crédibilité du Groupe ENI, renforcer sa notoriété et fédérer ses différentes audiences.",
+
+    categories: ['Print', ],
      photos: [       
         "/eni/56.png",
         "/eni/57.png",
@@ -39,8 +44,9 @@ export const portfolioItems = [
     image: '/casabussines/45.png',
     title: 'CASA BUSINESS TOWERS',
     subtitle: 'PRINT',
+    challenge: "Concevoir une signalétique à la hauteur de l’envergure du projet Casa Business Towers : allier clarté, élégance et innovation pour offrir une expérience fluide aux visiteurs comme aux résidents.",
+    solutions: "Un dispositif harmonieux, mêlant supports print et digitaux, pensé comme un parcours visuel cohérent. Une signalétique qui dépasse la simple orientation pour devenir un vecteur d’image et de prestige.",
     categories: ['Print'],
-    
       photos: [       
         "/casabussines/42.png",
         "/casabussines/43.png",
@@ -56,7 +62,8 @@ export const portfolioItems = [
     title: 'LITO',
     subtitle: 'Packaging',
     categories: ['Packaging'],
-    
+    challenge: "Positionner une marque de sardines dans un univers concurrentiel, en conciliant authenticité, attractivité et normes internationales de distribution.",
+    solutions: "Un logo distinctif et un packaging soigné, alliant modernité et héritage culinaire, conçus pour séduire le consommateur européen et valoriser l’origine de la marque.",
       photos: [       
         "/lito/121.png",
         "/lito/122.png",
@@ -69,6 +76,9 @@ export const portfolioItems = [
     image: "/35.png",
     title: 'PROVIDENCE VERTE',
     subtitle: 'Print',
+    classement: "4",
+    solutions: "Une proposition de rebranding globale, pensée pour renforcer la visibilité de Providence Verte, affirmer son positionnement stratégique et refléter ses valeurs d’excellence et d’innovation.",
+    challenge: "Accompagner un leader de l’agro-industrie marocaine dans l’évolution de son image de marque, en conciliant héritage, modernité et ambitions de développement.",
     categories: ['Print', 'Branding'],
       photos: [       
         "/35.png",
@@ -78,8 +88,11 @@ export const portfolioItems = [
   {
     id: 6,
     image: '/64.png',
-    title: 'UM6P/LIMSETt',
+    title: 'UM6P/LIMSET',
     subtitle: 'Print',
+    classement: "5",
+    challenge: "Valoriser les travaux d’une filiale de l’UM6P à travers un document scientifique exigeant, combinant rigueur académique, clarté et attractivité visuelle.",
+    solutions: "Un rapport conçu comme un outil de référence, associant précision éditoriale, design épuré et cohérence graphique, afin de refléter le sérieux et l’excellence de l’UM6P/LIMSET.",
     categories: ['Print'],
     
     description: "Conception et exécution d'un rapport scientifique pour une filiale de l'université UM6P",
@@ -89,6 +102,8 @@ export const portfolioItems = [
     image: '/5.png',
     title: 'NUANCES DE GRIS',
     subtitle: 'Branding',
+    challenge: "Donner une identité forte et distinctive à une marque de panneaux en béton, en transformant un matériau brut en un univers visuel porteur d’esthétique et de modernité.",
+    solutions: "Une identité visuelle sobre et contemporaine, inspirée de la matière elle-même, traduisant robustesse, fiabilité et design architectural.",
     categories: ['Branding', 'Direction Créative', 'Activation'],
       photos: [       
         "/1.png",
@@ -105,6 +120,8 @@ export const portfolioItems = [
     image: '/7.png',
     title: 'VITA ART FLORAL',
     subtitle: 'Branding',
+    challenge: "Réinventer l’image d’une enseigne marocaine de référence en art floral haut de gamme, en sublimant son héritage tout en l’ancrant dans une esthétique contemporaine.",
+    solutions: "Un rebranding complet, alliant élégance et modernité, pour traduire l’univers raffiné de Vita Art Floral, renforcer son positionnement premium et séduire une clientèle exigeante.",
     categories: ['Branding', 'Activation'],
       photos: [       
         "/7.png",
@@ -129,150 +146,146 @@ export const portfolioItems = [
       ],
     description: "Création de d'ientité visuelle pour une maison de caviar et produits fins.",
   },
-  {
-    id: 10,
-    image: '/15.png',
-    title: 'CONAGRO | CRÉATION DE NOUVELLE IDENTITÉ VISUELLE',
-    subtitle: 'Multi-service',
-    categories: ['Direction Créative', 'Print', 'Branding'],
-      photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Création d'Identité visuelle pour un acteur marocain de l'agro-industrie"
-  },
-  {
-    id: 11,
-    image: '/119.png',
-    title: 'SHAJARA FRUITS',
-    subtitle: 'Packaging',
-    categories: ['Packaging'],
-      photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Création des packagings pour la gamme fruits rouges Shajara"
-  },
+  // {
+  //   id: 10,
+  //   image: '/15.png',
+  //   title: 'CONAGRO | CRÉATION DE NOUVELLE IDENTITÉ VISUELLE',
+  //   subtitle: 'Multi-service',
+  //   categories: ['Direction Créative', 'Print', 'Branding'],
+  //     photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Création d'Identité visuelle pour un acteur marocain de l'agro-industrie"
+  // },
+  // {
+  //   id: 11,
+  //   image: '/119.png',
+  //   title: 'SHAJARA FRUITS',
+  //   subtitle: 'Packaging',
+  //   categories: ['Packaging'],
+  //     photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Création des packagings pour la gamme fruits rouges Shajara"
+  // },
   {
     id: 12,
     image: '/24.png',
     title: 'SHAPE AND SHADE',
     subtitle: 'Branding',
+    classement: "1",
     categories: ['Branding'],
-      photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
+      photos: [ 
+        "24.png",
+        "25.png",
+        "26.png",
+        "27.png",
+        "28.png",
       ],
     description: "Rebranding complet d'une enseigne Marocaine spécialisée dans le design en béton"
   },
-  {
-    id: 13,
-    image: '/98.png',
-    title: 'JAZZ AT THE FELLAH FESTIVAL',
-    subtitle: 'Print',
-    categories: ['Print'],
-      photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Conception d'affiche pour un festival de jazz a Marrakech"
-  },
-  {
-    id: 14,
-    image: '/92.png',
-    title: 'LE CARROUSEL',
-    subtitle: 'Print',
-    categories: ['Print'],
-      photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Conception de brochure pour la promotion d'un projet immobilier de luxe"
-  },
-  {
-    id: 15,
-    image: '/89.png',
-    title: 'ESCA',
-    subtitle: 'Print',
-    categories: ['Print'],
-      photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Campagne 4X3 outdoor multivisuelle pour le lancement du nouveau campus ESCA"
-  },
-  {
-    id: 16,
-    image: '/85.png',
-    title: 'UM6P',
-    subtitle: 'Print',
-    categories: ['Print'],
-      photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Conception de keyvisual pour la com autour de la présence de l’UM6P auy GITEX",
-  },
+  // {
+  //   id: 13,
+  //   image: '/98.png',
+  //   title: 'JAZZ AT THE FELLAH FESTIVAL',
+  //   subtitle: 'Print',
+  //   categories: ['Print'],
+  //     photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Conception d'affiche pour un festival de jazz a Marrakech"
+  // },
+  // {
+  //   id: 14,
+  //   image: '/92.png',
+  //   title: 'LE CARROUSEL',
+  //   subtitle: 'Print',
+  //   categories: ['Print'],
+  //     photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Conception de brochure pour la promotion d'un projet immobilier de luxe"
+  // },
+  // {
+  //   id: 15,
+  //   image: '/89.png',
+  //   title: 'ESCA',
+  //   subtitle: 'Print',
+  //   categories: ['Print'],
+  //     photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Campagne 4X3 outdoor multivisuelle pour le lancement du nouveau campus ESCA"
+  // },
+  // {
+  //   id: 16,
+  //   image: '/85.png',
+  //   title: 'UM6P',
+  //   subtitle: 'Print',
+  //   categories: ['Print'],
+  //     photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Conception de keyvisual pour la com autour de la présence de l’UM6P auy GITEX",
+  // },
   {
     id: 17,
     image: '/72.png',
     title: 'UM6P/OCP AFA',
     subtitle: 'Print',
+    classement: "8",
     categories: ['Print'],
        photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
+      "72.png",
       ],
     description: "Conception de keyvisual + brochure pour un evènement oranisé par l'OCP, l'UM6P et L'AFA"
   },
-  {
-    id: 18,
-    image: '/23.png',
-    title: "WASH'UP",
-    subtitle: 'Branding',
-    categories: ['Branding'],
-       photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Création de l'identité visuelle d'une grande enseigne marocaine de lavage automobiles implantée dans les malls des grandes villes du royaume"
-  },
+  // {
+  //   id: 18,
+  //   image: '/23.png',
+  //   title: "WASH'UP",
+  //   subtitle: 'Branding',
+  //   categories: ['Branding'],
+  //      photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Création de l'identité visuelle d'une grande enseigne marocaine de lavage automobiles implantée dans les malls des grandes villes du royaume"
+  // },
   {
     id: 19,
     image: '/33.png',
@@ -280,135 +293,138 @@ export const portfolioItems = [
     subtitle: 'Branding',
     categories: ['Branding'],
        photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
+        "/29.png",
+        "/30.png",
+        "/31.png",
+        "/32.png",
+        "/33.png",
+        "/34.png",
       ],
     description: "Création de marque pour une nouvelle enseigne de boulangerie au Maroc"
   },
-  {
-    id: 20,
-    image: '/161.png',
-    title: "BEFEC",
-    subtitle: 'Web',
-    categories: ['Web'],
-       photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Création de site web pour une enseigne de boulangerie au Maroc"
-  },
   // {
-  //   id: 21,
-  //   thumbnail: "providence.JPG",
-  //   image: "/videos/providence.mp4",
-  //   title: "PROVIDENCE VERTE FILM INSTITUTIONNEL",
-  //   subtitle: 'Production vidéo',
-  //   categories: ['Production vidéo'],
-  //   description: "Tournage et Production d'un film institutionnel pour Providence Verte",
-    
-  //   videos: [
-  //     {
-  //       src: "videos/zouitina.mp4",
-  //       thumbnail: "zouitina/134.png",
-  //       title: "Main Brand Video",
-  //       duration: "2:45"
-  //     },
-  //     {
-  //       src: "videos/providence.mp4",
-  //       thumbnail:  "zouitina/138.png",
-  //       title: "Behind the Scenes",
-  //       duration: "1:30"
-  //     },
-  //   ],
-  //   type: 'video'
-  // },
-  // {
-  //   id: 22,
-  //   thumbnail: "zouitina/zouitina.JPG",
-  //   image: "/videos/zouitinaa.mp4",
-  //   title: "FILM INSTITUTIONNEL ZOUITINA ",
-  //   subtitle: 'Production vidéo',
-  //   categories: ['Production vidéo'],
-  //   description: "Tournage et Production d'un film institutionnel pour Zouitina",
-    
-  //   videos: [
-  //     {
-  //       src: "videos/zouitina.mp4",
-  //       thumbnail: "zouitina/134.png",
-  //       title: "Main Brand Video",
-  //       duration: "2:45"
-  //     },
-  //     {
-  //       src: "videos/providence.mp4",
-  //       thumbnail:  "zouitina/138.png",
-  //       title: "Behind the Scenes",
-  //       duration: "1:30"
-  //     },
-  //   ],
-  //   type: 'video'
+  //   id: 20,
+  //   image: '/161.png',
+  //   title: "BEFEC",
+  //   subtitle: 'Web',
+  //   categories: ['Web'],
+  //      photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Création de site web pour une enseigne de boulangerie au Maroc"
   // },
   {
-    id: 23,
-    image: '/164.png',
-    title: "OLEACAPTIAL",
-    subtitle: 'Web',
-    categories: ['Web'],
-       photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Création de site web pour une enseigne de boulangerie au Maroc"
+    id: 21,
+    thumbnail: "providence.JPG",
+    image: "/videos/providence.mp4",
+    title: "PROVIDENCE VERTE FILM INSTITUTIONNEL",
+    subtitle: 'Production vidéo',
+    categories: ['Production vidéo'],
+    description: "Tournage et Production d'un film institutionnel pour Providence Verte",
+    
+    videos: [
+      {
+        src: "https://www.youtube.com/watch?v=QQFesYmphoY",
+        thumbnail: "zouitina/134.png",
+      },
+     
+    ],
+    type: 'video'
   },
   {
-    id: 24,
-    image: '/77.png',
-    title: 'UM6P/DTS',
-    subtitle: 'Print',
-    categories: ['Print'],
-       photos: [       
-        "/zouitina/110.png",
-        "/zouitina/112.png",
-        "/zouitina/113.png",
-        "/zouitina/114.png",
-        "/zouitina/115.png",
-        "/zouitina/116.png",
-      ],
-    description: "Conception de keyvisual pour l'event DTS organisé par l'UM6P"
+    id: 22,
+    thumbnail: "zouitina/zouitina.JPG",
+    image: "/videos/zouitinaa.mp4",
+    title: "FILM INSTITUTIONNEL ZOUITINA ",
+    subtitle: 'Production vidéo',
+    categories: ['Production vidéo'],
+    description: "Tournage et Production d'un film institutionnel pour Zouitina",
+    
+    videos: [
+      {
+        src: "https://www.youtube.com/watch?v=XhFUS9-uyuQ&t=9s",
+        thumbnail: "zouitina/134.png",
+      },
+      {
+        src: "https://drive.google.com/file/d/14BpWYP2aGJJ2FL0RIh4Td1bGaDDewbUR/view",
+        thumbnail: "zouitina/134.png",
+      },
+      
+    ],
+    type: 'video'
   },
   // {
-  //   id: 25,
-  //   thumbnail: "csdm.JPG",
-  //   image: "/videos/csdm.mp4",
-  //   title: "DEO/UM6P CSDM",
-  //   subtitle: 'Production vidéo',
-  //   categories: ['Production vidéo'],
-    
-  //   description: "Vidéos de présentation les Départements du DEO/UM6P à l’occasion du Digital day event",
-    
-  //   videos: [
-  //     {
-  //       src: "videos/zouitina.mp4",
-  //       thumbnail: "zouitina/134.png",
-  //     },
-  //     {
-  //       src: "videos/providence.mp4",
-  //       thumbnail:  "zouitina/138.png",
-  //     },
-  //   ],
-  //   type: 'video'
+  //   id: 23,
+  //   image: '/164.png',
+  //   title: "OLEACAPTIAL",
+  //   subtitle: 'Web',
+  //   categories: ['Web'],
+  //      photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Création de site web pour une enseigne de boulangerie au Maroc"
   // },
+  // {
+  //   id: 24,
+  //   image: '/77.png',
+  //   title: 'UM6P/DTS',
+  //   subtitle: 'Print',
+  //   categories: ['Print'],
+  //      photos: [       
+  //       "/zouitina/110.png",
+  //       "/zouitina/112.png",
+  //       "/zouitina/113.png",
+  //       "/zouitina/114.png",
+  //       "/zouitina/115.png",
+  //       "/zouitina/116.png",
+  //     ],
+  //   description: "Conception de keyvisual pour l'event DTS organisé par l'UM6P"
+  // },
+  {
+    id: 25,
+    thumbnail: "csdm.JPG",
+    image: "/videos/csdm.mp4",
+    title: "UM6P/DEO",
+    subtitle: 'Production vidéo',
+    categories: ['Production vidéo'],
+    classement: "6",
+    description: "Vidéos de présentation les Départements du DEO/UM6P à l’occasion du Digital day event",
+    
+    videos: [
+      {
+        src: "https://www.youtube.com/watch?v=XOLpb8veQLE",
+        thumbnail: "csdm.JPG",
+      },
+      {
+        src: "https://drive.google.com/file/d/1CrLr_wLFHJuNIUp-edXSR4iY0Oo-DGem/view",
+        thumbnail: "csdm.JPG",
+      },
+      {
+        src: "https://drive.google.com/file/d/1B0VKq-VBWoR85WQLoN-WbJFOW1g1Q6Pi/view",
+        thumbnail: "csdm.JPG",
+      },
+      {
+        src: "https://drive.google.com/file/d/1OW6uvEQjFQID9gXDlgQsntnx_lugiUWD/view",
+        thumbnail: "csdm.JPG",
+      },
+      {
+        src: "https://drive.google.com/file/d/1WVOmp26MLwXzOl-arJBKC1JG4I6543FK/view",
+        thumbnail: "csdm.JPG",
+      },
+     
+    ],
+    type: 'video'
+  },
   // {
   //   id: 26,
   //   thumbnail: "recete.JPG",
@@ -430,40 +446,74 @@ export const portfolioItems = [
   //   ],
   //   type: 'video'
   // },
-  // {
-  //   id: 27,
-  //   thumbnail: "zouitina/campagne.JPG",
-  //   image: "/videos/Campagne zouitina.mp4",
-  //   title: "COMMUNICATION DIGITAL ZOUITINA",
-  //   subtitle: 'Production vidéo',
-  //   categories: ['Campagne'],
+  {
+    id: 27,
+    thumbnail: "zouitina/campagne.JPG",
+    image: "/videos/Campagne zouitina.mp4",
+    title: "COMMUNICATION DIGITAL ZOUITINA",
+    subtitle: 'Production vidéo',
+    categories: ['Campagne'],
     
-  //   videos: [
-  //     {
-  //       src: "/videos/ocp solution.mp4",
-  //       thumbnail: "zouitina/134.png",
-  //     },
-  //     {
-  //       src: "videos/providence.mp4",
-  //       thumbnail:  "zouitina/138.png",
-  //     },
-  //   ],
-  //   type: 'video'
-  // },
-  // {
-  //   id: 28,
-  //   image: '/89.png',
-  //   title: 'ESCA',
-  //   subtitle: 'CAMPAGNE DIGITAL',
-  //   categories: ['Campagne'],
-  //      photos: [       
-  //       "/zouitina/110.png",
-  //       "/zouitina/112.png",
-  //       "/zouitina/113.png",
-  //       "/zouitina/114.png",
-  //       "/zouitina/115.png",
-  //       "/zouitina/116.png",
-  //     ],
-  //   description: "Campagne 4X3 outdoor multivisuelle pour le lancement du nouveau campus ESCA"
-  // }
+    videos: [
+      {
+        src: "/videos/ocp solution.mp4",
+        thumbnail: "zouitina/134.png",
+      },
+      {
+        src: "videos/providence.mp4",
+        thumbnail:  "zouitina/138.png",
+      },
+    ],
+    type: 'video'
+  },
+  {
+    id: 28,
+    image: '/89.png',
+    title: 'ESCA',
+    subtitle: 'CAMPAGNE DIGITAL',
+    categories: ['Campagne'],
+       photos: [
+
+      ],
+    description: "Campagne 4X3 outdoor multivisuelle pour le lancement du nouveau campus ESCA"
+  },
+
+    {
+      id: 29,
+      image: '/zouitina/120.png',
+      title: 'ZOUITINA OLIVE OIL',
+      subtitle: '',
+      webImage: '/zouitina/163.png',
+      solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
+      challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
+      categories: ['Branding'],
+      classement: "2",
+      description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
+      photos: [       
+          "/111.JPG",
+        ]
+  },
+    {
+      id: 30,
+      image: '/zouitina/120.png',
+      title: 'ZOUITINA',
+      subtitle: 'Interior',
+      solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
+      challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
+      webImage: '/zouitina/163.png',
+      categories: ['Branding'],
+      classement: "7",
+      description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
+      photos: [       
+          "/zouitina/120.png",
+          "/zouitina/118.png",
+          "/zouitina/117.png",
+
+        ]
+  },
 ];
+
+export const portfolioItems = rawPortfolioItems.map((item, index) => ({
+  ...item,
+  id: index + 1,
+}));

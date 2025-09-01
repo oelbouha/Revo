@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 
 
 
+
 const ProjectDetail = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -163,29 +164,22 @@ const ImageProjectDetail = ({ id = 1 }) => {
         <div className="w-full flex flex-col">
           {/* Navigation buttons */}
         
-          <p className="mt-[50px] pt-16 self-center text-[20px] font-bold text-red-500">
+          {/* <p className="mt-[50px] pt-16 self-center text-[20px] font-bold text-red-500">
             Social Media SPOT TV BRANDING WEBSITE CREATION MEDIA
-          </p>
+          </p> */}
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
             <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
               <h3 className="text-2xl font-bold text-[30px]">Challenge</h3>
               <p className="text-gray-700 text-start text-[18px] bg">
-                Permettre à cette nouvelle marque d'eau de table de se faire connaître et de gagner rapidement des PDM.
-                Challenger les acteurs de la catégorie avec l'objectif de devenir un player majeur des eaux de table et plus largement des eaux en bouteilles.
+                {project.challenge}
               </p>
             </div>
             
             <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
               <h3 className="text-2xl font-bold text-[30px]">SOLUTIONS</h3>
               <p className="text-gray-700 text-start text-[18px] bg">
-                Stratégie de communication pour lancement de produit
-                Spot TV – film equity
-                Conception et impression des supports de communication
-                Stratégie média online & offline
-                Stratégie d'influence
-                Brand content
-                Activation & drive to consumer
+                {project.solutions}
               </p>
             </div>
           </div>
@@ -231,6 +225,36 @@ const VideoProjectDetail = ({id}) => {
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [playingVideos, setPlayingVideos] = useState({});
+
+  const getVideoType = (url) => {
+    if (url.includes('youtube.com') || url.includes('youtu.be')) return 'youtube';
+    if (url.includes('drive.google.com')) return 'gdrive';
+    return 'direct';
+  };
+
+  const getYouTubeEmbedUrl = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    const videoId = match && match[2].length === 11 ? match[2] : null;
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+  };
+
+  const getGDriveEmbedUrl = (url) => {
+    const fileId = url.match(/[-\w]{25,}/);
+    return fileId ? `https://drive.google.com/file/d/${fileId[0]}/preview` : null;
+  };
+
+  const getVideoEmbedUrl = (video) => {
+    const type = getVideoType(video.src);
+    switch (type) {
+      case 'youtube':
+        return getYouTubeEmbedUrl(video.src);
+      case 'gdrive':
+        return getGDriveEmbedUrl(video.src);
+      default:
+        return video.src;
+    }
+  };
 
   
   
@@ -299,58 +323,39 @@ const VideoProjectDetail = ({id}) => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Simple Header Section */}
-        <Header isBlack={true} />
-      <section className="relative py-16 bg-white">
-       {/* <section className="relative py-16 bg-black "></section> */}
-        <div className="h-24"></div>
+     <section className="py-16 bg-black border- border-gray-200">
+        <Header />
+      </section>
+      
+      <div className="h-[351px] w-full bg-black px-8 sm:px-16 md:px-0">
+        <div 
+          className="bg-white h-[401px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
+          style={{
+            backgroundImage: `url(${project.thumbnail})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50 z-10"></div>
+          <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
+            <motion.h1
+              initial={{ opacity: 0,  }}
+              animate={{ opacity: 1,  }}
+              transition={{ duration: 0.6, delay: 0.2 }}
 
-        {/* Navigation buttons */}
-        <div className="flex justify-between items-center px-8 sm:px-16 max-w-7xl mx-auto mb-8">
-          <button
-            onClick={() => {
-              const prevId = (Number(id) - 1) || portfolioItems.length;
-              window.location.href = `/project?id=${prevId}`;
-            }}
-            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
-          >
-            <ChevronLeft className="w-5 h-5" />
-            <span>Previous Project</span>
-          </button>
-          <button
-            onClick={() => {
-              const nextId = ((Number(id) + 1) > portfolioItems.length) ? 1 : (Number(id) + 1);
-              window.location.href = `/project?id=${nextId}`;
-            }}
-            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
-          >
-            <span>Next Project</span>
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Content */}
-        <div className="text-center px-6 max-w-7xl mx-auto ">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-center justify-center gap-10"
-          >
-            <HeaderWithCircle title="Production Video" titleClassName="text-black font-bold " circlePostion={"center"}/>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+              className="text-4xl md:text-5xl font-bold mb-4">
               {project.title}
-            </h1>
-            
-            <p className="text-lg text-black  max-w-2xl mx-auto">
+            </motion.h1>
+            <p className="text-lg max-w-2xl">
               {project.description}
             </p>
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* Simple Video Gallery Section */}
-      <section className="pb-16">
+      <section className="pb-16 mt-24">
         <div className="max-w-7xl mx-auto ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -373,42 +378,54 @@ const VideoProjectDetail = ({id}) => {
                 className="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all "
               >
                 <div className="relative aspect-video">
-                  <video
-                    ref={(el) => {
-                      if (el) {
-                        el.onplay = () => setPlayingVideos(prev => ({ ...prev, [index]: true }));
-                        el.onpause = () => setPlayingVideos(prev => ({ ...prev, [index]: false }));
-                      }
-                    }}
-                    className="w-full h-full object-cover"
-                    poster={video.thumbnail}
-                    preload="metadata"
-                    muted
-                  >
-                    <source src={video.src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                  {getVideoType(video.src) === 'direct' ? (
+                    <>
+                      <video
+                        ref={(el) => {
+                          if (el) {
+                            el.onplay = () => setPlayingVideos(prev => ({ ...prev, [index]: true }));
+                            el.onpause = () => setPlayingVideos(prev => ({ ...prev, [index]: false }));
+                          }
+                        }}
+                        className="w-full h-full object-cover"
+                        poster={video.thumbnail}
+                        preload="metadata"
+                        muted
+                      >
+                        <source src={video.src} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
 
-                  {/* Simple Play Button */}
-                  <button
-                    onClick={(e) => {
-                      const videoElement = e.currentTarget.parentElement.querySelector('video');
-                      togglePlay(index, videoElement);
-                    }}
-                    className="absolute inset-0 flex items-center justify-center group-hover:bg-black/10 transition-all duration-300"
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-white/90 backdrop-blur-sm rounded-full p-4 shadow-lg transition-all duration-300"
-                    >
-                      {playingVideos[index] ? (
-                        <Pause className="w-6 h-6 text-gray-700" />
-                      ) : (
-                        <Play className="w-6 h-6 text-gray-700 ml-1" />
-                      )}
-                    </motion.div>
-                  </button>
+                      {/* Simple Play Button for direct videos */}
+                      <button
+                        onClick={(e) => {
+                          const videoElement = e.currentTarget.parentElement.querySelector('video');
+                          togglePlay(index, videoElement);
+                        }}
+                        className="absolute inset-0 flex items-center justify-center group-hover:bg-black/10 transition-all duration-300"
+                      >
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-white/90 backdrop-blur-sm rounded-full p-4 shadow-lg transition-all duration-300"
+                        >
+                          {playingVideos[index] ? (
+                            <Pause className="w-6 h-6 text-gray-700" />
+                          ) : (
+                            <Play className="w-6 h-6 text-gray-700 ml-1" />
+                          )}
+                        </motion.div>
+                      </button>
+                    </>
+                  ) : (
+                    <iframe
+                      src={getVideoEmbedUrl(video)}
+                      className="w-full h-full"
+                      allowFullScreen
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      title={`Video ${index + 1}`}
+                    />
+                  )}
 
                   {/* Simple Fullscreen Button */}
                   <button
@@ -479,19 +496,30 @@ const VideoProjectDetail = ({id}) => {
               className="max-w-5xl max-h-[85vh] w-full aspect-video"
               onClick={(e) => e.stopPropagation()}
             >
-              <video
-                src={selectedVideo.src}
-                controls
-                autoPlay
-                className="w-full h-full object-contain rounded-lg"
-                poster={selectedVideo.thumbnail}
-              >
-                Your browser does not support the video tag.
-              </video>
+              {getVideoType(selectedVideo.src) === 'direct' ? (
+                <video
+                  src={selectedVideo.src}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain rounded-lg"
+                  poster={selectedVideo.thumbnail}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <iframe
+                  src={getVideoEmbedUrl(selectedVideo)}
+                  className="w-full h-full rounded-lg"
+                  allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  title="Video Player"
+                />
+              )}
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+       <Footer />
     </div>
   );
 };

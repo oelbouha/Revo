@@ -13,11 +13,11 @@ const images = [
     text: "The future begins with a gesture"
   },
   {
-    image: "/home3.png",
+    image: "/home4.png",
     text: "We reach for meaning"
   },
   {
-    image: "/home4.png",
+    image: "/home3.png",
     text: "We don’t guess. We choose !"
   },
 ];
@@ -28,7 +28,7 @@ const ImageSlider = () => {
   useEffect(() => {
     const interval = setTimeout(() => {
       setSelectedImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    }, 6500);
 
     return () => clearTimeout(interval);
   }, [selectedImageIndex]);
@@ -44,7 +44,7 @@ const ImageSlider = () => {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1 , scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         />
       </AnimatePresence>
 
@@ -57,7 +57,7 @@ const ImageSlider = () => {
               initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 0 }}
-              transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+              transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
               className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl max-w-5xl"
             >
               {images[selectedImageIndex].text}
