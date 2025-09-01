@@ -6,18 +6,22 @@ import ScrollingTextBanner from './scrollingTextBanner';
 const images = [
   {
     image: "/home1.png",
+    mobileImage: "/menu-bg.jpg",
     text: "Unlike anything else."
   },
   {
     image: "/home2.png",
+    mobileImage: "/menu-bg.jpg",
     text: "The future begins with a gesture"
   },
   {
     image: "/home4.png",
+    mobileImage: "/menu-bg.jpg",
     text: "We reach for meaning"
   },
   {
     image: "/home3.png",
+    mobileImage: "/menu-bg.jpg",
     text: "We don’t guess. We choose !"
   },
 ];
@@ -37,16 +41,29 @@ const ImageSlider = () => {
     <div className="w-screen h-screen bg-black relative overflow-hidden">
       {/* Background Images */}
       <AnimatePresence mode="wait">
+        {/* Desktop Image */}
         <motion.img
-          key={selectedImageIndex}
+          key={`desktop-${selectedImageIndex}`}
           src={images[selectedImageIndex].image}
-          className="absolute w-full h-full object-cover top-0 left-0"
+          className="hidden md:block absolute w-full h-full object-cover top-0 left-0"
           initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1 , scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        />
+
+        {/* Mobile Image */}
+        <motion.img
+          key={`mobile-${selectedImageIndex}`}
+          src={images[selectedImageIndex].mobileImage}
+          className="block md:hidden absolute w-full h-full object-cover top-0 left-0"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         />
       </AnimatePresence>
+
 
       {/* Text Overlay */}
       <div className="absolute left-4 sm:left-2 md:left-4 top-[55%] transform -translate-y-1/2 z-10 max-w-[70%] p-4 sm:p-6 md:p-8">
