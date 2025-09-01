@@ -102,8 +102,8 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
               <X className={`w-6 h-6 z-99 md:w-15 md:h-15 ${isMenuOpen ? 'hidden' : 'text-black'}`} />
             ) : (
               <div className='flex items-center justify-center z-99 gap-2 sm:gap-4'>
-                <span className={`text-sm sm:text-xl md:text-xl lg:text-xl font-semibold ${isBlack ? "text-black" : "text-white"}`}>Menu</span>
-                <Menu className={`w-4 h-4 sm:w-8 sm:h-8 md:w-12 md:h-12 ${isBlack ? "text-black" : "text-white"}`} />
+                <span className={`text-[1rem] sm:text-xl md:text-xl lg:text-xl font-semibold ${isBlack ? "text-black" : "text-white"}`}>Menu</span>
+                <Menu className={`w-5 h-5 sm:w-8 sm:h-8 md:w-12 md:h-12 ${isBlack ? "text-black" : "text-white"}`} />
               </div>
             )}
           </button>
