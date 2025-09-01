@@ -16,6 +16,20 @@ const Header: React.FC<props> = ({isBlack = false}) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Preload menu background and logo images
+  useEffect(() => {
+    const imagesToPreload = [
+      '/menu.png',
+      '/Logo-revo-black.png',
+      '/Group 7.svg'
+    ];
+
+    imagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -109,14 +123,12 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
               duration: 0.3,
               ease: 'easeInOut',
             }}
-            className="w-screen h-screen origin-top bg-black text-white pt-4 pb-10 pl-6 pr-4 md:pr-16 flex flex-col items-end justify-start bg-cover"
+            className="w-screen h-screen origin-top bg-black text-white pt-4 pb-10 pl-6 pr-4 md:pr-16 flex flex-col items-end justify-start bg-cover bg-[url('/menu.png')]"
             style={{ 
               position: 'fixed', 
               top: 0, 
               left: 0, 
               right: 0,
-              backgroundImage: "url('/menu.png')",
-              backgroundSize: 'cover',
             }}
           >
             {/* <motion.div

@@ -70,6 +70,14 @@ const ImageSlider = () => {
 };
 
 const HomeScreen = () => {
+  useEffect(() => {
+    // Preload all slider images
+    images.forEach(item => {
+      const img = new Image();
+      img.src = item.image;
+    });
+  }, []);
+
   return (
     <div
       className="relative h-[93dvh] md:min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden"
