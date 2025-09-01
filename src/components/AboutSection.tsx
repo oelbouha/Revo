@@ -13,7 +13,7 @@ const AboutSection = () => {
   return (
     <section ref={ref}  className="mt  relative">
      
-      <div className='h-[25rem] md:h-[40rem] max-w-7xl mx-auto    px-8 lg:px-0 flex items-center justify-start '>
+      <div className='h-[20rem] md:h-[40rem] max-w-7xl mx-auto    px-8 lg:px-0 flex items-center justify-start '>
         <h3 className="max-w-[90%]   text-[#000014] font-Montserrat font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-7xl leading-tight md:leading-normal text-left">
           Our ideas shape brands at the crossing point of design, strategy and culture.
         </h3>

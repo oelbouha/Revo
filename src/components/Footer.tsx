@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 
-const linkStyle = "text-sm md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
+const linkStyle = "text-[10px] md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
 
 const FaInstagram = () => (
   <svg className="w-3 h-3 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -77,7 +77,7 @@ const Footer = () => {
               </div>
              
             </div>
-            <div className="flex items-center gap-12 ">
+            <div className="flex items-center gap-8 md:gap-12 ">
                 <div>
                   <h3 onClick={() => handleNavigation('about')} className={linkStyle}>Agence</h3>
                 </div>
@@ -142,7 +142,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='relative z-10 max-w-7xl mx-auto'>
-        <p className="text-center text-white text-sm md:text-base py-8">
+        <p className="text-center text-white text-[10px] md:text-base py-8">
           Copyright © 2025 Revo
         </p>
       </div>

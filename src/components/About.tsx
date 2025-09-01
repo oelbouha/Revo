@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   return (
     <section id="about" className=" w-full  flex flex-col overflow-hidden items-center justify-center relative ">
-      <div className='max-w-7xl  px-2 h-[25rem] md:h-[40rem]  bg- w-full flex items-center'>
+      <div className='max-w-7xl  px-2 h-[20rem] md:h-[40rem]  bg- w-full flex items-center'>
         <HeaderWithCircle />
       </div>
       <ImageSection />
