@@ -94,7 +94,12 @@
     challenge: "Valoriser les travaux d’une filiale de l’UM6P à travers un document scientifique exigeant, combinant rigueur académique, clarté et attractivité visuelle.",
     solutions: "Un rapport conçu comme un outil de référence, associant précision éditoriale, design épuré et cohérence graphique, afin de refléter le sérieux et l’excellence de l’UM6P/LIMSET.",
     categories: ['Print'],
-    
+    photos: [       
+        "/64.png",
+        "/65.png",
+        "/67.png",
+        "/68.png",
+      ],
     description: "Conception et exécution d'un rapport scientifique pour une filiale de l'université UM6P",
   },
   {
@@ -266,6 +271,8 @@
     classement: "8",
     categories: ['Print'],
        photos: [       
+      "71.png",
+      "72.png",
       "72.png",
       ],
     description: "Conception de keyvisual + brochure pour un evènement oranisé par l'OCP, l'UM6P et L'AFA"

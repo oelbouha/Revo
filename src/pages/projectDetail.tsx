@@ -169,19 +169,19 @@ const ImageProjectDetail = ({ id = 1 }) => {
           </p> */}
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
-            <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
+          {  project.challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
               <h3 className="text-2xl font-bold text-[30px]">Challenge</h3>
               <p className="text-gray-700 text-start text-[18px] bg">
                 {project.challenge}
               </p>
-            </div>
+            </div>}
             
-            <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
+           {  project.solutions && <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
               <h3 className="text-2xl font-bold text-[30px]">SOLUTIONS</h3>
               <p className="text-gray-700 text-start text-[18px] bg">
                 {project.solutions}
               </p>
-            </div>
+            </div>}
           </div>
         </div>
 
