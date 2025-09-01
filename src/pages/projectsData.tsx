@@ -7,7 +7,7 @@
     title: 'ZOUITINA GAMME VERRE',
     subtitle: 'Interior',
     webImage: '/zouitina/163.png',
-    categories: ['Packaging', 'Print', 'Web'],
+    categories: ['Packaging', 'Print'],
     classement: "9",
     solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
     challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
