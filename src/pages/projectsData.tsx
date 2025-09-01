@@ -265,7 +265,7 @@
   // },
   {
     id: 17,
-    image: '/72.png',
+    image: '/71.png',
     title: 'UM6P/OCP AFA',
     subtitle: 'Print',
     classement: "8",
