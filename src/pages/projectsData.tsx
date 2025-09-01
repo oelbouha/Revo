@@ -75,7 +75,7 @@
     image: "/35.png",
     title: 'PROVIDENCE VERTE',
     subtitle: 'Branding',
-    classement: "4",
+    // classement: "4",
     solutions: "Une proposition de rebranding globale, pensée pour renforcer la visibilité de Providence Verte, affirmer son positionnement stratégique et refléter ses valeurs d’excellence et d’innovation.",
     challenge: "Accompagner un leader de l’agro-industrie marocaine dans l’évolution de son image de marque, en conciliant héritage, modernité et ambitions de développement.",
     categories: [ 'Branding'],
@@ -342,6 +342,7 @@
     image: "/videos/providence.mp4",
     title: "PROVIDENCE VERTE FILM INSTITUTIONNEL",
     subtitle: 'Production vidéo',
+    classement: "4",
     categories: ['Production vidéo'],
     description: "Tournage et Production d'un film institutionnel pour Providence Verte",
     
