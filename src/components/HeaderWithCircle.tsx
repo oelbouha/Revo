@@ -26,7 +26,7 @@ const HeaderWithCircle: React.FC<HeaderWithCircleProps> = ({title, circleClassNa
           exit={{ opacity: 0, scale: 0.8 }}
           whileInView={{ scale: 1.2 }} 
           transition={{ duration: 1.5, ease: 'easeInOut' }}
-          className={`h-16 w-16 md:w-24 md:h-24 lg:w-[10rem] lg:h-[10rem] rounded-full bg-blue bg-opacity-80 ${circleClassName}`}>
+          className={`h-16 w-16 md:w-24 md:h-24 lg:w-[10rem] lg:h-[10rem] rounded-full bg-blue  ${circleClassName}`}>
         </motion.div>
         
         <motion.h2 

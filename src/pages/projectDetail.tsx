@@ -161,6 +161,8 @@ const ImageProjectDetail = ({ id = 1 }) => {
 
       <section className="max-w-7xl mx-auto overflow-hidden">
         <div className="w-full flex flex-col">
+          {/* Navigation buttons */}
+        
           <p className="mt-[50px] pt-16 self-center text-[20px] font-bold text-red-500">
             Social Media SPOT TV BRANDING WEBSITE CREATION MEDIA
           </p>
@@ -193,8 +195,30 @@ const ImageProjectDetail = ({ id = 1 }) => {
         <div className="px-8 sm:px-16 pb-16">
           {renderMasonryImages()}
         </div>
+          <div className="flex justify-between items-center px-8 sm:px-16 mt-8 mb-16">
+            <button
+              onClick={() => {
+                const prevId = (Number(id) - 1) || portfolioItems.length;
+                window.location.href = `/project?id=${prevId}`;
+              }}
+              className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+              <span>Previous Project</span>
+            </button>
+            <button
+              onClick={() => {
+                const nextId = ((Number(id) + 1) > portfolioItems.length) ? 1 : (Number(id) + 1);
+                window.location.href = `/project?id=${nextId}`;
+              }}
+              className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+            >
+              <span>Next Project</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
       </section>
-
+        
           <Footer />
     </div>
   );
@@ -280,6 +304,30 @@ const VideoProjectDetail = ({id}) => {
       <section className="relative py-16 bg-white">
        {/* <section className="relative py-16 bg-black "></section> */}
         <div className="h-24"></div>
+
+        {/* Navigation buttons */}
+        <div className="flex justify-between items-center px-8 sm:px-16 max-w-7xl mx-auto mb-8">
+          <button
+            onClick={() => {
+              const prevId = (Number(id) - 1) || portfolioItems.length;
+              window.location.href = `/project?id=${prevId}`;
+            }}
+            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+            <span>Previous Project</span>
+          </button>
+          <button
+            onClick={() => {
+              const nextId = ((Number(id) + 1) > portfolioItems.length) ? 1 : (Number(id) + 1);
+              window.location.href = `/project?id=${nextId}`;
+            }}
+            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+          >
+            <span>Next Project</span>
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
 
         {/* Content */}
         <div className="text-center px-6 max-w-7xl mx-auto ">

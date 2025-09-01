@@ -1,6 +1,7 @@
-import React from 'react';
-import { Mail } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { Mail, PhoneCallIcon, PhoneIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 
 const linkStyle = "text-sm md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
@@ -18,6 +19,42 @@ const FaLinkedinIn = () => (
 );
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Handle hash navigation when component mounts or location changes
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const sectionId = location.hash.slice(1); // Remove the # from the hash
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Small delay to ensure the page has rendered
+    }
+  }, [location]);
+
+  const handleNavigation = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // Navigate to home page with the hash
+      navigate('/', { replace: true });
+      // After navigation, set the hash and scroll
+      setTimeout(() => {
+        window.location.hash = sectionId;
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return ( 
     <footer className="relative  text-white pt-16  ">
       {/* Background Image - Back Layer */}
@@ -41,71 +78,75 @@ const Footer = () => {
               <div className="text-3xl font-bold flex items-center gap-4 justify-center md:justify-start">
                 <img src="/Group 7.svg" alt="Revo Logo"  className="filter brightness-0 invert h-10 md:h-12 lg:h-16" />
               </div>
-              <p className="text-gray-300 text-center md:text-start leading-relaxed pr-4 text-sm md:text-base max-w-[400px]">
-                Member of the Association of Professional Architects of Morocco
-              </p>
+             
             </div>
-            <div className=" flex   items-center gap-12">
-                <div className="">
-                  <h3 className={linkStyle}>Agence</h3>
+            <div className="flex items-center gap-12">
+                <div>
+                  <h3 onClick={() => handleNavigation('about')} className={linkStyle}>Agence</h3>
                 </div>
-                <div className="">
-                  <h3 className={linkStyle}>Expertises</h3>
+                <div>
+                  <h3 onClick={() => handleNavigation('about')} className={linkStyle}>Expertises</h3>
                 </div>
-                <div className="">
-                  <h3 className={linkStyle}>Works</h3>
+                <div>
+                  <h3 onClick={() => handleNavigation('portfolio')} className={linkStyle}>Works</h3>
                 </div>
-                <div className="">
-                  <h3 className={linkStyle}>Studio</h3>
+                <div>
+                  <h3 onClick={() => handleNavigation('home')} className={linkStyle}>Studio</h3>
                 </div>
           </div>
         </div>
       </div>
 
       
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0 flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-24 border-b border-[#FFFFFF30] ">
-            <div className="flex flex-col gap-4">
-              <h3 className='text-l md:text-lg lg:text-2xl font-semibold text-white'>Adresse</h3>
-              <p className="text-gray-300 leading-relaxed pr-4 text-sm md:text-base max-w-[400px] font-medium">
-                5 Rue Abou Baker Seddik, Résidence Al Manar, Appt 3, Casablanca, Maroc
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white">Contact</h3>
-              <div className="flex items-center space-x-4">
-                <Mail className="w-3 h-3 md:h-5 md:w-5  text-blue-500 flex-shrink-0" />
-                <span className="text-sm md:text-l  text-white hover:text-blue-400 transition-colors cursor-pointer">
+      <div className="relative z-10 max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0 border-b border-[#FFFFFF30]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-x-16">
+          {/* Address Section */}
+          <div className="flex flex-col gap-2">
+            <h3 className='text-l md:text-lg lg:text-2xl font-semibold text-white mb-2'>Adresse</h3>
+            <p className="text-gray-300 leading-relaxed text-sm md:text-base font-medium">
+              5 Rue Abou Baker Seddik, Résidence Al Manar, Appt 3, Casablanca, Maroc
+            </p>
+          </div>
+          
+          {/* Contact Section */}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Contact</h3>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center space-x-2">
+                <Mail className="w-3 h-3 md:h-5 md:w-5 text-blue-500 flex-shrink-0" />
+                <span className="text-sm md:text-l text-white hover:text-blue-400 transition-colors cursor-pointer">
                   contact@revo.ma
                 </span>
               </div>
-            </div>
-            <div className="flex flex-col gap-4 ">
-              <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white">Suivez-nous</h3>
-              <div className="flex items-center space-x-4">
-                <a 
-                  href="https://www.instagram.com/revo.ma/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-white hover:text-blue-400 rounded-full transition-all duration-300 hover:bg-blue-400 hover:bg-opacity-10"
-                  aria-label="Follow us on Instagram"
-                >
-                  <FaInstagram />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/company/revo-agency/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-white hover:text-blue-400  transition-all duration-300 hover:bg-blue-400 hover:bg-opacity-10"
-                  aria-label="Connect with us on LinkedIn"
-                >
-                  <FaLinkedinIn />
-                </a>
+              <div className="flex items-center space-x-2">
+                <PhoneIcon className="w-3 h-3 md:h-5 md:w-5 text-blue-500 flex-shrink-0" />
+                <span className="text-sm md:text-l text-white hover:text-blue-400 transition-colors cursor-pointer">
+                  05 29 27 60 40
+                </span>
               </div>
             </div>
+          </div>
+
+          {/* Social Media Section */}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Suivez-nous</h3>
+            <div className="flex items-start">
+              <a 
+                href="https://www.linkedin.com/company/revo-advertising-casablanca/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white hover:text-blue-400 transition-all duration-300 hover:bg-blue-400 hover:bg-opacity-10"
+                aria-label="Connect with us on LinkedIn"
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
       <div className='relative z-10 max-w-7xl mx-auto'>
         <p className="text-center text-white text-sm md:text-base py-8">
-          Copyright © 2025 REVO. All rights reserved.
+          Copyright © 2025 Revo
         </p>
       </div>
     </footer>

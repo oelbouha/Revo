@@ -32,6 +32,8 @@ export default NotFound;
 
 
 
+
+
  
       {/* Gallery Section */}
      

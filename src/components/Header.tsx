@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { url } from 'inspector';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { IoMdClose } from "react-icons/io";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -13,6 +13,8 @@ type props = {
 const Header: React.FC<props> = ({isBlack = false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,12 +25,38 @@ const Header: React.FC<props> = ({isBlack = false}) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  // Handle hash navigation when component mounts or location changes
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const sectionId = location.hash.slice(1); // Remove the # from the hash
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Small delay to ensure the page has rendered
     }
+  }, [location]);
+
+  const handleNavigation = (sectionId: string) => {
     setIsMenuOpen(false);
+    if (location.pathname !== '/') {
+      // Navigate to home page with the hash
+      navigate('/', { replace: true });
+      // After navigation, set the hash and scroll
+      setTimeout(() => {
+        window.location.hash = sectionId;
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   
@@ -45,7 +73,7 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
       <div className="w-full px-4 sm:px-10 md:px-12 ">
         <div className="flex justify-between w-full min-h-[60px] items-center">
           {/* Logo */}
-          <div className="px-4">
+          <div className="px-4 cursor-pointer" onClick={() => navigate('/')}>
             <img 
               src={isBlack ? '/Logo-revo-black.png' : '/Group 7.svg'}
               alt="Revo Logo"
@@ -123,11 +151,11 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
                     transition={{ duration: 0.3, delay: 0.3, ease: 'easeInOut' }}
                     className="flex flex-col items-end font-bold space-y-4"
                   >
-                    <button onClick={() => scrollToSection('home')} className={linkStyle}>Home</button>
-                    <button onClick={() => scrollToSection('about')} className={linkStyle}>Who we are</button>
-                    {/* <button onClick={() => scrollToSection('services')} className={linkStyle}>Services</button> */}
-                    <button onClick={() => scrollToSection('portfolio')} className={linkStyle}>Our work</button>
-                    <button onClick={() => scrollToSection('contact')} className={linkStyle}>Contact Us</button>
+                    <button onClick={() => handleNavigation('home')} className={linkStyle}>Home</button>
+                    <button onClick={() => handleNavigation('about')} className={linkStyle}>Who we are</button>
+                    {/* <button onClick={() => handleNavigation('services')} className={linkStyle}>Services</button> */}
+                    <button onClick={() => handleNavigation('portfolio')} className={linkStyle}>Our work</button>
+                    <button onClick={() => handleNavigation('footer')} className={linkStyle}>Contact Us</button>
                   </motion.div>
                 )}
               </AnimatePresence>
