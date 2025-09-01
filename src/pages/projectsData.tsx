@@ -3,7 +3,7 @@
  const rawPortfolioItems  = [
   {
     id: 1,
-    image: '/zouitina/120.png',
+    image: '/zouitina/201.jpg',
     title: 'ZOUITINA GAMME VERRE',
     subtitle: 'Interior',
     webImage: '/zouitina/163.png',
@@ -13,9 +13,8 @@
     challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
     description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
     photos: [       
-      "/zouitina/120.png",
-      "/zouitina/118.png",
-          "/zouitina/117.png",
+      "/zouitina/200.jpg",
+      "/zouitina/201.jpg",
       ]
   },
   {
@@ -41,7 +40,7 @@
   },
   {
     id: 3,
-    image: '/casabussines/45.png',
+    image: '/casabussines/43.png',
     title: 'CASA BUSINESS TOWERS',
     subtitle: 'PRINT',
     challenge: "Concevoir une signalétique à la hauteur de l’envergure du projet Casa Business Towers : allier clarté, élégance et innovation pour offrir une expérience fluide aux visiteurs comme aux résidents.",
@@ -52,7 +51,7 @@
         "/casabussines/43.png",
         "/casabussines/44.png",
         "/casabussines/45.png",
-        "/casabussines/46.jpg",
+        // "/casabussines/46.jpg",
       ],
     description: "Conception du dispositif de signalétique complet en print & digital pour le projet casa business Towers"
   },
@@ -502,7 +501,7 @@
   },
     {
       id: 30,
-      image: '/zouitina/120.png',
+      image: '/zouitina/118.png',
       title: 'ZOUITINA',
       subtitle: 'Interior',
       solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
@@ -512,7 +511,7 @@
       classement: "7",
       description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
       photos: [       
-          "/zouitina/120.png",
+          // "/zouitina/120.png",
           "/zouitina/118.png",
           "/zouitina/117.png",
 
