@@ -40,7 +40,7 @@ const ImageSlider = () => {
   return (
     <div className="w-screen h-screen bg-black relative overflow-hidden">
       {/* Background Images */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         {/* Desktop Image */}
         <motion.img
           key={`desktop-${selectedImageIndex}`}

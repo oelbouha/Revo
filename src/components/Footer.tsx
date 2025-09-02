@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 
-const linkStyle = "text-[10px] md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
+const linkStyle = "text-[14px] md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
 
 const FaInstagram = () => (
   <svg className="w-3 h-3 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -127,12 +127,12 @@ const Footer = () => {
           {/* Social Media Section */}
           <div className="flex flex-col gap-2">
             <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Suivez-nous</h3>
-            <div className="flex items-start">
+            <div className="flex items-start  ">
               <a 
                 href="https://www.linkedin.com/company/revo-advertising-casablanca/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-white hover:text-blue-400 transition-all duration-300 hover:bg-blue-400 hover:bg-opacity-10"
+                className="text-white  hover:text-blue-400 transition-all duration-300 hover:bg-blue-400 hover:bg-opacity-10"
                 aria-label="Connect with us on LinkedIn"
               >
                 <FaLinkedinIn />
@@ -142,7 +142,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='relative z-10 max-w-7xl mx-auto'>
-        <p className="text-center text-white text-[10px] md:text-base py-8">
+        <p className="text-center text-white text-[14px] md:text-base py-8">
           Copyright © 2025 Revo
         </p>
       </div>

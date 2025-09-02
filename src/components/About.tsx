@@ -40,42 +40,44 @@ const HeaderWithCircle = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center px-4 ">
-      <div className="relative w-full flex items- justify-end  20 md:h-24 lg:h-48 xl:h-60 z-10 bg-">
-        <motion.div
-          ref={circleRef}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          exit={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ scale: 1.2 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-48 lg:w-48 xl:h-60 xl:w-60 rounded-full bg-blue"
-        />
+    <div className="relative w-full flex flex-col items-center justify-center px-4 ">
+      <div className='w-full absolute top-0 left-0 h-full flex flex-col items-center justify-center  px-8'>
+        <div className="relative w-full flex items- justify-end  20 md:h-24 lg:h-48 xl:h-60 z-10 bg-">
+          <motion.div
+            ref={circleRef}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            exit={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ scale: 1.2 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-48 lg:w-48 xl:h-60 xl:w-60 rounded-full bg-blue"
+          />
 
-        <motion.h2
-          ref={ref}
-          initial={{ opacity: 0, x: -20 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          exit={{ opacity: 0, x: -20 }}
-          whileInView={{ x: 20 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute top-[24%] font-Montserrat font-bold z-10 text-3xl md:text-5xl lg:text-8xl tracking-tight text-primary   "
-            style={{ right: circleWidth * 0.6 }} 
-        >
-          WE ARE REVO
-        </motion.h2>
-      </div>
+          <motion.h2
+            ref={ref}
+            initial={{ opacity: 0, x: -20 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            exit={{ opacity: 0, x: -20 }}
+            whileInView={{ x: 20 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute top-[24%] font-Montserrat font-bold z-10 text-3xl md:text-5xl lg:text-8xl tracking-tight text-primary   "
+              style={{ right: circleWidth * 0.6 }} 
+          >
+            WE ARE REVO
+          </motion.h2>
+        </div>
 
-      <div className="relative w-full flex items-center justify-end  bg- h-32">
-        <h3
-          style={{ right: circleWidth }} 
-          className="absolute -top-6 md:-top-10 text-black font-Montserrat font-semibold   
-            text-[0.5rem] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right px-8 md:px-12 lg:px-16 "
-        >
-          As an independent voice in strategic design and communication,
-          REVO shapes powerful ideas that enable brands to exist differently,
-          above the noise and beyond fleeting trends.
-        </h3>
+        <div className="relative w-full flex items-center justify-end  bg- h-32">
+          <h3
+            style={{ right: circleWidth }} 
+            className="absolute -top-6 md:-top-10 text-black font-Montserrat font-semibold   
+              text-[0.5rem] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right px-8 md:px-12 lg:px-16 "
+          >
+            As an independent voice in strategic design and communication,
+            REVO shapes powerful ideas that enable brands to exist differently,
+            above the noise and beyond fleeting trends.
+          </h3>
+        </div>
       </div>
     </div>
   );
@@ -89,7 +91,7 @@ const ImageSection = () => {
   });
 
   return (
-    <section ref={ref} className="relative">
+    <section ref={ref} className="relative md:mt-24">
       {/* Mobile Layout - Column */}
       <div className="md:hidden flex flex-col w-full bg-white">
         <motion.div className="w-full">

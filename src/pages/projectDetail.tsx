@@ -133,9 +133,9 @@ const ImageProjectDetail = ({ id = 1 }) => {
         <Header />
       </section>
       
-      <div className="h-[351px] w-full bg-black px-8 sm:px-16 md:px-0">
+      <div className="h-[300px] w-full bg-black px-8 sm:px-16 md:px-0 md:mb-24">
         <div 
-          className="bg-white h-[401px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
+          className="bg-white h-[350px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
           style={{
             backgroundImage: `url(${project.image})`,
             backgroundSize: 'cover',
@@ -198,7 +198,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
-              <span>Previous Project</span>
+              <span className="text-sm md:text-lg " >Previous Project</span>
             </button>
             <button
               onClick={() => {
@@ -207,7 +207,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               }}
               className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
             >
-              <span>Next Project</span>
+              <span className="text-sm md:text-lg ">Next Project</span>
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
@@ -327,9 +327,9 @@ const VideoProjectDetail = ({id}) => {
         <Header />
       </section>
       
-      <div className="h-[351px] w-full bg-black px-8 sm:px-16 md:px-0">
+      <div className="h-[300px] w-full bg-black px-8 sm:px-16 md:px-0">
         <div 
-          className="bg-white h-[401px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
+          className="bg-white h-[350px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
           style={{
             backgroundImage: `url(${project.thumbnail})`,
             backgroundSize: 'cover',
