@@ -71,7 +71,7 @@ const HeaderWithCircle = () => {
           <h3
             style={{ right: circleWidth }} 
             className="absolute -top-6 md:-top-10 text-black font-Montserrat font-semibold   
-              text-[0.55rem] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right px-8 md:px-12 lg:px-16 "
+              text-[0.55rem] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right pr-8 md:pr-12 lg:pr-16 "
           >
             As an independent voice in strategic design and communication,
             REVO shapes powerful ideas that enable brands to exist differently,
