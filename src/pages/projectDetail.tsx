@@ -86,7 +86,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
       }
 
       // Second row: Two half-width images side by side
-      if (project.photos[i] || project.photos[i + 1]) {
+      if (project.photos[i] || project.photos[i + 1] && i  > 2) {
         rows.push(
           <motion.div
             key={`row-${i}`}
@@ -168,7 +168,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
             Social Media SPOT TV BRANDING WEBSITE CREATION MEDIA
           </p> */}
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
+         { project.challenge && project.solutions && <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
           {  project.challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
               <h3 className="text-2xl font-bold text-[30px]">Challenge</h3>
               <p className="text-gray-700 text-start text-[18px] bg">
@@ -182,7 +182,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
                 {project.solutions}
               </p>
             </div>}
-          </div>
+          </div>}
         </div>
 
         {/* Masonry Image Gallery */}
@@ -367,7 +367,7 @@ const VideoProjectDetail = ({id}) => {
           </motion.div>
 
           {/* Simple Video Grid */}
-          <div className="space-y-8">
+          <div className="space-y-8 px-8 md:p-0">
             {project.videos.map((video, index) => (
               <motion.div
                 key={index}
