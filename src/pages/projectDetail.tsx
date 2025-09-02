@@ -74,7 +74,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
             <img
               src={project.photos[i]}
               alt={`Project image ${i + 1}`}
-              className="w-full h-[400px] md:h-[600px] object-fill  cursor-pointer hover:opacity-90 transition-opacity"
+              className="w-full h-[400px] md:h-[600px] object-cover  cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => {
                 setSelectedImage(project.photos[i]);
                 setSelectedImageIndex(i);
