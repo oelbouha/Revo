@@ -75,7 +75,7 @@ const ImageSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
-              className="text-[3rem] md:text-5xl lg:text-7xl xl:text-8xl max-w-7xl leading-tight text-white"
+              className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl max-w-7xl leading-tight text-white"
             >
               {images[selectedImageIndex].text}
             </motion.h1>
@@ -88,11 +88,7 @@ const ImageSlider = () => {
 
 const HomeScreen = () => {
   useEffect(() => {
-    // Preload all slider images
-    images.forEach(item => {
-      const img = new Image();
-      img.src = item.image;
-    });
+    // Images are now preloaded in the HeroSection component
   }, []);
 
   return (
@@ -115,6 +111,54 @@ const HomeScreen = () => {
 };
 
 const HeroSection = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const preloadImages = async () => {
+      try {
+        const imagePromises = images.flatMap(item => [
+          new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = item.image;
+            img.onload = resolve;
+            img.onerror = reject;
+          }),
+          new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = item.mobileImage;
+            img.onload = resolve;
+            img.onerror = reject;
+          })
+        ]);
+
+        await Promise.all(imagePromises);
+         setTimeout(() => {
+          setIsLoading(false);
+        }, 1000); 
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        
+          setIsLoading(false);
+      }
+    };
+
+    preloadImages();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+        <div className="animate-pulse">
+          <img 
+            src="/Group 7.svg" 
+            alt="Loading Logo" 
+            className="w-48 h-48 md:w-[30rem] md:h-[30rem"
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <section
       id="home"
