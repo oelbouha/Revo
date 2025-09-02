@@ -50,7 +50,7 @@ const HeaderWithCircle = () => {
             exit={{ opacity: 0, scale: 0.8 }}
             whileInView={{ scale: 1.2 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-48 lg:w-48 xl:h-60 xl:w-60 rounded-full bg-blue"
+            className="h-[6rem] w-[6rem] sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-48 lg:w-48 xl:h-60 xl:w-60 rounded-full bg-blue"
           />
 
           <motion.h2
@@ -71,7 +71,7 @@ const HeaderWithCircle = () => {
           <h3
             style={{ right: circleWidth }} 
             className="absolute -top-6 md:-top-10 text-black font-Montserrat font-semibold   
-              text-[0.5rem] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right px-8 md:px-12 lg:px-16 "
+              text-[0.55rem] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right px-8 md:px-12 lg:px-16 "
           >
             As an independent voice in strategic design and communication,
             REVO shapes powerful ideas that enable brands to exist differently,
