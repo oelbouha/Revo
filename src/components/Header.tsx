@@ -91,7 +91,7 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
             <img 
               src={isBlack ? '/Logo-revo-black.png' : '/Group 7.svg'}
               alt="Revo Logo"
-              className='w-[7rem] sm:w-24 md:w-32 lg:w-56 xl:w-64 h-auto'
+              className='w-[9rem] sm:w-24 md:w-32 lg:w-56 xl:w-64 h-auto'
             />
           </div>
           <button 
@@ -102,8 +102,8 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
               <X className={`w-6 h-6 z-99 md:w-15 md:h-15 ${isMenuOpen ? 'hidden' : 'text-black'}`} />
             ) : (
               <div className='flex items-center justify-center z-99 gap-2 sm:gap-4'>
-                <span className={`text-[1rem] sm:text-xl md:text-xl lg:text-xl font-semibold ${isBlack ? "text-black" : "text-white"}`}>Menu</span>
-                <Menu className={`w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 ${isBlack ? "text-black" : "text-white"}`} />
+                <span className={`hidden md:block text-[1rem] sm:text-xl md:text-xl lg:text-xl font-semibold ${isBlack ? "text-black" : "text-white"}`}>Menu</span>
+                <Menu className={`w-[30px] h-[30PX] sm:w-8 sm:h-8 md:w-12 md:h-12 ${isBlack ? "text-black" : "text-white"}`} />
               </div>
             )}
           </button>

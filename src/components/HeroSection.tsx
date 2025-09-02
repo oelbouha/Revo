@@ -6,22 +6,22 @@ import ScrollingTextBanner from './scrollingTextBanner';
 const images = [
   {
     image: "/home1.png",
-    mobileImage: "/hometest.png",
+    mobileImage: "/home11test.png",
     text: "Unlike anything else."
   },
   {
     image: "/home2.png",
-    mobileImage: "/hometest.png",
+    mobileImage: "/home2test.png",
     text: "The future begins with a gesture"
   },
   {
     image: "/home4.png",
-    mobileImage: "/hometest.png",
+    mobileImage: "/home4test.png",
     text: "We reach for meaning"
   },
   {
     image: "/home3.png",
-    mobileImage: "/hometest.png",
+    mobileImage: "/home3test.png",
     text: "We don’t guess. We choose !"
   },
 ];
@@ -56,7 +56,7 @@ const ImageSlider = () => {
         <motion.img
           key={`mobile-${selectedImageIndex}`}
           src={images[selectedImageIndex].mobileImage}
-          className="block md:hidden absolute w-full h-full object-cover top-0 left-0"
+          className="block md:hidden absolute w-full h-[100dvh] object-cover top-0 left-0"
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
@@ -66,7 +66,7 @@ const ImageSlider = () => {
 
 
       {/* Text Overlay */}
-      <div className="absolute left-4 sm:left-2 md:left-4 top-[55%] transform -translate-y-1/2 z-10 max-w-[70%] p-4 sm:p-6 md:p-8">
+      <div className="absolute left-4 sm:left-2 md:left-4 top-[55%] transform -translate-y-1/2 z-10 max-w-[80%] p-4 sm:p-6 md:p-8">
         <div className="font-Montserrat font-bold overflow-hidden py-4">
           <AnimatePresence mode="wait">
             <motion.h1
@@ -75,7 +75,7 @@ const ImageSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
-              className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl max-w-5xl"
+              className="text-[3rem] md:text-5xl lg:text-7xl xl:text-8xl max-w-7xl leading-tight text-white"
             >
               {images[selectedImageIndex].text}
             </motion.h1>
@@ -97,7 +97,7 @@ const HomeScreen = () => {
 
   return (
     <div
-      className="relative h-[93dvh] md:min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden"
+      className="relative h-screen md:min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden"
     >
       {/* Background Image Slider */}
       <ImageSlider />
