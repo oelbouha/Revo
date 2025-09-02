@@ -6,22 +6,22 @@ import ScrollingTextBanner from './scrollingTextBanner';
 const images = [
   {
     image: "/home1.png",
-    mobileImage: "/menu.png",
+    mobileImage: "/hometest.png",
     text: "Unlike anything else."
   },
   {
     image: "/home2.png",
-    mobileImage: "/menu.png",
+    mobileImage: "/hometest.png",
     text: "The future begins with a gesture"
   },
   {
     image: "/home4.png",
-    mobileImage: "/menu.png",
+    mobileImage: "/hometest.png",
     text: "We reach for meaning"
   },
   {
     image: "/home3.png",
-    mobileImage: "/menu.png",
+    mobileImage: "/hometest.png",
     text: "We don’t guess. We choose !"
   },
 ];
