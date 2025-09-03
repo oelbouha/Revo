@@ -41,8 +41,8 @@ const HeaderWithCircle = () => {
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center px-4 ">
-      <div className='w-full absolute top-0 left-0 h-full flex flex-col items-center justify-center  px-8'>
-        <div className="relative w-full flex items- justify-end  20 md:h-24 lg:h-48 xl:h-60 z-10 bg-">
+      <div className='w-full absolute top-0 left-0 h-full flex flex-col items-center justify-center  px-8 '>
+        <div className="relative w-full flex items- justify-end  20 md:h-24 lg:h-48 xl:h-60 z-10 ">
           <motion.div
             ref={circleRef}
             initial={{ opacity: 0, scale: 0.5 }}
@@ -110,16 +110,17 @@ const ImageSection = () => {
       </div>
 
       {/* Desktop Layout - Row */}
-      <div className="hidden md:flex justify-end w-full">
+      <div className="hidden md:flex justify-end w-full ">
         <motion.img 
           src="https://static.vecteezy.com/system/resources/previews/039/063/358/large_2x/ai-generated-ai-circuit-board-technology-background-central-computer-processors-cpu-concept-motherboard-digital-chip-tech-science-background-integrated-communication-processor-3d-illustration-photo.jpeg" 
           alt="Studio workspace"
-          className="object-cover absolute top-0 left-0 h-[25rem] lg:h-[36rem] w-[50%]"
+          className="object-cover absolute top-0 left-0 h-[400px] md:h-[350px] lg:h-[444px] w-[40%]"
         />
        
-        <div className="flex justify-end items-center mt-20 h-[25rem] lg:h-[36rem] pl-[12rem] lg:pl-[18rem] p-8 lg:p-24 md:max-w-[60%] lg:max-w-[60%] bg-black text-white">
-          <div className="max-w- mx-auto w-full flex justify-end">
-            <h3 className="text-lg lg:text-2xl xl:text-3xl leading-relaxed font-Montserrat font-semibold px-8 text-right text-white">
+        <div className="flex justify-end items-center mt-20  h-[628px]    w-[73%]  bg-black text-white ">
+          <div className="max-w- mx-auto w-full flex justify-end bg-red- px-16 ml-[18%] lg:mr-[1%]   ">
+            
+            <h3 className="text-lg lg:text-3xl xl:text-3xl leading-relaxed font-Montserrat font-semibold px-8 text-right text-white">
               As an independent voice in strategic design and communication, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
             </h3>
           </div>

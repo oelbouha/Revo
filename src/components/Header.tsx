@@ -91,7 +91,7 @@ const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-wh
             <img 
               src={isBlack ? '/Logo-revo-black.png' : '/Group 7.svg'}
               alt="Revo Logo"
-              className='w-[9rem] sm:w-24 md:w-32 lg:w-56 xl:w-64 h-auto'
+              className='w-[9rem] sm:w-24 md:w-32 lg:w-48 xl:w-56 h-auto'
             />
           </div>
           <button 

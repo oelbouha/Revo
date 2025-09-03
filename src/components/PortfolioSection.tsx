@@ -75,14 +75,14 @@ const PortfolioSection = () => {
 
   const filters = [
     'All',
-    'Branding',
-    'Activation',
-    'Direction Créative',
-    'Packaging',
-    'Web',
-    'Print',
+    'Brand strategy',
+    'Operational',
+    'Audiovisual Production',
+    'Digital & Social Media',
+    'Event & PR',
+    // 'Print',
     'Production vidéo',
-    'Campagne',
+    // 'Campagne',
   ];
 
 const getFilteredItems = () => {
@@ -148,13 +148,13 @@ const getFilteredItems = () => {
                   setShowAll(false);
                   setActiveFilter((prev) => (prev === filter ? 'All' : filter));
                 }}
-                className={`px-2 py-2 text-sm md:text-lg transition-colors lowercase ${
+                className={`px-2 py-2 text-sm md:text-lg transition-colors  ${
                   activeFilter === filter ? 'text-blue ' : 'text-gray-600 hover:text-blue'
                 }`}
               >
                 {filter}
               </button>
-              {filter !== 'Campagne' && <div className="text-gray-600 h-1 w-1 bg-gray-600 rounded-full"></div>}
+              {filter !== 'Production vidéo' && <div className="text-gray-600 h-1 w-1 bg-gray-600 rounded-full"></div>}
             </div>
           ))}
         </div>
@@ -211,7 +211,7 @@ const getFilteredItems = () => {
                 <div className="absolute flex items-center justify-between bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
                   <div>
                     <h3 className="text-2xl font-semibold mb-1">{item.title}</h3>
-                    <h4 className="text-lg">{item.categories[0]}</h4>
+                    <h4 className="text-lg">{item.subtitle}</h4>
                   </div>
                   <RiArrowRightSLine className="w-12 h-12 inline-block ml-2 text-white" />
                 </div>
