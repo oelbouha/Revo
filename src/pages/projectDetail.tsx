@@ -153,7 +153,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               className="text-4xl md:text-5xl font-bold mb-4">
               {project.title}
             </motion.h1>
-            <p className="text-lg max-w-2xl">
+            <p className="text-lg max-w-2xl " >
               {project.description}
             </p>
           </div>
@@ -347,7 +347,7 @@ const VideoProjectDetail = ({id}) => {
               className="text-4xl md:text-5xl font-bold mb-4">
               {project.title}
             </motion.h1>
-            <p className="text-lg max-w-2xl">
+            <p className="text-lg max-w-2xl ">
               {project.description}
             </p>
           </div>
