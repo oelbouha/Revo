@@ -87,9 +87,9 @@ const ImageSlider = () => {
 };
 
 const HomeScreen = () => {
-  useEffect(() => {
-    // Images are now preloaded in the HeroSection component
-  }, []);
+  // useEffect(() => {
+  //   // Images are now preloaded in the HeroSection component
+  // }, []);
 
   return (
     <div
@@ -97,8 +97,6 @@ const HomeScreen = () => {
     >
       {/* Background Image Slider */}
       <ImageSlider />
-
-      <Header />
 
       {/* Scroll indicator */}
       <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -111,53 +109,53 @@ const HomeScreen = () => {
 };
 
 const HeroSection = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const preloadImages = async () => {
-      try {
-        const imagePromises = images.flatMap(item => [
-          new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = item.image;
-            img.onload = resolve;
-            img.onerror = reject;
-          }),
-          new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = item.mobileImage;
-            img.onload = resolve;
-            img.onerror = reject;
-          })
-        ]);
+  // useEffect(() => {
+  //   const preloadImages = async () => {
+  //     try {
+  //       const imagePromises = images.flatMap(item => [
+  //         new Promise((resolve, reject) => {
+  //           const img = new Image();
+  //           img.src = item.image;
+  //           img.onload = resolve;
+  //           img.onerror = reject;
+  //         }),
+  //         new Promise((resolve, reject) => {
+  //           const img = new Image();
+  //           img.src = item.mobileImage;
+  //           img.onload = resolve;
+  //           img.onerror = reject;
+  //         })
+  //       ]);
 
-        await Promise.all(imagePromises);
-         setTimeout(() => {
-          setIsLoading(false);
-        }, 1000); 
-      } catch (error) {
-        console.error('Error preloading images:', error);
+  //       await Promise.all(imagePromises);
+  //        setTimeout(() => {
+  //         setIsLoading(false);
+  //       }, 1000); 
+  //     } catch (error) {
+  //       console.error('Error preloading images:', error);
         
-          setIsLoading(false);
-      }
-    };
+  //         setIsLoading(false);
+  //     }
+  //   };
 
-    preloadImages();
-  }, []);
+  //   preloadImages();
+  // }, []);
 
-  if (isLoading) {
-    return (
-      <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
-        <div className="animate-pulse">
-          <img 
-            src="/Group 7.svg" 
-            alt="Loading Logo" 
-            className="w-48 h-48 md:w-[30rem] md:h-[30rem"
-          />
-        </div>
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+  //       <div className="animate-pulse">
+  //         <img 
+  //           src="/Group 7.svg" 
+  //           alt="Loading Logo" 
+  //           className="w-48 h-48 md:w-[30rem] md:h-[30rem"
+  //         />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <section

@@ -163,13 +163,10 @@ const ImageProjectDetail = ({ id = 1 }) => {
         </div>
       </div>
 
-      <section className="max-w-7xl mx-auto overflow-hidden ">
+      <section className="max-w-7xl mx-auto overflow-hidden mt-16 md:mt-0">
         <div className="w-full flex flex-col">
           {/* Navigation buttons */}
         
-          {/* <p className="mt-[50px] pt-16 self-center text-[20px] font-bold text-red-500">
-            Social Media SPOT TV BRANDING WEBSITE CREATION MEDIA
-          </p> */}
           
          { project.challenge && project.solutions && <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
           {  project.challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
@@ -216,7 +213,6 @@ const ImageProjectDetail = ({ id = 1 }) => {
           </div>
       </section>
         
-          <Footer />
     </div>
   );
 };
@@ -522,7 +518,6 @@ const VideoProjectDetail = ({id}) => {
           </motion.div>
         )}
       </AnimatePresence>
-       <Footer />
     </div>
   );
 };

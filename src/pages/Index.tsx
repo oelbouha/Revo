@@ -12,18 +12,4 @@ import About from '../components/About';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-white overflow-hidden">
-      <HeroSection />
-      <About />
-      <AboutSection />
-      <PortfolioSection />
-      {/* <PartnersSection /> */}
-      {/* <ContactSection /> */}
-      <Footer />
-    </div>
-  );
-};
 
-export default Index;

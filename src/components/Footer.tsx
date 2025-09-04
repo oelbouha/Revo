@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { Mail, PhoneCallIcon, PhoneIcon } from 'lucide-react';
+import { Copy, Mail, PhoneCallIcon, PhoneIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
+
 
 
 const linkStyle = "text-[14px] md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
@@ -22,20 +23,67 @@ const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Handle hash navigation when component mounts or location changes
-  useEffect(() => {
-    if (location.pathname === '/' && location.hash) {
-      const sectionId = location.hash.slice(1); // Remove the # from the hash
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100); // Small delay to ensure the page has rendered
-    }
-  }, [location]);
 
-  const handleNavigation = (sectionId: string) => {
+  return ( 
+    <footer className="relative  text-white pt-16 bg-black  ">
+      {/* Background Image - Back Layer */}
+      <div
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{
+          backgroundImage: "url('/footer.png')",
+        }}
+      />
+      
+      {/*  Overlay for Better Text Readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 z-1"></div>
+      
+      {/* Footer Content */}
+      <div className="relative z-10">
+        <LogoSection />      
+        <div className="max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0 border-b border-[#FFFFFF30]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-x-16">
+            <AddressSection />
+            <ContactSection />
+            <SocialMediaSection />
+          </div>
+        </div>
+        <CopyrightSection />
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+
+const ContactSection = () => {
+  return (
+      <div className="flex flex-col gap-2">
+        <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Contact</h3>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center space-x-2">
+            <Mail className="w-3 h-3 md:h-5 md:w-5 text-blue-500 flex-shrink-0" />
+            <span className="text-sm md:text-l text-white hover:text-blue-400 transition-colors cursor-pointer">
+              contact@revo.ma
+            </span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <PhoneIcon className="w-3 h-3 md:h-5 md:w-5 text-blue-500 flex-shrink-0" />
+            <span className="text-sm md:text-l text-white hover:text-blue-400 transition-colors cursor-pointer">
+              05 29 27 60 40
+            </span>
+          </div>
+        </div>
+      </div>
+  );
+}
+
+const LogoSection = () => {
+   const navigate = useNavigate();
+    const location = useLocation();
+
+   const handleNavigation = (sectionId: string) => {
+    // setIsMenuOpen(false);
     if (location.pathname !== '/') {
       // Navigate to home page with the hash
       navigate('/', { replace: true });
@@ -54,22 +102,8 @@ const Footer = () => {
       }
     }
   };
-
-  return ( 
-    <footer className="relative  text-white pt-16  ">
-      {/* Background Image - Back Layer */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{
-          backgroundImage: "url('/footer.png')",
-        }}
-      />
-      
-      {/*  Overlay for Better Text Readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 z-1"></div>
-      
-      {/* Content - Front Layer */}
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0  border-b border-[#FFFFFF30] ">
+  return (
+      <div className=" max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0  border-b border-[#FFFFFF30] ">
         <div className="w-full  flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
             <div className="space-y-6">
               <div className="text-3xl font-bold flex items-center gap-4 justify-center md:justify-start">
@@ -79,80 +113,60 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-8 md:gap-12 ">
                 <div>
-                  <h3 onClick={() => handleNavigation('about')} className={linkStyle}>Agence</h3>
+                  <h3  onClick={() => handleNavigation('home')} className={linkStyle}>Agence</h3>
                 </div>
                 <div>
-                  <h3 onClick={() => handleNavigation('about')} className={linkStyle}>Expertises</h3>
+                  <h3  onClick={() => handleNavigation('about')} className={linkStyle}>Expertises</h3>
                 </div>
                 <div>
-                  <h3 onClick={() => handleNavigation('portfolio')} className={linkStyle}>Works</h3>
+                  <h3  onClick={() => handleNavigation('portfolio')} className={linkStyle}>Works</h3>
                 </div>
                 <div>
-                  <h3 onClick={() => handleNavigation('home')} className={linkStyle}>Studio</h3>
+                  <h3   onClick={() => handleNavigation('home')} className={linkStyle}>Studio</h3>
                 </div>
           </div>
         </div>
       </div>
+  );
+}
 
-      
-      <div className="relative z-10 max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0 border-b border-[#FFFFFF30]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-x-16">
-          {/* Address Section */}
-          <div className="flex flex-col gap-2">
-            <h3 className='text-l md:text-lg lg:text-2xl font-semibold text-white mb-2'>Adresse</h3>
-            <p className="text-gray-300 leading-relaxed text-sm md:text-base font-medium">
-             Revo Advertising, 5 eme etg, Espace majorelles, 11 Rue Abou Hayane Attaouhidi، Casablanca 20000
-            </p>
-          </div>
-          
-          {/* Contact Section */}
-          <div className="flex flex-col gap-2">
-            <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Contact</h3>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center space-x-2">
-                <Mail className="w-3 h-3 md:h-5 md:w-5 text-blue-500 flex-shrink-0" />
-                <span className="text-sm md:text-l text-white hover:text-blue-400 transition-colors cursor-pointer">
-                  contact@revo.ma
-                </span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <PhoneIcon className="w-3 h-3 md:h-5 md:w-5 text-blue-500 flex-shrink-0" />
-                <span className="text-sm md:text-l text-white hover:text-blue-400 transition-colors cursor-pointer">
-                  05 29 27 60 40
-                </span>
-              </div>
-            </div>
-          </div>
 
-          {/* Social Media Section */}
-          <div className="flex flex-col gap-2">
-            <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Suivez-nous</h3>
-            <div className="flex items-start  ">
-              <a 
-                href="https://www.linkedin.com/company/revo-advertising-casablanca/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-white  hover:text-blue-400 transition-all duration-300 hover:bg-blue-400 hover:bg-opacity-10"
-                aria-label="Connect with us on LinkedIn"
-              >
-                <FaLinkedinIn />
-              </a>
-            </div>
-          </div>
+const AddressSection = () => {
+  return (
+      <div className="flex flex-col gap-2">
+        <h3 className='text-l md:text-lg lg:text-2xl font-semibold text-white mb-2'>Adresse</h3>
+        <p className="text-gray-300 leading-relaxed text-sm md:text-base font-medium">
+          Revo Advertising, 5 eme etg, Espace majorelles, 11 Rue Abou Hayane Attaouhidi، Casablanca 20000
+        </p>
+      </div>
+  );
+}
+
+const SocialMediaSection = () => {
+  return (
+     <div className="flex flex-col gap-2">
+        <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Suivez-nous</h3>
+        <div className="flex items-start  ">
+          <a 
+            href="https://www.linkedin.com/company/revo-advertising-casablanca/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-white  hover:text-blue-400 transition-all duration-300 hover:bg-blue-400 hover:bg-opacity-10"
+            aria-label="Connect with us on LinkedIn"
+          >
+            <FaLinkedinIn />
+          </a>
         </div>
       </div>
-      <div className='relative z-10 max-w-7xl mx-auto'>
+  );
+}
+
+const CopyrightSection = () => {
+    return (
+       <div className=' max-w-7xl mx-auto'>
         <p className="text-center text-white text-[14px] md:text-base py-8">
           Copyright © 2025 Revo
         </p>
       </div>
-    </footer>
-  );
-};
-
-export default Footer;
-
-
-
-
-
+    ); 
+}
