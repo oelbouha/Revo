@@ -114,7 +114,7 @@ const ImageSection = () => {
         <motion.img 
           src="https://static.vecteezy.com/system/resources/previews/039/063/358/large_2x/ai-generated-ai-circuit-board-technology-background-central-computer-processors-cpu-concept-motherboard-digital-chip-tech-science-background-integrated-communication-processor-3d-illustration-photo.jpeg" 
           alt="Studio workspace"
-          className="object-cover absolute top-0 left-0 h-[400px] md:h-[350px] lg:h-[444px]  xl:h-[540px] w-[50%]"
+          className="object-cover absolute top-0 left-0 h-[400px] md:h-[300px] lg:h-[444px]  xl:h-[550px] w-[50%]"
         />
        
         <div className="flex justify-end items-center mt-20  h-[628px]    w-[73%]  bg-black text-white ">
