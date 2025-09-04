@@ -31,6 +31,9 @@ const ProjectDetail = () => {
 }
 
 export default ProjectDetail
+
+
+
 const ImageProjectDetail = ({ id = 1 }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -74,7 +77,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
             <img
               src={project.photos[i]}
               alt={`Project image ${i + 1}`}
-              className="w-full h-[400px] md:h-[600px] object-contain  cursor-pointer hover:opacity-90 transition-opacity"
+              className="w-full  md:h-[600px] object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => {
                 setSelectedImage(project.photos[i]);
                 setSelectedImageIndex(i);
@@ -99,7 +102,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               <img
                 src={project.photos[i]}
                 alt={`Project image ${i + 1}`}
-                className="w-full h-[300px] md:h-[400px] object-contain  cursor-pointer hover:opacity-90 transition-opacity"
+                className="w-full  md:h-[400px] object-cover md:object-contain  cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => {
                   setSelectedImage(project.photos[i]);
                   setSelectedImageIndex(i);
@@ -110,7 +113,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               <img
                 src={project.photos[i + 1]}
                 alt={`Project image ${i + 2}`}
-                className="w-full h-[300px] md:h-[400px] object-contain  cursor-pointer hover:opacity-90 transition-opacity"
+                className="w-full  md:h-[400px] object-cover md:object-contain  cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => {
                   setSelectedImage(project.photos[i + 1]);
                   setSelectedImageIndex(i + 1);
@@ -133,9 +136,9 @@ const ImageProjectDetail = ({ id = 1 }) => {
         <Header />
       </section>
       
-      <div className="h-[300px] w-full bg-black px-8 sm:px-16 md:px-0 md:mb-24">
+      <div className="h-[250px] w-full bg-black px-8 sm:px-16 md:px-0 md:mb-24">
         <div 
-          className="bg-white h-[350px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
+          className="bg-white h-[300px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
           style={{
             backgroundImage: `url(${project.image})`,
             backgroundSize: 'cover',
@@ -153,14 +156,14 @@ const ImageProjectDetail = ({ id = 1 }) => {
               className="text-4xl md:text-5xl font-bold mb-4">
               {project.title}
             </motion.h1>
-            <p className="text-lg max-w-2xl " >
+            <p className=" text-sm md:text-lg max-w-2xl " >
               {project.description}
             </p>
           </div>
         </div>
       </div>
 
-      <section className="max-w-7xl mx-auto overflow-hidden">
+      <section className="max-w-7xl mx-auto overflow-hidden ">
         <div className="w-full flex flex-col">
           {/* Navigation buttons */}
         
@@ -171,14 +174,14 @@ const ImageProjectDetail = ({ id = 1 }) => {
          { project.challenge && project.solutions && <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
           {  project.challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
               <h3 className="text-2xl font-bold text-[30px]">Challenge</h3>
-              <p className="text-gray-700 text-start text-[18px] bg">
+              <p className="text-gray-700 text-center md:text-start text-[18px] ">
                 {project.challenge}
               </p>
             </div>}
             
            {  project.solutions && <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
               <h3 className="text-2xl font-bold text-[30px]">SOLUTIONS</h3>
-              <p className="text-gray-700 text-start text-[18px] bg">
+              <p className="text-gray-700 text-center md:text-start text-[18px] bg">
                 {project.solutions}
               </p>
             </div>}
@@ -186,7 +189,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
         </div>
 
         {/* Masonry Image Gallery */}
-        <div className="px-8 sm:px-16 pb-16">
+        <div className="px-8 sm:px-16 md:pb-16">
           {renderMasonryImages()}
         </div>
           <div className="flex justify-between items-center px-8 sm:px-16 mt-8 mb-16">
