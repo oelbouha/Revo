@@ -133,19 +133,12 @@ const ImageProjectDetail = ({ id = 1 }) => {
     <div className="min-h-screen text-black">
       {/* Simple Header Section */}
       <section className="py-16 bg-black border- border-gray-200">
-        <Header />
       </section>
       
       <div className="h-[250px] w-full bg-black px-8 sm:px-16 md:px-0 md:mb-24">
         <div 
-          className="bg-white h-[300px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
-          style={{
-            backgroundImage: `url(${project.image})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
+          className="bg-white h-[300px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10">
+          <img src={project.image} alt={project.title} className="absolute  w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50 z-10"></div>
           <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
             <motion.h1
@@ -323,19 +316,12 @@ const VideoProjectDetail = ({id}) => {
   return (
     <div className="min-h-screen bg-white">
      <section className="py-16 bg-black border- border-gray-200">
-        <Header />
       </section>
       
       <div className="h-[300px] w-full bg-black px-8 sm:px-16 md:px-0">
         <div 
-          className="bg-white h-[350px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10"
-          style={{
-            backgroundImage: `url(${project.thumbnail})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
+          className="bg-white h-[350px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10">
+           <img src={project.thumbnail} alt={project.title} className="absolute  w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50 z-10"></div>
           <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
             <motion.h1

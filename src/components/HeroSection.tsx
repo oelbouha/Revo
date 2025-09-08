@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Header from '../components/Header';
 import ScrollingTextBanner from './scrollingTextBanner';
 
-const images = [
+export const images = [
   {
     image: "/home1.png",
     mobileImage: "/home11test.png",
@@ -91,14 +91,11 @@ const HomeScreen = () => {
   //   // Images are now preloaded in the HeroSection component
   // }, []);
 
-  return (
-    <div
-      className="relative h-screen md:min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden"
-    >
-      {/* Background Image Slider */}
-      <ImageSlider />
+  
 
-      {/* Scroll indicator */}
+  return (
+    <div className="relative h-screen md:min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden">
+      <ImageSlider />
       <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-4 h-6 sm:w-5 sm:h-8 md:w-6 md:h-10 border-2 border-white rounded-full flex justify-center">
           <div className="w-1 h-2 sm:h-3 bg-white rounded-full mt-2 animate-pulse"></div>
@@ -107,6 +104,8 @@ const HomeScreen = () => {
     </div>
   );
 };
+
+
 
 const HeroSection = () => {
   // const [isLoading, setIsLoading] = useState(true);
@@ -145,7 +144,7 @@ const HeroSection = () => {
 
   // if (isLoading) {
   //   return (
-  //     <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+  //     <div className="fixed inset-0 top-0 left-0 bg-black  flex items-center justify-center z-[5000]">
   //       <div className="animate-pulse">
   //         <img 
   //           src="/Group 7.svg" 

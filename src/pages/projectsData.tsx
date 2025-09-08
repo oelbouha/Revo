@@ -11,7 +11,7 @@
     classement: "9",
     solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
     challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
-    description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
+    description: "Création des packagings verre et PET pour la gamme d’huiles d’olive et olives",
     photos: [       
       "/zouitina/200.jpg",
       "/zouitina/201.jpg",
@@ -158,6 +158,8 @@
     id: 9,
     image: '/20.png',
     title: 'CAVIAR & CO | IDENTITÉ VISUELLE',
+    challenge: "Traduire le raffinement d’une maison de caviar et produits fins.",
+    solutions: "Une identité élégante et sophistiquée, reflétant luxe et exclusivité.",
     subtitle: 'Brand strategy',
     categories: ['Brand strategy', 'Operational', 'Audiovisual Production'],
       photos: [       
@@ -172,6 +174,8 @@
     image: '/15.png',
     title: 'CONAGRO | CRÉATION DE NOUVELLE IDENTITÉ VISUELLE',
     subtitle: 'Multi-service',
+    challenge: "Créer une identité distinctive pour un acteur marocain de l’agro-industrie.",
+    solutions: "Une identité visuelle forte, traduisant l’expertise et l’ancrage du secteur.",
     categories: ['Audiovisual Production', 'Print', 'Brand strategy'],
       photos: [
         "/13.png",
@@ -188,6 +192,8 @@
     image: '/119.png',
     title: 'SHAJARA FRUITS',
     subtitle: 'Packaging',
+    challenge: "Développer des packagings distinctifs pour la gamme fruits rouges, alliant fraîcheur et attractivité commerciale.",
+    solutions: "Des designs lumineux et modernes, valorisant la naturalité et l’identité marocaine de la marque.",
     categories: ['Packaging'],
       photos: [
         "/119.png",
@@ -201,6 +207,8 @@
     title: 'SHAPE AND SHADE',
     subtitle: 'Brand Identity',
     classement: "1",
+    challenge: "Redéfinir l’image d’une enseigne spécialisée dans le design en béton.",
+    solutions: "Un rebranding complet, associant modernité, minimalisme et élégance architecturale.",
     categories: ['Brand strategy'],
       photos: [ 
         "24.png",
@@ -247,6 +255,8 @@
     id: 15,
     image: '/89.png',
     title: 'ESCA',
+    challenge: "Mettre en valeur un projet immobilier de luxe auprès d’une clientèle exigeante.",
+    solutions: "Une brochure raffinée et élégante, pensée comme un écrin éditorial reflétant prestige et exclusivité.",
     subtitle: 'Print',
     categories: ['Print'],
       photos: [       
@@ -278,6 +288,8 @@
     id: 17,
     image: '/71.png',
     title: 'UM6P/OCP',
+    challenge: "Donner une identité visuelle forte à un événement réunissant l’OCP, l’UM6P et l’AFA.",
+    solutions: "Un keyvisual impactant et une brochure soignée, reflétant l’envergure et le prestige de l’événement.",
     subtitle: 'Event keyvisual',
     classement: "8",
     categories: ['Print'],
@@ -309,6 +321,8 @@
     image: '/33.png',
     title: "JEAN MICHEL MUSIA",
     subtitle: 'Brand strategy',
+    challenge: "Lancer une nouvelle enseigne de boulangerie au Maroc avec une identité distinctive.",
+    solutions: "Création d’un univers de marque raffiné, associant tradition artisanale et modernité.",
     categories: ['Brand strategy'],
        photos: [       
          "/30.png",
@@ -522,7 +536,7 @@
       webImage: '/zouitina/163.png',
       categories: ['Brand strategy'],
       classement: "7",
-      description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
+      description: "Création des packagings verre et PET pour la gamme d’huiles d’olive et olives",
       photos: [       
           // "/zouitina/120.png",
           "/zouitina/118.png",
