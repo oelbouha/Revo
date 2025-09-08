@@ -6,6 +6,7 @@ import { portfolioItems } from "./projectsData";
 import HeaderWithCircle from "@/components/HeaderWithCircle";
 import { RiArrowRightSLine } from "react-icons/ri";
 
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -38,7 +39,8 @@ const ImageProjectDetail = ({ id = 1 }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  
+   const navigate = useNavigate();
+
   if (!id || isNaN(Number(id)) || Number(id) < 1 || Number(id) > portfolioItems.length) {
     return <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">Invalid project ID</div>;
   }
@@ -186,7 +188,8 @@ const ImageProjectDetail = ({ id = 1 }) => {
             <button
               onClick={() => {
                 const prevId = (Number(id) - 1) || portfolioItems.length;
-                window.location.href = `/project?id=${prevId}`;
+                  navigate(`/project?id=${prevId}`);
+                window.scrollTo(0, 0);
               }}
               className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
             >
@@ -196,7 +199,9 @@ const ImageProjectDetail = ({ id = 1 }) => {
             <button
               onClick={() => {
                 const nextId = ((Number(id) + 1) > portfolioItems.length) ? 1 : (Number(id) + 1);
-                window.location.href = `/project?id=${nextId}`;
+                // window.location.href = `/project?id=${nextId}`;
+                navigate(`/project?id=${nextId}`);
+                window.scrollTo(0, 0);
               }}
               className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
             >
