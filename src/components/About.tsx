@@ -71,7 +71,7 @@ const HeaderWithCircle = () => {
           <h3
             style={{ right: circleWidth }} 
             className="absolute -top-6 md:-top-10 text-black font-Montserrat font-semibold   
-              text-[0.55rem] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right pr-8 md:pr-12 lg:pr-16 "
+              text-[10px] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-right pr-8 md:pr-12 lg:pr-16 "
           >
             As an independent voice in strategic design and communication,
             REVO shapes powerful ideas that enable brands to exist differently,
@@ -102,8 +102,8 @@ const ImageSection = () => {
           />
         </motion.div>
         
-        <div className="w-full p-6 bg-black text-white  font-Montserrat font-bold">
-          <h3 className="text-sm leading-relaxed text-center">
+        <div className="w-full py-16 px-8 bg-black text-white  font-Montserrat font-bold">
+          <h3 className="text-[16px] leading-relaxed text-center">
             As an independent voice in strategic design and communication, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
           </h3>
         </div>

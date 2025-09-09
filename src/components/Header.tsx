@@ -36,7 +36,7 @@ const Header = ()  => {
   };
 
   
-const linkStyle = "text-left text-xl sm:text-2xl md:text-5xl lg:text-6xl text-white font-bold \
+const linkStyle = "text-left text-[24px] sm:text-2xl md:text-5xl lg:text-6xl text-white font-bold \
   border-b-[0.5rem] border-transparent hover:border-gray-500 hover:text-gray-500 \
   transition-colors duration-300 leading-none";
 
@@ -129,7 +129,7 @@ const CloseButton = () => {
      <div className="flex items-center space-x-3 ">
         <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-white" >Close</span>
         <div className='flex items-center justify-center '>
-          <X className={`items-end w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white }`} />
+          <X className={`items-end w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white }`} />
         </div>
       </div>
   );

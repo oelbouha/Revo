@@ -11,8 +11,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 
-
-
 const ProjectDetail = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
