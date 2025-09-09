@@ -36,7 +36,7 @@ const Header = ()  => {
   };
 
   
-const linkStyle = "text-left text-[24px] sm:text-2xl md:text-5xl lg:text-6xl text-white font-bold \
+const linkStyle = "text-left text-[24px] sm:text-2xl md:text-5xl lg:text-[64px] text-white font-bold \
   border-b-[0.5rem] border-transparent hover:border-gray-500 hover:text-gray-500 \
   transition-colors duration-300 leading-none";
 

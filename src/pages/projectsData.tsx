@@ -1,22 +1,22 @@
 
 
  const rawPortfolioItems  = [
-  {
-    id: 1,
-    image: '/zouitina/201.jpg',
-    title: 'ZOUITINA GAMME VERRE',
-    subtitle: 'Interior',
-    webImage: '/zouitina/163.png',
-    categories: ['Packaging', 'Print'],
-    classement: "9",
-    solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
-    challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
-    description: "Création des packagings verre et PET pour la gamme d’huiles d’olive et olives",
-    photos: [       
-      "/zouitina/200.jpg",
-      "/zouitina/201.jpg",
-      ]
-  },
+  // {
+  //   id: 1,
+  //   image: '/zouitina/201.jpg',
+  //   title: 'ZOUITINA GAMME VERRE',
+  //   subtitle: 'Interior',
+  //   webImage: '/zouitina/163.png',
+  //   categories: ['Packaging', 'Print'],
+  //   classement: "9",
+  //   solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
+  //   challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
+  //   description: "Création des packagings verre et PET pour la gamme d’huiles d’olive et olives",
+  //   photos: [       
+  //     "/zouitina/200.jpg",
+  //     "/zouitina/201.jpg",
+  //     ]
+  // },
   {
     id: 2,
     image: '/eni/56.png',
@@ -70,20 +70,20 @@
       ],
     description: "Création de logo + packagings pour une marque de sardines commercialisée en europe"
   },
-  {
-    id: 5,
-    image: "/35.png",
-    title: 'PROVIDENCE VERTE',
-    subtitle: 'Brand strategy',
-    // classement: "4",
-    solutions: "Une proposition de rebranding globale, pensée pour renforcer la visibilité de Providence Verte, affirmer son positionnement stratégique et refléter ses valeurs d’excellence et d’innovation.",
-    challenge: "Accompagner un leader de l’agro-industrie marocaine dans l’évolution de son image de marque, en conciliant héritage, modernité et ambitions de développement.",
-    categories: [ 'Brand strategy'],
-      photos: [       
-        "/35.png",
-      ],
-    description: "Proposition de rebranding pour un grand acteur Marocain de l'agro-industrie",
-  },
+  // {
+  //   id: 5,
+  //   image: "/35.png",
+  //   title: 'PROVIDENCE VERTE',
+  //   subtitle: 'Brand strategy',
+  //   // classement: "4",
+  //   solutions: "Une proposition de rebranding globale, pensée pour renforcer la visibilité de Providence Verte, affirmer son positionnement stratégique et refléter ses valeurs d’excellence et d’innovation.",
+  //   challenge: "Accompagner un leader de l’agro-industrie marocaine dans l’évolution de son image de marque, en conciliant héritage, modernité et ambitions de développement.",
+  //   categories: [ 'Brand strategy'],
+  //     photos: [       
+  //       "/35.png",
+  //     ],
+  //   description: "Proposition de rebranding pour un grand acteur Marocain de l'agro-industrie",
+  // },
   // {
   //   id: 55,
   //   image: "/100.png",
@@ -239,6 +239,8 @@
     id: 14,
     image: '/92.png',
     title: 'LE CARROUSEL',
+    challenge: "Mettre en valeur un projet immobilier de luxe auprès d’une clientèle exigeante.",
+    solutions: "Une brochure raffinée et élégante, pensée comme un écrin éditorial refléUne brochure raffinée et élégante, pensée comme un écrin éditorial reflétant prestige et exclusivité.",
     subtitle: 'Print',
     categories: ['Print'],
       photos: [
@@ -249,7 +251,7 @@
         "/96.png",
         "/97.png",
       ],
-    description: "Conception de brochure pour la promotion d'un projet immobilier de luxe"
+    description: "Brochure – Communication immobilière – Supports premium"
   },
   {
     id: 15,
@@ -521,9 +523,14 @@
       challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
       categories: ['Brand strategy'],
       classement: "2",
-      description: "Conception de visuels promotionnels pour habillages des stands dans les salons d'Agriculture",
+      description: "Habillage stands – Visuels promotionnels – Salons d’Agriculture",
       photos: [       
-          "/111.JPG",
+             "/zouitina/118.png",
+          "/zouitina/201.jpg",
+          "/zouitina/201.jpg",
+          "/zouitina/117.png",
+          "/zouitina/184.png",
+          "/zouitina/182.png",
         ]
   },
     {
@@ -531,16 +538,22 @@
       image: '/zouitina/118.png',
       title: 'ZOUITINA',
       subtitle: 'Social Content videos',
-      solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
-      challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
+      solutions: "Production d’une série de capsules vidéo et réalisation d’un film institutionnel reflétant l’univers et la qualité de la marque.",
+      challenge: "Créer du contenu digital inspirant et immersif, capable de renforcer le lien avec les consommateurs.",
       webImage: '/zouitina/163.png',
       categories: ['Brand strategy'],
       classement: "7",
-      description: "Création des packagings verre et PET pour la gamme d’huiles d’olive et olives",
+      description: "Capsules recettes – Film institutionnel – Médias sociaux",
       photos: [       
-          // "/zouitina/120.png",
-          "/zouitina/118.png",
-          "/zouitina/117.png",
+          
+        "/zouitina/148.png",
+        "/zouitina/144.png",
+        "/zouitina/145.png",
+        "/111.JPG",
+          "/zouitina/181.png",
+          "/zouitina/183.png",
+          "/zouitina/147.png",
+          // "/zouitina/182.png",
 
         ]
   },

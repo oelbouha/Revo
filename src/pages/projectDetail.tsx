@@ -163,7 +163,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
           
          { project.challenge && project.solutions && <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
           {  project.challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
-              <h3 className="text-2xl font-bold text-[30px]">Challenge</h3>
+              <h3 className="text-2xl font-bold text-[30px]">DÉFIS</h3>
               <p className="text-gray-700 text-center md:text-start text-[18px] ">
                 {project.challenge}
               </p>
