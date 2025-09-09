@@ -9,7 +9,8 @@
   //   webImage: '/zouitina/163.png',
   //   categories: ['Packaging', 'Print'],
   //   classement: "9",
-  //   solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
+  //  thumbnail: '/zouitina/133.png',
+  // solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
   //   challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
   //   description: "Création des packagings verre et PET pour la gamme d’huiles d’olive et olives",
   //   photos: [       
@@ -24,17 +25,22 @@
     webImage: '/eni/152.png',
     subtitle: 'Brand Identity',
     classement: "3",
-     solutions: "Créer une identité forte et distinctive pour un acteur majeur de l’intérim et des services associés, capable de traduire son expertise, sa fiabilité et son ancrage sur le marché.",
+     thumbnail:  '/eni/56.png',
+    solutions: "Créer une identité forte et distinctive pour un acteur majeur de l’intérim et des services associés, capable de traduire son expertise, sa fiabilité et son ancrage sur le marché.",
     challenge: "Élaboration d’une charte graphique moderne et cohérente, déclinée sur l’ensemble des supports print et digitaux, accompagnée d’une stratégie de communication globale. Un dispositif pensé pour affirmer la crédibilité du Groupe ENI, renforcer sa notoriété et fédérer ses différentes audiences.",
 
     categories: ['Print', ],
      photos: [       
+        "/eni/51.png",
+        "/eni/52.png",
+        "/eni/53.png",
         "/eni/56.png",
         "/eni/57.png",
         "/eni/58.png",
         "/eni/59.png",
         "/eni/54.png",
         "/eni/55.png",
+        "/eni/152.png",
       ],
     description: "Création d'identité visuelle et stratéguie de communication globale, print, web et social media pour un grand groupe en interim et services associés."
   },
@@ -44,6 +50,7 @@
     title: 'CASA BUSINESS TOWERS',
     subtitle: 'PRINT',
     challenge: "Concevoir une signalétique à la hauteur de l’envergure du projet Casa Business Towers : allier clarté, élégance et innovation pour offrir une expérience fluide aux visiteurs comme aux résidents.",
+     thumbnail: '/casabussines/43.png',
     solutions: "Un dispositif harmonieux, mêlant supports print et digitaux, pensé comme un parcours visuel cohérent. Une signalétique qui dépasse la simple orientation pour devenir un vecteur d’image et de prestige.",
     categories: ['Print'],
       photos: [       
@@ -62,6 +69,7 @@
     subtitle: 'Packaging',
     categories: ['Packaging'],
     challenge: "Positionner une marque de sardines dans un univers concurrentiel, en conciliant authenticité, attractivité et normes internationales de distribution.",
+     thumbnail: '/lito/121.png',
     solutions: "Un logo distinctif et un packaging soigné, alliant modernité et héritage culinaire, conçus pour séduire le consommateur européen et valoriser l’origine de la marque.",
       photos: [       
         "/lito/121.png",
@@ -76,7 +84,8 @@
   //   title: 'PROVIDENCE VERTE',
   //   subtitle: 'Brand strategy',
   //   // classement: "4",
-  //   solutions: "Une proposition de rebranding globale, pensée pour renforcer la visibilité de Providence Verte, affirmer son positionnement stratégique et refléter ses valeurs d’excellence et d’innovation.",
+  //  thumbnail: '/zouitina/133.png',//   
+  // solutions: "Une proposition de rebranding globale, pensée pour renforcer la visibilité de Providence Verte, affirmer son positionnement stratégique et refléter ses valeurs d’excellence et d’innovation.",
   //   challenge: "Accompagner un leader de l’agro-industrie marocaine dans l’évolution de son image de marque, en conciliant héritage, modernité et ambitions de développement.",
   //   categories: [ 'Brand strategy'],
   //     photos: [       
@@ -89,7 +98,8 @@
   //   image: "/100.png",
   //   title: 'PROVIDENCE VERTE',
   //   subtitle: 'Print',
-  //   solutions: "Une proposition de rebranding globale, pensée pour renforcer la visibilité de Providence Verte, affirmer son positionnement stratégique et refléter ses valeurs d’excellence et d’innovation.",
+  //  thumbnail: '/zouitina/133.png',//   
+  // solutions: "Une proposition de rebranding globale, pensée pour renforcer la visibilité de Providence Verte, affirmer son positionnement stratégique et refléter ses valeurs d’excellence et d’innovation.",
   //   challenge: "Accompagner un leader de l’agro-industrie marocaine dans l’évolution de son image de marque, en conciliant héritage, modernité et ambitions de développement.",
   //   categories: [ 'Print'],
   //     photos: [       
@@ -108,6 +118,7 @@
     subtitle: 'Scientific Report',
     classement: "5",
     challenge: "Valoriser les travaux d’une filiale de l’UM6P à travers un document scientifique exigeant, combinant rigueur académique, clarté et attractivité visuelle.",
+     thumbnail: '/64.png',
     solutions: "Un rapport conçu comme un outil de référence, associant précision éditoriale, design épuré et cohérence graphique, afin de refléter le sérieux et l’excellence de l’UM6P/LIMSET.",
     categories: ['Print'],
     photos: [       
@@ -124,6 +135,7 @@
     title: 'NUANCES DE GRIS',
     subtitle: 'Brand strategy',
     challenge: "Donner une identité forte et distinctive à une marque de panneaux en béton, en transformant un matériau brut en un univers visuel porteur d’esthétique et de modernité.",
+     thumbnail: '/5.png',
     solutions: "Une identité visuelle sobre et contemporaine, inspirée de la matière elle-même, traduisant robustesse, fiabilité et design architectural.",
     categories: ['Brand strategy', 'Audiovisual Production', 'Operational'],
       photos: [       
@@ -142,6 +154,7 @@
     title: 'VITA ART FLORAL',
     subtitle: 'Brand strategy',
     challenge: "Réinventer l’image d’une enseigne marocaine de référence en art floral haut de gamme, en sublimant son héritage tout en l’ancrant dans une esthétique contemporaine.",
+     thumbnail: '/7.png',
     solutions: "Un rebranding complet, alliant élégance et modernité, pour traduire l’univers raffiné de Vita Art Floral, renforcer son positionnement premium et séduire une clientèle exigeante.",
     categories: ['Brand strategy', 'Operational'],
       photos: [       
@@ -159,6 +172,7 @@
     image: '/20.png',
     title: 'CAVIAR & CO | IDENTITÉ VISUELLE',
     challenge: "Traduire le raffinement d’une maison de caviar et produits fins.",
+     thumbnail:'/20.png',
     solutions: "Une identité élégante et sophistiquée, reflétant luxe et exclusivité.",
     subtitle: 'Brand strategy',
     categories: ['Brand strategy', 'Operational', 'Audiovisual Production'],
@@ -175,6 +189,7 @@
     title: 'CONAGRO | CRÉATION DE NOUVELLE IDENTITÉ VISUELLE',
     subtitle: 'Multi-service',
     challenge: "Créer une identité distinctive pour un acteur marocain de l’agro-industrie.",
+     thumbnail: '/15.png',
     solutions: "Une identité visuelle forte, traduisant l’expertise et l’ancrage du secteur.",
     categories: ['Audiovisual Production', 'Print', 'Brand strategy'],
       photos: [
@@ -193,6 +208,7 @@
     title: 'SHAJARA FRUITS',
     subtitle: 'Packaging',
     challenge: "Développer des packagings distinctifs pour la gamme fruits rouges, alliant fraîcheur et attractivité commerciale.",
+     thumbnail: '/119.png',
     solutions: "Des designs lumineux et modernes, valorisant la naturalité et l’identité marocaine de la marque.",
     categories: ['Packaging'],
       photos: [
@@ -208,6 +224,7 @@
     subtitle: 'Brand Identity',
     classement: "1",
     challenge: "Redéfinir l’image d’une enseigne spécialisée dans le design en béton.",
+     thumbnail: '/24.png',
     solutions: "Un rebranding complet, associant modernité, minimalisme et élégance architecturale.",
     categories: ['Brand strategy'],
       photos: [ 
@@ -240,6 +257,7 @@
     image: '/92.png',
     title: 'LE CARROUSEL',
     challenge: "Mettre en valeur un projet immobilier de luxe auprès d’une clientèle exigeante.",
+     thumbnail: '/92.png',
     solutions: "Une brochure raffinée et élégante, pensée comme un écrin éditorial refléUne brochure raffinée et élégante, pensée comme un écrin éditorial reflétant prestige et exclusivité.",
     subtitle: 'Print',
     categories: ['Print'],
@@ -258,6 +276,7 @@
     image: '/89.png',
     title: 'ESCA',
     challenge: "Mettre en valeur un projet immobilier de luxe auprès d’une clientèle exigeante.",
+     thumbnail: '/89.png',
     solutions: "Une brochure raffinée et élégante, pensée comme un écrin éditorial reflétant prestige et exclusivité.",
     subtitle: 'Print',
     categories: ['Print'],
@@ -291,6 +310,7 @@
     image: '/71.png',
     title: 'UM6P/OCP',
     challenge: "Donner une identité visuelle forte à un événement réunissant l’OCP, l’UM6P et l’AFA.",
+     thumbnail: '/71.png',
     solutions: "Un keyvisual impactant et une brochure soignée, reflétant l’envergure et le prestige de l’événement.",
     subtitle: 'Event keyvisual',
     classement: "8",
@@ -324,6 +344,7 @@
     title: "JEAN MICHEL MUSIA",
     subtitle: 'Brand strategy',
     challenge: "Lancer une nouvelle enseigne de boulangerie au Maroc avec une identité distinctive.",
+     thumbnail: '/31.png',
     solutions: "Création d’un univers de marque raffiné, associant tradition artisanale et modernité.",
     categories: ['Brand strategy'],
        photos: [       
@@ -519,6 +540,7 @@
       title: 'ZOUITINA OLIVE OIL',
       subtitle: 'Brand Packaging',
       webImage: '/zouitina/163.png',
+       thumbnail: '/zouitina/004.png',
       solutions: "Conception de visuels promotionnels raffinés, alliant esthétisme et lisibilité, pour créer un univers graphique distinctif et renforcer l’impact de la marque auprès des visiteurs.",
       challenge: "Mettre en valeur la gamme verre de Zouitina dans un environnement hautement concurrentiel, en attirant le regard et en affirmant une identité haut de gamme.",
       categories: ['Brand strategy'],
@@ -538,6 +560,7 @@
       image: '/zouitina/118.png',
       title: 'ZOUITINA',
       subtitle: 'Social Content videos',
+       thumbnail: '/zouitina/133.png',
       solutions: "Production d’une série de capsules vidéo et réalisation d’un film institutionnel reflétant l’univers et la qualité de la marque.",
       challenge: "Créer du contenu digital inspirant et immersif, capable de renforcer le lien avec les consommateurs.",
       webImage: '/zouitina/163.png',
