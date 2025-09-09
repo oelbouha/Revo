@@ -48,10 +48,10 @@
     categories: ['Print'],
       photos: [       
         "/casabussines/42.png",
-        "/casabussines/43.png",
-        "/casabussines/44.png",
         "/casabussines/45.png",
-        // "/casabussines/46.jpg",
+        "/casabussines/44.png",
+        "/casabussines/43.png",
+        "/casabussines/46.jpg",
       ],
     description: "Conception du dispositif de signalétique complet en print & digital pour le projet casa business Towers"
   },
@@ -197,7 +197,7 @@
     categories: ['Packaging'],
       photos: [
         "/119.png",
-        "/120.png",
+        // "/120.png",
       ],
     description: "Création des packagings pour la gamme fruits rouges Shajara"
   },
@@ -320,7 +320,7 @@
   // },
   {
     id: 19,
-    image: '/33.png',
+    image: '/31.png',
     title: "JEAN MICHEL MUSIA",
     subtitle: 'Brand strategy',
     challenge: "Lancer une nouvelle enseigne de boulangerie au Maroc avec une identité distinctive.",
@@ -329,8 +329,8 @@
        photos: [       
          "/30.png",
          "/29.png",
-        "/31.png",
-        "/34.png",
+         "/34.png",
+         "/31.png",
         "/33.png",
         "/32.png",
       ],
@@ -525,12 +525,12 @@
       classement: "2",
       description: "Habillage stands – Visuels promotionnels – Salons d’Agriculture",
       photos: [       
-             "/zouitina/118.png",
-          "/zouitina/201.jpg",
-          "/zouitina/201.jpg",
-          "/zouitina/117.png",
-          "/zouitina/184.png",
-          "/zouitina/182.png",
+             "/zouitina/004.png",
+          "/zouitina/00.png",
+          "/zouitina/003.png",
+          "/zouitina/000.png",
+          // "/zouitina/184.png",
+          // "/zouitina/182.png",
         ]
   },
     {
@@ -553,7 +553,7 @@
           "/zouitina/181.png",
           "/zouitina/183.png",
           "/zouitina/147.png",
-          // "/zouitina/182.png",
+          "/zouitina/130.png",
 
         ]
   },

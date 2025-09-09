@@ -77,7 +77,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
             <img
               src={project.photos[i]}
               alt={`Project image ${i + 1}`}
-              className="w-full  md:h-[600px] object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
+              className="w-full  md:h-[700px] object-cover md:object-cover object-center   cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => {
                 setSelectedImage(project.photos[i]);
                 setSelectedImageIndex(i);
@@ -89,7 +89,10 @@ const ImageProjectDetail = ({ id = 1 }) => {
       }
 
       // Second row: Two half-width images side by side
-      if (project.photos[i] || project.photos[i + 1] && i  > 2) {
+      if (i < project.photos.length - 2) {
+        console.log("i:", i);
+      }
+      if ((i < project.photos.length - 1) && (project.photos[i] || project.photos[i + 1] && i  > 2)) {
         rows.push(
           <motion.div
             key={`row-${i}`}
@@ -102,7 +105,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               <img
                 src={project.photos[i]}
                 alt={`Project image ${i + 1}`}
-                className="w-full  md:h-[400px] object-cover md:object-contain  cursor-pointer hover:opacity-90 transition-opacity"
+                className="w-full  md:h-[400px] object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => {
                   setSelectedImage(project.photos[i]);
                   setSelectedImageIndex(i);
@@ -113,7 +116,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               <img
                 src={project.photos[i + 1]}
                 alt={`Project image ${i + 2}`}
-                className="w-full  md:h-[400px] object-cover md:object-contain  cursor-pointer hover:opacity-90 transition-opacity"
+                className="w-full  md:h-[400px] object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => {
                   setSelectedImage(project.photos[i + 1]);
                   setSelectedImageIndex(i + 1);
