@@ -41,6 +41,15 @@
         "/eni/54.png",
         "/eni/55.png",
         "/eni/152.png",
+        "/eni/167.png",
+        "/eni/168.png",
+        "/eni/46.png",
+        "/eni/47.png",
+        "/eni/48.png",
+        "/eni/49.png",
+        "/eni/169.png",
+        "/eni/170.png",
+
       ],
     description: "Création d'identité visuelle et stratéguie de communication globale, print, web et social media pour un grand groupe en interim et services associés."
   },
