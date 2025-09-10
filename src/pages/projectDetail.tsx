@@ -77,6 +77,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
             <img
               src={project.photos[i]}
               alt={`Project image ${i + 1}`}
+              loading="lazy"
               className="w-full  md:h-[700px] object-cover md:object-cover object-center   cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => {
                 setSelectedImage(project.photos[i]);
@@ -105,6 +106,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               <img
                 src={project.photos[i]}
                 alt={`Project image ${i + 1}`}
+                loading="lazy"
                 className="w-full  md:h-[400px] object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => {
                   setSelectedImage(project.photos[i]);
@@ -116,6 +118,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               <img
                 src={project.photos[i + 1]}
                 alt={`Project image ${i + 2}`}
+                loading="lazy"
                 className="w-full  md:h-[400px] object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => {
                   setSelectedImage(project.photos[i + 1]);
