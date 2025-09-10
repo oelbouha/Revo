@@ -10,8 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-
-export const ProjectDetail = () => {
+const ProjectDetail = () => {
    const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const id = queryParams.get("id");
@@ -109,6 +108,8 @@ export const ProjectDetail = () => {
   );
 };
 
+
+export default ProjectDetail;
 
 type Video = {
   src: string;
