@@ -137,9 +137,14 @@ const CloseButton = () => {
 
 const MenuButton = () => {
   return (
-     <div className='flex items-center justify-center  gap-2 sm:gap-4'>
-        <span className={`hidden md:block text-[1rem] sm:text-xl md:text-xl lg:text-xl font-semibold text-white }`}>Menu</span>
-        <Menu className={`w-[30px] h-[30PX] sm:w-8 sm:h-8 md:w-12 md:h-12 text-white }`} />
-      </div>
+     <div
+        className="flex flex-col justify-between w-8 h-6 cursor-pointer"
+          // onClick={toggleMenu}
+        >
+          <span className="block h-[3px] bg-white rounded"></span>
+          <span className="block h-[3px] bg-white rounded"></span>
+          <span className="block h-[3px] bg-white rounded"></span>
+        </div>
+
   );
 }

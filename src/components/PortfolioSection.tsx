@@ -134,7 +134,7 @@ const getFilteredItems = () => {
   return (
     <section id="portfolio" className="mb-24">
       <div className="text-end mb-16">
-        <div className="w-full h-12 md:h-20 flex items-center justify-center px-10 mb-24 bg-[#4D4D4D]">
+        <div className="w-full h-12 md:h-20 flex items-center justify-center px-4 mb-24 bg-[#4D4D4D]">
           <div className="max-w-7xl w-full h-full">
             <HeaderWithCircle title="Our work" titleClassName="text-white uppercase" circlePostion="end" />
           </div>

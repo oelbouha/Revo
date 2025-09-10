@@ -66,7 +66,7 @@ const ImageSlider = () => {
 
 
       {/* Text Overlay */}
-      <div className="absolute left-4 sm:left-2 md:left-4 top-[55%] transform -translate-y-1/2 z-10 max-w-[80%] p-4 sm:p-6 md:p-8">
+      <div className="absolute left-4 sm:left-2 md:left-4 top-[55%] transform -translate-y-1/2 z-10 max-w-[95%] p-4 sm:p-6 md:p-8">
         <div className="font-Montserrat font-bold overflow-hidden py-4">
           <AnimatePresence mode="wait">
             <motion.h1
@@ -75,7 +75,7 @@ const ImageSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
-              className="text-3xl md:text-5xl lg:text-7xl xl:text-8xl max-w-7xl leading-tight text-white"
+              className="text-[4rem] md:text-5xl lg:text-7xl xl:text-8xl max-w-7xl leading-tight text-white"
             >
               {images[selectedImageIndex].text}
             </motion.h1>
