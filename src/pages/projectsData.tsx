@@ -59,7 +59,7 @@
     title: 'CASA BUSINESS TOWERS',
     subtitle: 'PRINT',
     challenge: "Concevoir une signalétique à la hauteur de l’envergure du projet Casa Business Towers : allier clarté, élégance et innovation pour offrir une expérience fluide aux visiteurs comme aux résidents.",
-     thumbnail: '/casabussines/41.png',
+     thumbnail: '/casabussines/46.jpg',
     solutions: "Un dispositif harmonieux, mêlant supports print et digitaux, pensé comme un parcours visuel cohérent. Une signalétique qui dépasse la simple orientation pour devenir un vecteur d’image et de prestige.",
     categories: ['Print'],
       photos: [       

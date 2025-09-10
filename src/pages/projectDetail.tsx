@@ -78,7 +78,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               src={project.photos[i]}
               alt={`Project image ${i + 1}`}
               loading="lazy"
-              className="w-full  md:h-[700px] object-cover md:object-cover object-center   cursor-pointer hover:opacity-90 transition-opacity"
+              className="w-full  md:h-full object-cover md:object-cover object-center   cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => {
                 setSelectedImage(project.photos[i]);
                 setSelectedImageIndex(i);
@@ -138,19 +138,14 @@ const ImageProjectDetail = ({ id = 1 }) => {
   return (
     <div className="min-h-screen text-black">
       {/* Simple Header Section */}
-      <section className="py-16 bg-black border- border-gray-200">
-      </section>
-      
-      <div className="h-[250px] w-full bg-black px-8 sm:px-16 md:px-0 md:mb-24">
-        <div 
-          className="bg-white h-[300px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10">
-          <img 
+      <section className="relative h-[300px] bg-black border- border-gray-200 flex items-center justify-center">
+         <img 
             src={project.thumbnail} 
             alt={project.title} 
             className="absolute  w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
+           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
             <motion.h1
               initial={{ opacity: 0,  }}
@@ -164,15 +159,14 @@ const ImageProjectDetail = ({ id = 1 }) => {
               {project.description}
             </p>
           </div>
-        </div>
-      </div>
+      </section>
 
-      <section className="max-w-7xl mx-auto overflow-hidden mt-16 md:mt-0">
+      <section className="max-w-7xl mx-auto overflow-hidden ">
         <div className="w-full flex flex-col">
           {/* Navigation buttons */}
         
           
-         { project.challenge && project.solutions && <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16 mt-[50px] w-full px-8 sm:px-16">
+         { project.challenge && project.solutions && <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16  w-full px-8 sm:px-16">
           {  project.challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
               <h3 className="text-2xl font-bold text-[30px]">DÉFIS</h3>
               <p className="text-gray-700 text-center md:text-start text-[18px] ">
@@ -329,14 +323,14 @@ const VideoProjectDetail = ({id}) => {
 
   return (
     <div className="min-h-screen bg-white">
-     <section className="py-16 bg-black border- border-gray-200">
-      </section>
-      
-      <div className="h-[300px] w-full bg-black px-8 sm:px-16 md:px-0">
-        <div 
-          className="bg-white h-[350px] w-full flex items-center justify-center max-w-7xl md:mx-auto relative z-10">
-           <img src={project.thumbnail} alt={project.title} className="absolute  w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
+     <section className="relative h-[300px] bg-black border- border-gray-200 flex items-center justify-center">
+         <img 
+          src={project.thumbnail}
+            alt={project.title} 
+            className="absolute  w-full h-full object-cover"
+            loading="lazy"
+          />
+           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
             <motion.h1
               initial={{ opacity: 0,  }}
@@ -346,15 +340,14 @@ const VideoProjectDetail = ({id}) => {
               className="text-4xl md:text-5xl font-bold mb-4">
               {project.title}
             </motion.h1>
-            <p className="text-lg max-w-2xl ">
+            <p className=" text-sm md:text-lg max-w-2xl " >
               {project.description}
             </p>
           </div>
-        </div>
-      </div>
+      </section>
 
       {/* Simple Video Gallery Section */}
-      <section className="pb-16 mt-24">
+      <section className="pb-16 ">
         <div className="max-w-7xl mx-auto ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

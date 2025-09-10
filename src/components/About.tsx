@@ -40,15 +40,15 @@ const HeaderWithCircle = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col  justify-center px-4   bg-  py-20">
-      <div className='flex flex-col items-center justify-center  gap-[1.5rem]'>
+    <div className="w-full flex flex-col  justify-center px-4     py-20">
+      <div className='flex flex-col items-center justify-center  gap-[1.5rem] md:gap-[3rem] '>
       <HeaderCircle />
 
-        <div className="relative w-full flex items-center justify-end  bg-">
+        <div className="relative w-full flex items-center justify-end  ">
           <h3
             style={{ right: circleWidth }} 
-            className=" md:absolute  md:-top-10 text-black font-Montserrat font-semibold   
-              text-[16px] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-left pr-8 md:pr-12 lg:pr-16 "
+            className=" md:absolute  md:-top-10 text-black font-Montserrat font-semibold    z-[20]
+              text-[16px] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-left pr-8 md:pr-24 lg:pr-36 "
           >
             As an independent voice in strategic design and communication,
             REVO shapes powerful ideas that enable brands to exist differently,
