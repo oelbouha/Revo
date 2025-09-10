@@ -134,7 +134,7 @@ const getFilteredItems = () => {
   return (
     <section id="portfolio" className="mb-24">
       <div className="text-end mb-16">
-        <div className="w-full h-12 md:h-20 flex items-center justify-center px-4 mb-24 bg-[#4D4D4D]">
+        <div className="w-full h-14 md:h-20 lg:h-28 flex items-center justify-center px-8 mb-24 bg-[#4D4D4D]">
           <div className="max-w-7xl w-full h-full">
             <HeaderWithCircle title="Our work" titleClassName="text-white uppercase" circlePostion="end" />
           </div>
@@ -208,7 +208,7 @@ const getFilteredItems = () => {
 
                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/0 transition-colors duration-300 pointer-events-none" />
 
-                <div className="absolute flex items-center justify-between bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
+                <div className="absolute flex items-center justify-between bottom-0 left-0 right-0  p-4  bg-gradient-to-t from-black/70 to-transparent text-white">
                   <div>
                     <h3 className="text-2xl font-semibold mb-1">{item.title}</h3>
                     <h4 className="text-lg">{item.subtitle}</h4>

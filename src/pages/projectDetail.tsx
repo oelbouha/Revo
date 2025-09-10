@@ -11,33 +11,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 
-const ProjectDetail = () => {
-  const location = useLocation();
+export const ProjectDetail = () => {
+   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const id = queryParams.get("id");
-  const project = portfolioItems[id - 1];
-  console.log("Project :", project);
-  const type = project.type;
-  
-  if (type === "video") {
-    return (
-      <VideoProjectDetail id={id} />
-    );
-  }
-  return (
-    <ImageProjectDetail id={id} />
-  );
-}
 
-export default ProjectDetail
-
-
-
-const ImageProjectDetail = ({ id = 1 }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   if (!id || isNaN(Number(id)) || Number(id) < 1 || Number(id) > portfolioItems.length) {
     return <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">Invalid project ID</div>;
@@ -55,90 +35,10 @@ const ImageProjectDetail = ({ id = 1 }) => {
   }, []);
 
 
-
-  // Function to render images in masonry layout
-  const renderMasonryImages = () => {
-    if (!project.photos || project.photos.length === 0) return null;
-
-    const rows = [];
-    let i = 0;
-
-    while (i < project.photos.length) {
-      // First row: One full-width image
-      if (project.photos[i]) {
-        rows.push(
-          <motion.div
-            key={`row-${i}`}
-            className="w-full mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: rows.length * 0.1 }}
-          >
-            <img
-              src={project.photos[i]}
-              alt={`Project image ${i + 1}`}
-              loading="lazy"
-              className="w-full  md:h-full object-cover md:object-cover object-center   cursor-pointer hover:opacity-90 transition-opacity"
-              onClick={() => {
-                setSelectedImage(project.photos[i]);
-                setSelectedImageIndex(i);
-              }}
-            />
-          </motion.div>
-        );
-        i++;
-      }
-
-      // Second row: Two half-width images side by side
-      if (i < project.photos.length - 2) {
-        console.log("i:", i);
-      }
-      if ((i < project.photos.length - 1) && (project.photos[i] || project.photos[i + 1] && i  > 2)) {
-        rows.push(
-          <motion.div
-            key={`row-${i}`}
-            className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: rows.length * 0.1 }}
-          >
-            {project.photos[i] && (
-              <img
-                src={project.photos[i]}
-                alt={`Project image ${i + 1}`}
-                loading="lazy"
-                className="w-full  md:h-full object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => {
-                  setSelectedImage(project.photos[i]);
-                  setSelectedImageIndex(i);
-                }}
-              />
-            )}
-            {project.photos[i + 1] && (
-              <img
-                src={project.photos[i + 1]}
-                alt={`Project image ${i + 2}`}
-                loading="lazy"
-                className="w-full  md:h-full object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => {
-                  setSelectedImage(project.photos[i + 1]);
-                  setSelectedImageIndex(i + 1);
-                }}
-              />
-            )}
-          </motion.div>
-        );
-        i += 2;
-      }
-    }
-
-    return rows;
-  };
-
   return (
-    <div className="min-h-screen text-black">
+    <div className=" text-black">
       {/* Simple Header Section */}
-      <section className="relative h-[300px] bg-black border- border-gray-200 flex items-center justify-center">
+      <section className="relative h-[350px] bg-black border- border-gray-200 flex items-center justify-center">
          <img 
             src={project.thumbnail} 
             alt={project.title} 
@@ -152,7 +52,7 @@ const ImageProjectDetail = ({ id = 1 }) => {
               animate={{ opacity: 1,  }}
               transition={{ duration: 0.6, delay: 0.2 }}
 
-              className="text-4xl md:text-5xl font-bold mb-4">
+              className="text-2xl md:text-5xl font-bold mb-4">
               {project.title}
             </motion.h1>
             <p className=" text-sm md:text-lg max-w-2xl " >
@@ -163,66 +63,59 @@ const ImageProjectDetail = ({ id = 1 }) => {
 
       <section className="max-w-7xl mx-auto overflow-hidden ">
         <div className="w-full flex flex-col">
-          {/* Navigation buttons */}
-        
-          
-         { project.challenge && project.solutions && <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16  w-full px-8 sm:px-16">
-          {  project.challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
-              <h3 className="text-2xl font-bold text-[30px]">DÉFIS</h3>
-              <p className="text-gray-700 text-center md:text-start text-[18px] ">
-                {project.challenge}
-              </p>
-            </div>}
-            
-           {  project.solutions && <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
-              <h3 className="text-2xl font-bold text-[30px]">SOLUTIONS</h3>
-              <p className="text-gray-700 text-center md:text-start text-[18px] bg">
-                {project.solutions}
-              </p>
-            </div>}
-          </div>}
+          {/* Navigation buttons */}  
+         { project.challenge && project.solutions && <ChallengeAndSolution challenge={project.challenge} solution={project.solutions} />}
         </div>
 
         {/* Masonry Image Gallery */}
-        <div className="px-8 sm:px-16 md:pb-16">
-          {renderMasonryImages()}
+        {
+          project.photos &&  
+          <div className="px-8 sm:px-16 md:pb-16">
+          {renderMasonryImages(project.photos)}
         </div>
-          <div className="flex justify-between items-center px-8 sm:px-16 mt-8 mb-16">
-            <button
-              onClick={() => {
-                const prevId = (Number(id) - 1) || portfolioItems.length;
-                  navigate(`/project?id=${prevId}`);
-                window.scrollTo(0, 0);
-              }}
-              className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-              <span className="text-sm md:text-lg " >Previous Project</span>
-            </button>
-            <button
-              onClick={() => {
-                const nextId = ((Number(id) + 1) > portfolioItems.length) ? 1 : (Number(id) + 1);
-                // window.location.href = `/project?id=${nextId}`;
-                navigate(`/project?id=${nextId}`);
-                window.scrollTo(0, 0);
-              }}
-              className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
-            >
-              <span className="text-sm md:text-lg ">Next Project</span>
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+        }
+       
+        {/* {videos } */}
+        {project.videos && <RenderVideos videos={project.videos} />}
+
+
+        <div className="flex justify-between items-center px-8 sm:px-16 mt-8 mb-16">
+          <button
+            onClick={() => {
+              const prevId = (Number(id) - 1) || portfolioItems.length;
+                navigate(`/project?id=${prevId}`);
+              window.scrollTo(0, 0);
+            }}
+            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+            <span className="text-sm md:text-lg " >Previous Project</span>
+          </button>
+          <button
+            onClick={() => {
+              const nextId = ((Number(id) + 1) > portfolioItems.length) ? 1 : (Number(id) + 1);
+              // window.location.href = `/project?id=${nextId}`;
+              navigate(`/project?id=${nextId}`);
+              window.scrollTo(0, 0);
+            }}
+            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+          >
+            <span className="text-sm md:text-lg ">Next Project</span>
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
       </section>
-        
     </div>
   );
 };
 
 
+type Video = {
+  src: string;
+  thumbnail: string;
+};
 
-const VideoProjectDetail = ({id}) => {
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
+const RenderVideos = ({videos} : {videos: Video[]}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [playingVideos, setPlayingVideos] = useState({});
 
@@ -256,40 +149,6 @@ const VideoProjectDetail = ({id}) => {
     }
   };
 
-  
-  
-  if (!id || isNaN(Number(id)) || Number(id) < 1 || Number(id) > portfolioItems.length) {
-    return <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">Invalid project ID</div>;
-  }
-  
-  const project = portfolioItems[id - 1];
-  
-  if (!project) {
-    return <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">Project not found</div>;
-  }
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const openVideoModal = (video, index) => {
-    setSelectedVideo(video);
-    setSelectedVideoIndex(index);
-  };
-
-  const closeVideoModal = () => {
-    setSelectedVideo(null);
-  };
-
-  const navigateVideo = (direction) => {
-    const newIndex = direction === 'next' 
-      ? (selectedVideoIndex + 1) % project.videos.length
-      : (selectedVideoIndex - 1 + project.videos.length) % project.videos.length;
-    
-    setSelectedVideoIndex(newIndex);
-    setSelectedVideo(project.videos[newIndex]);
-  };
-
   const togglePlay = (videoId, videoElement) => {
     if (playingVideos[videoId]) {
       videoElement.pause();
@@ -300,67 +159,11 @@ const VideoProjectDetail = ({id}) => {
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') closeVideoModal();
-    if (e.key === 'ArrowRight') navigateVideo('next');
-    if (e.key === 'ArrowLeft') navigateVideo('prev');
-  };
-
-  useEffect(() => {
-    if (selectedVideo) {
-      document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
-    };
-  }, [selectedVideo, selectedVideoIndex]);
-
 
   return (
-    <div className="min-h-screen bg-white">
-     <section className="relative h-[300px] bg-black border- border-gray-200 flex items-center justify-center">
-         <img 
-          src={project.thumbnail}
-            alt={project.title} 
-            className="absolute  w-full h-full object-cover"
-            loading="lazy"
-          />
-           <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
-            <motion.h1
-              initial={{ opacity: 0,  }}
-              animate={{ opacity: 1,  }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-
-              className="text-4xl md:text-5xl font-bold mb-4">
-              {project.title}
-            </motion.h1>
-            <p className=" text-sm md:text-lg max-w-2xl " >
-              {project.description}
-            </p>
-          </div>
-      </section>
-
-      {/* Simple Video Gallery Section */}
-      <section className="pb-16 ">
-        <div className="max-w-7xl mx-auto ">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-          </motion.div>
-
-          {/* Simple Video Grid */}
-          <div className="space-y-8 px-8 md:p-0">
-            {project.videos.map((video, index) => (
+    <div className=" bg-white max-w-7xl mx-auto px-8 sm:px-16 md:pb-16 py-16 ">
+          <div className="space-y-8 ">
+            {videos.map((video, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -418,99 +221,120 @@ const VideoProjectDetail = ({id}) => {
                       title={`Video ${index + 1}`}
                     />
                   )}
-
-                  {/* Simple Fullscreen Button */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      openVideoModal(video, index);
-                    }}
-                    className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 text-gray-700 hover:bg-white transition-colors shadow-lg opacity-0 group-hover:opacity-100"
-                  >
-                    <Maximize className="w-4 h-4" />
-                  </button>
                 </div>
-
               </motion.div>
             ))}
-          </div>
         </div>
-      </section>
-
-      {/* Simple Video Modal */}
-      <AnimatePresence>
-        {selectedVideo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-            onClick={closeVideoModal}
-          >
-            {/* Close Button */}
-            <button
-              onClick={closeVideoModal}
-              className="absolute top-6 right-6 z-60 bg-white rounded-full p-2 text-gray-700 hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Navigation Buttons */}
-            {project.videos.length > 1 && (
-              <>
-                <button
-                  onClick={(e) => { e.stopPropagation(); navigateVideo('prev'); }}
-                  className="absolute left-6 top-1/2 -translate-y-1/2 z-60 bg-white rounded-full p-2 text-gray-700 hover:bg-gray-100 transition-colors shadow-lg"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                
-                <button
-                  onClick={(e) => { e.stopPropagation(); navigateVideo('next'); }}
-                  className="absolute right-6 top-1/2 -translate-y-1/2 z-60 bg-white rounded-full p-2 text-gray-700 hover:bg-gray-100 transition-colors shadow-lg"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </>
-            )}
-
-            {/* Video Counter */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-60 bg-white rounded-full px-4 py-2 text-gray-700 text-sm shadow-lg">
-              {selectedVideoIndex + 1} / {project.videos.length}
-            </div>
-
-            {/* Video Player */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="max-w-5xl max-h-[85vh] w-full aspect-video"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {getVideoType(selectedVideo.src) === 'direct' ? (
-                <video
-                  src={selectedVideo.src}
-                  controls
-                  autoPlay
-                  className="w-full h-full object-contain rounded-lg"
-                  poster={selectedVideo.thumbnail}
-                >
-                  Your browser does not support the video tag.
-                </video>
-              ) : (
-                <iframe
-                  src={getVideoEmbedUrl(selectedVideo)}
-                  className="w-full h-full rounded-lg"
-                  allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  title="Video Player"
-                />
-              )}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };
+
+
+const renderMasonryImages = (photos: string[]) => {
+    
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  if (!photos || photos.length === 0) return null;
+
+    const rows = [];
+    let i = 0;
+
+    while (i < photos.length) {
+      // First row: One full-width image
+      if (photos[i]) {
+        rows.push(
+          <motion.div
+            key={`row-${i}`}
+            className="w-full mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: rows.length * 0.1 }}
+          >
+            <img
+              src={photos[i]}
+              alt={`Project image ${i + 1}`}
+              loading="lazy"
+              className="w-full  md:h-full object-cover md:object-cover object-center   cursor-pointer hover:opacity-90 transition-opacity"
+              onClick={() => {
+                setSelectedImage(photos[i]);
+                setSelectedImageIndex(i);
+              }}
+            />
+          </motion.div>
+        );
+        i++;
+      }
+
+      // Second row: Two half-width images side by side
+      if (i < photos.length - 2) {
+        console.log("i:", i);
+      }
+      if ((i < photos.length - 1) && (photos[i] || photos[i + 1] && i  > 2)) {
+        rows.push(
+          <motion.div
+            key={`row-${i}`}
+            className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: rows.length * 0.1 }}
+          >
+            {photos[i] && (
+              <img
+                src={photos[i]}
+                alt={`Project image ${i + 1}`}
+                loading="lazy"
+                className="w-full  md:h-full object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => {
+                  setSelectedImage(photos[i]);
+                  setSelectedImageIndex(i);
+                }}
+              />
+            )}
+            {photos[i + 1] && (
+              <img
+                src={photos[i + 1]}
+                alt={`Project image ${i + 2}`}
+                loading="lazy"
+                className="w-full  md:h-full object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => {
+                  setSelectedImage(photos[i + 1]);
+                  setSelectedImageIndex(i + 1);
+                }}
+              />
+            )}
+          </motion.div>
+        );
+        i += 2;
+      }
+    }
+
+    return rows;
+  };
+
+
+
+  type ChallengeAndSolutionProps = {
+  challenge: string;
+  solution: string;
+};
+
+  const ChallengeAndSolution = ({ challenge, solution }: ChallengeAndSolutionProps) => {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16  w-full px-8 sm:px-16">
+          {  challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
+              <h3 className="text-2xl font-bold text-[30px]">DÉFIS</h3>
+              <p className="text-gray-700 text-center md:text-start text-[18px] ">
+                {challenge}
+              </p>
+            </div>}
+            
+           {  solution && <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
+              <h3 className="text-2xl font-bold text-[30px]">SOLUTIONS</h3>
+              <p className="text-gray-700 text-center md:text-start text-[18px] bg">
+                {solution}
+              </p>
+            </div>
+            }
+      </div>
+    );
+  }

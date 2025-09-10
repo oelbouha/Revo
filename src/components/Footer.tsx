@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 
 
-const linkStyle = "text-[14px] md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
+const linkStyle = "text-[16px] md:text-lg lg:text-[20px] font-medium text-white cursor-pointer hover:text-blue-400 transition-colors";
 
 const FaInstagram = () => (
   <svg className="w-3 h-3 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
