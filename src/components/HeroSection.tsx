@@ -80,7 +80,7 @@ const ImageSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
-              className="text-[3.6rem] md:text-5xl lg:text-8xl xl:text-9xl max-w-7xl leading-tight text-white whitespace-pre-wrap"
+              className="text-[3.4rem] md:text-5xl lg:text-8xl xl:text-9xl max-w-7xl leading-tight text-white whitespace-pre-wrap"
             >
               {images[selectedImageIndex].text}
             </motion.h1>
