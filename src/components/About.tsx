@@ -52,9 +52,7 @@ const HeaderWithCircle = () => {
             className=" md:absolute  md:-top-20 lg:-top-24 pl-8 md:pl-0 text-black font-Montserrat font-semibold bg-red pr-4  z-[20] 
               text-[16px] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-left md:text-right  md:pr-[10rem] lg:pr-[18rem] "
           >
-            As an independent voice in strategic design and communication,
-            REVO shapes powerful ideas that enable brands to exist differently,
-            above the noise and beyond fleeting trends.
+            As an independent voice in strategic communication and design, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
           </h3>
         </div>
       </div>

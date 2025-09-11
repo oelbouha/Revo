@@ -30,7 +30,7 @@ export const Layout = () => {
         await Promise.all(imagePromises);
          setTimeout(() => {
           setIsLoading(false);
-        }, 1000); 
+        }, 200); 
       } catch (error) {
         console.error('Error preloading images:', error);
         
@@ -48,7 +48,7 @@ export const Layout = () => {
           <img 
             src="/Group 7.svg" 
             alt="Loading Logo" 
-            className="w-48 h-48 md:w-[30rem] md:h-[30rem"
+            className="w-48  md:w-[20rem] "
           />
         </div>
       </div>
