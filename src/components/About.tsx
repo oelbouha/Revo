@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   return (
     <section id="about" className=" w-full  flex flex-col overflow-hidden items-center justify-center relative ">
-      <div className='max-w-7xl bg-red pr-8 h md:h-[40rem]  bg- w-full flex items-center'>
+      <div className='max-w-7xl bg-red pr-4 h md:h-[40rem]  bg- w-full flex items-center'>
         <HeaderWithCircle />
       </div>
       <ImageSection />
@@ -41,14 +41,14 @@ const HeaderWithCircle = () => {
 
   return (
     <div className="w-full flex flex-col  justify-center   py-20">
-      <div className='flex flex-col items-center justify-center  gap-[1.5rem] md:gap-[3.5rem] '>
+      <div className='flex flex-col items-center justify-center  gap-[1.5rem] md:gap-[4rem] '>
       <HeaderCircle />
 
         <div className="relative w-full flex items-center justify-end  ">
           <h3
             style={{ right: circleWidth }} 
-            className=" md:absolute  md:-top-10 text-black font-Montserrat font-semibold  pr-4  z-[20] 
-              text-[16px] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-left  md:pr-24 lg:pr-36 "
+            className=" md:absolute  md:-top-20 lg:-top-24 pl-8 md:pl-0 text-black font-Montserrat font-semibold bg-red pr-4  z-[20] 
+              text-[16px] sm:text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl text-left md:text-right  md:pr-[10rem] lg:pr-[18rem] "
           >
             As an independent voice in strategic design and communication,
             REVO shapes powerful ideas that enable brands to exist differently,
@@ -95,9 +95,9 @@ const ImageSection = () => {
         />
        
         <div className="flex justify-end items-center mt-20  h-[628px] w-[73%]  bg-black text-white ">
-          <div className="max-w- mx-auto w-full flex justify-end bg-red- px-16 ml-[28%] lg:mr-[1%]   ">
+          <div className="max-w- mx-auto w-full flex justify-end bg-red- px-8 ml-[28%] lg:mr-[%]   ">
             
-            <h3 className="text-lg lg:text-3xl xl:text-3xl leading-relaxed font-Montserrat font-semibold px-8 text-right text-white">
+            <h3 className="text-lg lg:text-3xl xl:text-3xl leading-relaxed font-Montserrat font-semibold pl-8 text-right text-white">
               As an independent voice in strategic design and communication, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
             </h3>
           </div>
