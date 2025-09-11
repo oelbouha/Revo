@@ -12,7 +12,7 @@ export const images = [
   {
     image: "/home2.png",
     mobileImage: "/home2test.png",
-    text: "The \nfuture\nbegins \nwith a gesture"
+    text: "The future begins \nwith a gesture"
   },
   {
     image: "/home4.png",
