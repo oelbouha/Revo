@@ -22,7 +22,7 @@ const rawPortfolioItems  = [
     title: 'ENI GROUP',
     webImage: '/eni/152.png',
     subtitle: 'Brand Identity',
-    classement: "3",
+    classement: "5",
     thumbnail:  '/eni/56.png',
     solutions: "Create a strong and distinctive identity for a major player in temporary work and related services, capable of conveying its expertise, reliability, and market positioning.",
     challenge: "Development of a modern and coherent graphic charter, applied across all print and digital media, accompanied by a global communication strategy. A framework designed to affirm ENI Group’s credibility, strengthen its brand awareness, and unite its diverse audiences.",
@@ -92,7 +92,7 @@ const rawPortfolioItems  = [
     image: '/64.png',
     title: 'UM6P/LIMSET',
     subtitle: 'Scientific Report',
-    classement: "5",
+    classement: "2",
     challenge: "Showcase the work of a UM6P subsidiary through a rigorous scientific document that combines academic precision, clarity, and visual appeal.",
     thumbnail: '/64.png',
     solutions: "A report designed as a reference tool, combining editorial accuracy, clean design, and graphic consistency, reflecting the seriousness and excellence of UM6P/LIMSET.",
@@ -197,7 +197,7 @@ const rawPortfolioItems  = [
     image: '/24.png',
     title: 'SHAPE AND SHADE',
     subtitle: 'Brand Identity',
-    classement: "1",
+    classement: "6",
     challenge: "Redefine the image of a brand specialized in concrete design.",
     thumbnail: '/24.png',
     solutions: "A complete rebranding, combining modernity, minimalism, and architectural elegance.",
@@ -255,7 +255,7 @@ const rawPortfolioItems  = [
     thumbnail: '/71.png',
     solutions: "An impactful key visual and a carefully designed brochure, reflecting the scope and prestige of the event.",
     subtitle: 'Event keyvisual',
-    classement: "8",
+    classement: "3",
     categories: ['Print'],
     photos: [       
       "71.png",
@@ -329,7 +329,7 @@ const rawPortfolioItems  = [
     title: "UM6P/DEO",
     subtitle: 'Video Production',
     categories: ['Production vidéo'],
-    classement: "6",
+    classement: "1",
     description: "Presentation videos of the DEO/UM6P departments for the Digital Day event",
     
     videos: [
@@ -366,7 +366,7 @@ const rawPortfolioItems  = [
     solutions: "Design of refined promotional visuals, combining aesthetics and readability, to create a distinctive graphic universe and strengthen the brand’s impact on visitors.",
     challenge: "Highlight Zouitina’s glass range in a highly competitive environment, attracting attention while asserting a premium identity.",
     categories: ['Brand strategy'],
-    classement: "2",
+    classement: "5",
     description: "Booth design – Promotional visuals – Agricultural fairs",
     photos: [       
           "/zouitina/004.png",
