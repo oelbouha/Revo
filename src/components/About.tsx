@@ -40,7 +40,7 @@ const HeaderWithCircle = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col  justify-center   py-20">
+    <div className="w-full flex flex-col  justify-center   py-20 ">
       <div className='flex flex-col items-center justify-center  gap-[1.5rem] md:gap-[4rem] '>
       <HeaderCircle />
 
@@ -135,7 +135,7 @@ const HeaderCircle = () => {
 
 
   return (
-     <div className="relative w-full flex bg-red justify-end   md:h-24 lg:h-48 xl:h-60 z-10 ">
+     <div className="relative w-full flex bg-red justify-end   md:h-24 lg:h-48 xl:h-60 z-10 pr-4 md:pr-2">
           <motion.div
             ref={circleRef}
             initial={{ opacity: 0, scale: 0.5 }}
@@ -154,7 +154,7 @@ const HeaderCircle = () => {
             whileInView={{ x: 20 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             className="absolute top-[24%] font-Montserrat font-bold z-10 text-3xl md:text-5xl lg:text-8xl tracking-tight text-primary   "
-              style={{ right: circleWidth * 0.6 }} 
+              style={{ right: circleWidth * 0.7 }} 
           >
             WE ARE REVO
           </motion.h2>
