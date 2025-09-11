@@ -80,7 +80,7 @@ const linkStyle = "text-left text-[24px] sm:text-2xl md:text-5xl lg:text-[64px] 
             <img 
               src='/menu.png'
               alt="Revo Logo"
-              className=' absolute w-full   100 h-100     object-cover top-0 left-0   z-[998]'
+              className=' absolute w-full   100 h-100 object-cover top-0 left-0   z-[998]'
             />
              
             <div className='relative z-[9999] flex flex-col items-end'>
@@ -137,14 +137,10 @@ const CloseButton = () => {
 
 const MenuButton = () => {
   return (
-     <div
-        className="flex flex-col justify-between w-8 h-6 cursor-pointer"
-          // onClick={toggleMenu}
-        >
+     <div className="flex flex-col justify-between w-8 h-6 cursor-pointer">
           <span className="block h-[3px] bg-white rounded"></span>
           <span className="block h-[3px] bg-white rounded"></span>
           <span className="block h-[3px] bg-white rounded"></span>
-        </div>
-
+      </div>
   );
 }

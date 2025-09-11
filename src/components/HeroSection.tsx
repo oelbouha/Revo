@@ -6,7 +6,7 @@ import ScrollingTextBanner from './scrollingTextBanner';
 export const images = [
   {
     image: "/home1.png",
-    mobileImage: "/home11test.png",
+    mobileImage: "/home1.jpg",
     text: "Unlike anything else."
   },
   {
