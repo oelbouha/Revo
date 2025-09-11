@@ -40,6 +40,11 @@ const ImageSlider = () => {
   return (
     <div className="w-screen h-screen bg-black relative overflow-hidden">
       {/* Background Images */}
+       <img 
+              src='/menu.png'
+              alt="Revo Logo"
+              className='opacity-0 hidden'
+            />
       <AnimatePresence mode="sync">
         {/* Desktop Image */}
         <motion.img

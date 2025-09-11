@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   return (
     <section id="about" className=" w-full  flex flex-col overflow-hidden items-center justify-center relative ">
+      
+     
       <div className='max-w-7xl bg-red pr-4 h md:h-[40rem]  bg- w-full flex items-center'>
         <HeaderWithCircle />
       </div>
