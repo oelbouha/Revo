@@ -189,6 +189,7 @@ const rawPortfolioItems  = [
     categories: ['Packaging'],
     photos: [
         "/119.png",
+        "/120.png",
       ],
     description: "Creation of packaging for the Shajara red fruits range"
   },

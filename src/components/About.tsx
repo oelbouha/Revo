@@ -83,7 +83,7 @@ const ImageSection = () => {
         
         <div className="w-full py-20 px-8 bg-black text-white  font-Montserrat font-bold">
           <h3 className="text-[16px] leading-relaxed text-left ">
-            As an independent voice in strategic communication and design, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
+            True to its vocation to revoke the obvious and challenge conventions, REVO blends rigor, clarity and impact to create identities, campaigns and stories that endure in the collective imagination.
           </h3>
         </div>
       </div>
@@ -100,7 +100,7 @@ const ImageSection = () => {
           <div className="max-w- mx-auto w-full flex justify-end bg-red- px-8 ml-[28%] lg:mr-[%]   ">
             
             <h3 className="text-lg lg:text-3xl xl:text-3xl leading-relaxed font-Montserrat font-semibold pl-8 text-right text-white">
-              As an independent voice in strategic communication and design, REVO shapes powerful ideas that enable brands to exist differently, above the noise and beyond fleeting trends.
+              True to its vocation to revoke the obvious and challenge conventions, REVO blends rigor, clarity and impact to create identities, campaigns and stories that endure in the collective imagination.
             </h3>
           </div>
         </div>
