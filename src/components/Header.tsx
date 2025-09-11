@@ -85,13 +85,13 @@ const linkStyle = "text-left text-[34px] sm:text-2xl md:text-5xl lg:text-[74px] 
              
             <div className='relative z-[9999] flex flex-col items-end'>
                 <button 
-                  className="p-8  sm:p-8  px-4 sm:px-8 md:px-16"
+                  className="p-8  sm:p-8  px-4 sm:px-8 md:px"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                   {isMenuOpen  && <CloseButton />}
                 </button>
                 
-                <nav className="w-full px-4 sm:px-8 md:px-16 overflow-hidden mt-6 ">
+                <nav className="w-full px-4 sm:px-8 md:px- overflow-hidden mt-8 ">
                   {/* <AnimatePresence> */}
                     {isMenuOpen && (
                       <motion.div
