@@ -7,22 +7,22 @@ export const images = [
   {
     image: "/home1.png",
     mobileImage: "/home1.jpg",
-    text: "Unlike anything else."
+    text: "Unlike \nanything \nelse."
   },
   {
     image: "/home2.png",
     mobileImage: "/home2test.png",
-    text: "The future begins with a gesture"
+    text: "The \nfuture begins \nwith a gesture"
   },
   {
     image: "/home4.png",
     mobileImage: "/home4test.png",
-    text: "We reach for meaning"
+    text: "We \nreach \nfor meaning"
   },
   {
     image: "/home3.png",
     mobileImage: "/home3test.png",
-    text: "We don’t guess. We choose !"
+    text: "We \ndon’t guess. \nWe choose !"
   },
 ];
 
@@ -41,10 +41,10 @@ const ImageSlider = () => {
     <div className="w-screen h-screen bg-black relative overflow-hidden">
       {/* Background Images */}
        <img 
-              src='/menu.png'
-              alt="Revo Logo"
-              className='opacity-0 hidden'
-            />
+          src='/menu.png'
+          alt="Revo Logo"
+          className='opacity-0 hidden'
+        />
       <AnimatePresence mode="sync">
         {/* Desktop Image */}
         <motion.img
@@ -80,7 +80,7 @@ const ImageSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
-              className="text-[4rem] md:text-5xl lg:text-7xl xl:text-8xl max-w-7xl leading-tight text-white"
+              className="text-[4rem] md:text-5xl lg:text-8xl xl:text-9xl max-w-7xl leading-tight text-white whitespace-pre-wrap"
             >
               {images[selectedImageIndex].text}
             </motion.h1>

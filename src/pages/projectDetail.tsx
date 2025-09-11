@@ -3,12 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowLeft, ChevronLeft, ChevronRight, ZoomIn, Maximize, Pause, Play } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { portfolioItems } from "./projectsData";
-import HeaderWithCircle from "@/components/HeaderWithCircle";
-import { RiArrowRightSLine } from "react-icons/ri";
-
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 
 const ProjectDetail = () => {
    const location = useLocation();
