@@ -75,7 +75,7 @@ const ImageSection = () => {
       <div className="md:hidden flex flex-col w-full bg-white">
         <motion.div className="w-full">
           <img 
-            src="/about1.jpg" 
+            src="/about2.jpg" 
             alt="Studio workspace"
             className="w-full h-50 object-cover"
           />
@@ -91,7 +91,7 @@ const ImageSection = () => {
       {/* Desktop Layout - Row */}
       <div className="hidden md:flex justify-end w-full ">
         <motion.img 
-            src="/about1.jpg" 
+            src="/about2.jpg" 
              alt="Studio workspace"
           className="object-cover absolute top-0 left-0 h-[400px] md:h-[300px] lg:h-[440px]  xl:h-[500px] w-[49%]"
         />

@@ -12,12 +12,12 @@ export const images = [
   {
     image: "/home2.png",
     mobileImage: "/home2test.png",
-    text: "The \nfuture begins \nwith a gesture"
+    text: "The \nfuture\nbegins \nwith a gesture"
   },
   {
     image: "/home4.png",
     mobileImage: "/home4test.png",
-    text: "We \nreach \nfor meaning"
+    text: "We reach \nfor meaning"
   },
   {
     image: "/home3.png",
@@ -71,7 +71,7 @@ const ImageSlider = () => {
 
 
       {/* Text Overlay */}
-      <div className="absolute left-4 sm:left-2 md:left-4 top-[55%] transform -translate-y-1/2 z-10 max-w-[95%] p-4 sm:p-6 md:p-8">
+      <div className="absolute left-4 sm:left-2 md:left-4 top-[55%] transform -translate-y-1/2 z-10 w-full p-2 sm:p-6 md:p-8">
         <div className="font-Montserrat font-bold overflow-hidden py-4">
           <AnimatePresence mode="wait">
             <motion.h1
@@ -80,7 +80,7 @@ const ImageSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0 }}
-              className="text-[4rem] md:text-5xl lg:text-8xl xl:text-9xl max-w-7xl leading-tight text-white whitespace-pre-wrap"
+              className="text-[3.6rem] md:text-5xl lg:text-8xl xl:text-9xl max-w-7xl leading-tight text-white whitespace-pre-wrap"
             >
               {images[selectedImageIndex].text}
             </motion.h1>

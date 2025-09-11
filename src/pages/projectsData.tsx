@@ -18,7 +18,7 @@ const rawPortfolioItems  = [
   // },
   {
     id: 2,
-    image: '/eni/56.png',
+    image: '/eni/005.jpg',
     title: 'ENI GROUP',
     webImage: '/eni/152.png',
     subtitle: 'Brand Identity',
@@ -249,7 +249,7 @@ const rawPortfolioItems  = [
   },
   {
     id: 17,
-    image: '/71.png',
+    image: '/72.png',
     title: 'UM6P/OCP',
     challenge: "Give a strong visual identity to an event bringing together OCP, UM6P, and AFA.",
     thumbnail: '/71.png',
@@ -285,7 +285,7 @@ const rawPortfolioItems  = [
   },
   {
     id: 21,
-    thumbnail: "providence.JPG",
+    thumbnail: "provi.png",
     image: "/videos/providence.mp4",
     title: "PROVIDENCE VERTE CORPORATE FILM",
     subtitle: 'Corporate film',
@@ -358,7 +358,7 @@ const rawPortfolioItems  = [
   },
   {
     id: 29,
-    image: '/zouitina/00.png',
+    image: '/zouitina/006.jpg',
     title: 'ZOUITINA OLIVE OIL',
     subtitle: 'Brand Packaging',
     webImage: '/zouitina/163.png',

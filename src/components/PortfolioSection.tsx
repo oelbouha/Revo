@@ -148,7 +148,7 @@ const getFilteredItems = () => {
                   setShowAll(false);
                   setActiveFilter((prev) => (prev === filter ? 'All' : filter));
                 }}
-                className={`px-2 py-2 text-sm md:text-lg transition-colors font-bold ${
+                className={`px-2 py-2 text-sm md:text-2xl transition-colors font-bold ${
                   activeFilter === filter ? 'text-blue ' : 'text-gray-600 hover:text-blue'
                 }`}
               >
