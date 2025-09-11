@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   return (
     <section id="about" className=" w-full  flex flex-col overflow-hidden items-center justify-center relative ">
-      <div className='max-w-7xl bg-red px-8 h md:h-[40rem]  bg- w-full flex items-center'>
+      <div className='max-w-7xl bg-red pr-8 h md:h-[40rem]  bg- w-full flex items-center'>
         <HeaderWithCircle />
       </div>
       <ImageSection />
@@ -41,7 +41,7 @@ const HeaderWithCircle = () => {
 
   return (
     <div className="w-full flex flex-col  justify-center   py-20">
-      <div className='flex flex-col items-center justify-center  gap-[1.5rem] md:gap-[3rem] '>
+      <div className='flex flex-col items-center justify-center  gap-[1.5rem] md:gap-[3.5rem] '>
       <HeaderCircle />
 
         <div className="relative w-full flex items-center justify-end  ">
@@ -73,7 +73,7 @@ const ImageSection = () => {
       <div className="md:hidden flex flex-col w-full bg-white">
         <motion.div className="w-full">
           <img 
-            src="https://static.vecteezy.com/system/resources/previews/039/063/358/large_2x/ai-generated-ai-circuit-board-technology-background-central-computer-processors-cpu-concept-motherboard-digital-chip-tech-science-background-integrated-communication-processor-3d-illustration-photo.jpeg" 
+            src="/about.jpg" 
             alt="Studio workspace"
             className="w-full h-50 object-cover"
           />
@@ -89,9 +89,9 @@ const ImageSection = () => {
       {/* Desktop Layout - Row */}
       <div className="hidden md:flex justify-end w-full ">
         <motion.img 
-          src="https://static.vecteezy.com/system/resources/previews/039/063/358/large_2x/ai-generated-ai-circuit-board-technology-background-central-computer-processors-cpu-concept-motherboard-digital-chip-tech-science-background-integrated-communication-processor-3d-illustration-photo.jpeg" 
-          alt="Studio workspace"
-          className="object-cover absolute top-0 left-0 h-[400px] md:h-[300px] lg:h-[444px]  xl:h-[550px] w-[49%]"
+            src="/about.jpg" 
+             alt="Studio workspace"
+          className="object-cover absolute top-0 left-0 h-[400px] md:h-[300px] lg:h-[440px]  xl:h-[500px] w-[49%]"
         />
        
         <div className="flex justify-end items-center mt-20  h-[628px] w-[73%]  bg-black text-white ">

@@ -25,7 +25,7 @@ const Footer = () => {
 
 
   return ( 
-    <footer className="relative  text-white pt-16 bg-black  ">
+    <footer id="footer" className="relative  text-white pt-16 bg-black  ">
       {/* Background Image - Back Layer */}
       <div
         className="absolute inset-0 bg-cover bg-center z-0"

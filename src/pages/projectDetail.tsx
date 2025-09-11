@@ -28,6 +28,29 @@ const ProjectDetail = () => {
     return <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">Project not found</div>;
   }
 
+
+
+  
+     const handleNavigation = (sectionId: string) => {
+      // setIsMenuOpen(false);
+      if (location.pathname !== '/') {
+        // Navigate to home page with the hash
+        navigate('/', { replace: true });
+        // After navigation, set the hash and scroll
+        setTimeout(() => {
+          window.location.hash = sectionId;
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => setIsLoading(false), 800);
@@ -51,7 +74,7 @@ const ProjectDetail = () => {
               animate={{ opacity: 1,  }}
               transition={{ duration: 0.6, delay: 0.2 }}
 
-              className="text-2xl md:text-5xl font-bold mb-4">
+              className="text-2xl md:text-4xl font-bold mb-4">
               {project.title}
             </motion.h1>
             <p className=" text-sm md:text-lg max-w-2xl " >
@@ -79,16 +102,29 @@ const ProjectDetail = () => {
 
 
         <div className="flex justify-between items-center px-8 sm:px-16 mt-8 mb-16">
+          <div >
+             <button
+            onClick={() => {
+              const prevId = (Number(id) - 1) || portfolioItems.length;
+                handleNavigation("portfolio");
+            }}
+            className="flex items-center gap-1 md:gap-2 text-gray-700 hover:text-black transition-colors"
+          >
+            <ChevronLeft className="w-3 h-3 md:w-5 md:h-5" />
+            <span className="text-[10px] md:text-lg " >Back to our works</span>
+          </button>  
+          </div>
+          <div className="flex  items-center gap-4 md:gap-8">
           <button
             onClick={() => {
               const prevId = (Number(id) - 1) || portfolioItems.length;
                 navigate(`/project?id=${prevId}`);
               window.scrollTo(0, 0);
             }}
-            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+            className="flex items-center gap-1 md:gap-2 text-gray-700 hover:text-black transition-colors"
           >
-            <ChevronLeft className="w-5 h-5" />
-            <span className="text-sm md:text-lg " >Previous Project</span>
+            <ChevronLeft className="w-3 h-3 md:w-5 md:h-5" />
+            <span className="text-[10px] md:text-lg " >Previous Project</span>
           </button>
           <button
             onClick={() => {
@@ -97,11 +133,12 @@ const ProjectDetail = () => {
               navigate(`/project?id=${nextId}`);
               window.scrollTo(0, 0);
             }}
-            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors"
+            className="flex items-center gap-1 md:gap-2 text-gray-700 hover:text-black transition-colors"
           >
-            <span className="text-sm md:text-lg ">Next Project</span>
-            <ChevronRight className="w-5 h-5" />
+            <span className="text-[10px] md:text-lg ">Next Project</span>
+            <ChevronRight className="w-3 h-3 md:w-5 md:h-5" />
           </button>
+          </div>
         </div>
       </section>
     </div>
@@ -323,7 +360,7 @@ const renderMasonryImages = (photos: string[]) => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16  w-full px-8 sm:px-16">
           {  challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
-              <h3 className="text-2xl font-bold text-[30px]">DÉFIS</h3>
+              <h3 className="text-2xl font-bold text-[30px]">CHALLENGE</h3>
               <p className="text-gray-700 text-center md:text-start text-[18px] ">
                 {challenge}
               </p>
