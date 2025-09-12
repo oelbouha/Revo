@@ -136,7 +136,7 @@ const AddressSection = () => {
       <div className="flex flex-col gap-2">
         <h3 className='text-l md:text-lg lg:text-2xl font-semibold text-white mb-2'>Adresse</h3>
         <p className="text-gray-300 leading-relaxed text-sm md:text-base font-medium">
-          Revo Advertising, 5 eme etg, Espace majorelles, 11 Rue Abou Hayane Attaouhidi، Casablanca 20000
+         Rue Abou Hayane Attaouhidi, Espace majorelles, 5ème étage N11 - Casablanca
         </p>
       </div>
   );

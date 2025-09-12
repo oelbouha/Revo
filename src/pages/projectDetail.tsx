@@ -51,6 +51,10 @@ const ProjectDetail = () => {
     }
   };
 
+    useEffect(() => {
+      scrollTo(0, 0);
+      
+    }, );
 
 
   return (
