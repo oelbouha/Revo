@@ -61,7 +61,7 @@ const ImageSlider = () => {
         <motion.img
           key={`mobile-${selectedImageIndex}`}
           src={images[selectedImageIndex].mobileImage}
-          className="block md:hidden absolute w-full h-[100dvh] object-cover top-0 left-0"
+          className="block md:hidden absolute w-full h-full object-cover top-0 left-0"
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}

@@ -36,7 +36,7 @@ const Header = ()  => {
   };
 
   
-const linkStyle = "text-left text-[34px] sm:text-2xl md:text-5xl lg:text-[74px] text-white font-bold \
+const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] text-white font-bold \
   border-b-[0.5rem] border-transparent hover:border-gray-500 hover:text-gray-500 \
   transition-colors duration-300 leading-none";
 
@@ -76,11 +76,11 @@ const linkStyle = "text-left text-[34px] sm:text-2xl md:text-5xl lg:text-[74px] 
               duration: 0.3,
               ease: 'easeInOut',
             }}
-            className="origin-top bg-black object-cover pt-4 pb-10 pl-6 pr-4 md:pr-16 flex flex-col items-end justify-start h-screen w-screen fixed top-0 left-0 z-[9999]">
+            className="origin-top bg-[#000016] object-cover pt-4 pb-10 pl-6 pr-4 md:pr-16 flex flex-col items-end justify-start h-screen w-screen fixed top-0 left-0 z-[9999]">
             <img 
               src='/menu.png'
               alt="Revo Logo"
-              className=' absolute w-full  object-cover top-0 left-0   z-[998]'
+              className=' absolute w-full object-cover top-0 left-0 z-[998]'
             />
              
             <div className='relative z-[9999] flex flex-col items-end'>

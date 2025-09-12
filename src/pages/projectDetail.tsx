@@ -5,79 +5,57 @@ import { useLocation } from "react-router-dom";
 import { portfolioItems } from "./projectsData";
 import { useNavigate } from 'react-router-dom';
 
-
 const ProjectDetail = () => {
-   const location = useLocation();
+  const location = useLocation();
+  const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
   const id = queryParams.get("id");
-
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
 
+  // Handle invalid ID and redirect
+  useEffect(() => {
+    if (!id || isNaN(Number(id)) || Number(id) < 1 || Number(id) > portfolioItems.length) {
+      navigate(`/project?id=1`, { replace: true });
+      return;
+    }
+  }, [id, navigate]);
+
+  // Early return if invalid ID (while redirect is happening)
   if (!id || isNaN(Number(id)) || Number(id) < 1 || Number(id) > portfolioItems.length) {
-    return <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">Invalid project ID</div>;
+    return <div>Redirecting...</div>; // Or a loading spinner
   }
   
-  const project = portfolioItems[id - 1];
+  const project = portfolioItems[Number(id) - 1];
   
+  // Handle case where project doesn't exist (extra safety)
   if (!project) {
-    return <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">Project not found</div>;
+    navigate(`/project?id=1`, { replace: true });
+    return <div>Redirecting...</div>;
   }
 
-
-
-  
-     const handleNavigation = (sectionId: string) => {
-      // setIsMenuOpen(false);
-      if (location.pathname !== '/') {
-        // Navigate to home page with the hash
-        navigate('/', { replace: true });
-        // After navigation, set the hash and scroll
-        setTimeout(() => {
-          window.location.hash = sectionId;
-          const element = document.getElementById(sectionId);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      } else {
+  const handleNavigation = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        window.location.hash = sectionId;
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
-    };
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setTimeout(() => setIsLoading(false), 800);
-  }, []);
+    }
+  };
+
 
 
   return (
     <div className=" text-black">
-      {/* Simple Header Section */}
-      <section className="relative h-[350px] bg-black border- border-gray-200 flex items-center justify-center">
-         <img 
-            src={project.thumbnail} 
-            alt={project.title} 
-            className="absolute  w-full h-full object-cover"
-            loading="lazy"
-          />
-           <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
-            <motion.h1
-              initial={{ opacity: 0,  }}
-              animate={{ opacity: 1,  }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-
-              className="text-2xl md:text-4xl font-bold mb-4">
-              {project.title}
-            </motion.h1>
-            <p className=" text-sm md:text-lg max-w-2xl " >
-              {project.description}
-            </p>
-          </div>
-      </section>
+      <ProjectBanner thumbnail={project.thumbnail} title={project.title} description={project.description} />
 
       <section className="max-w-7xl mx-auto overflow-hidden ">
         <div className="w-full flex flex-col">
@@ -85,13 +63,12 @@ const ProjectDetail = () => {
          { project.challenge && project.solutions && <ChallengeAndSolution challenge={project.challenge} solution={project.solutions} />}
         </div>
 
-        {/* Masonry Image Gallery */}
-        {
-          project.photos &&  
-          <div className="px-8 sm:px-16 md:pb-16">
-          {renderMasonryImages(project.photos)}
+      {project.photos && (
+        <div className="px-8 sm:px-16 md:pb-16">
+          <MasonryImages photos={project.photos} />
         </div>
-        }
+      )}
+
        
         {/* {videos } */}
         {project.videos && <RenderVideos videos={project.videos} />}
@@ -125,7 +102,6 @@ const ProjectDetail = () => {
           <button
             onClick={() => {
               const nextId = ((Number(id) + 1) > portfolioItems.length) ? 1 : (Number(id) + 1);
-              // window.location.href = `/project?id=${nextId}`;
               navigate(`/project?id=${nextId}`);
               window.scrollTo(0, 0);
             }}
@@ -140,7 +116,6 @@ const ProjectDetail = () => {
     </div>
   );
 };
-
 
 export default ProjectDetail;
 
@@ -192,7 +167,6 @@ const RenderVideos = ({videos} : {videos: Video[]}) => {
       setPlayingVideos(prev => ({ ...prev, [videoId]: true }));
     }
   };
-
 
   return (
     <div className=" bg-white max-w-7xl mx-auto px-8 sm:px-16 md:pb-16 py-16 ">
@@ -263,112 +237,127 @@ const RenderVideos = ({videos} : {videos: Video[]}) => {
   );
 };
 
-
-const renderMasonryImages = (photos: string[]) => {
-    
-  const [selectedImage, setSelectedImage] = useState(null);
+const MasonryImages = ({ photos }: { photos: string[] }) => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
   if (!photos || photos.length === 0) return null;
 
-    const rows = [];
-    let i = 0;
+  const rows = [];
+  let i = 0;
 
-    while (i < photos.length) {
-      // First row: One full-width image
-      if (photos[i]) {
-        rows.push(
-          <motion.div
-            key={`row-${i}`}
-            className="w-full mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: rows.length * 0.1 }}
-          >
+  while (i < photos.length) {
+    // First row
+    if (photos[i]) {
+      rows.push(
+        <motion.div key={`row-${i}`} className="w-full mb-4" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: rows.length * 0.1 }}>
+          <img
+            src={photos[i]}
+            alt={`Project image ${i + 1}`}
+            loading="lazy"
+            className="w-full md:h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+            onClick={() => {
+              setSelectedImage(photos[i]);
+              setSelectedImageIndex(i);
+            }}
+          />
+        </motion.div>
+      );
+      i++;
+    }
+
+    // Second row
+    if ((i < photos.length - 1) && (photos[i] || photos[i + 1] && i > 2)) {
+      rows.push(
+        <motion.div key={`row-${i}`} className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: rows.length * 0.1 }}>
+          {photos[i] && (
             <img
               src={photos[i]}
               alt={`Project image ${i + 1}`}
               loading="lazy"
-              className="w-full  md:h-full object-cover md:object-cover object-center   cursor-pointer hover:opacity-90 transition-opacity"
+              className="w-full md:h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => {
                 setSelectedImage(photos[i]);
                 setSelectedImageIndex(i);
               }}
             />
-          </motion.div>
-        );
-        i++;
-      }
-
-      // Second row: Two half-width images side by side
-      if (i < photos.length - 2) {
-        console.log("i:", i);
-      }
-      if ((i < photos.length - 1) && (photos[i] || photos[i + 1] && i  > 2)) {
-        rows.push(
-          <motion.div
-            key={`row-${i}`}
-            className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: rows.length * 0.1 }}
-          >
-            {photos[i] && (
-              <img
-                src={photos[i]}
-                alt={`Project image ${i + 1}`}
-                loading="lazy"
-                className="w-full  md:h-full object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => {
-                  setSelectedImage(photos[i]);
-                  setSelectedImageIndex(i);
-                }}
-              />
-            )}
-            {photos[i + 1] && (
-              <img
-                src={photos[i + 1]}
-                alt={`Project image ${i + 2}`}
-                loading="lazy"
-                className="w-full  md:h-full object-cover md:object-cover  cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => {
-                  setSelectedImage(photos[i + 1]);
-                  setSelectedImageIndex(i + 1);
-                }}
-              />
-            )}
-          </motion.div>
-        );
-        i += 2;
-      }
+          )}
+          {photos[i + 1] && (
+            <img
+              src={photos[i + 1]}
+              alt={`Project image ${i + 2}`}
+              loading="lazy"
+              className="w-full md:h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+              onClick={() => {
+                setSelectedImage(photos[i + 1]);
+                setSelectedImageIndex(i + 1);
+              }}
+            />
+          )}
+        </motion.div>
+      );
+      i += 2;
     }
+  }
 
-    return rows;
-  };
+  return <>{rows}</>;
+};
 
-
-
-  type ChallengeAndSolutionProps = {
+type ChallengeAndSolutionProps = {
   challenge: string;
   solution: string;
 };
 
-  const ChallengeAndSolution = ({ challenge, solution }: ChallengeAndSolutionProps) => {
+const ChallengeAndSolution = ({ challenge, solution }: ChallengeAndSolutionProps) => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16  w-full px-8 sm:px-16">
+        {  challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
+            <h3 className="text-2xl font-bold text-[30px]">CHALLENGE</h3>
+            <p className="text-gray-700 text-center md:text-start text-[18px] ">
+              {challenge}
+            </p>
+          </div>}
+          
+         {  solution && <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
+            <h3 className="text-2xl font-bold text-[30px]">SOLUTIONS</h3>
+            <p className="text-gray-700 text-center md:text-start text-[18px] bg">
+              {solution}
+            </p>
+          </div>
+          }
+    </div>
+  );
+}
+
+type ProjectBannerProps = {
+  thumbnail: string;
+  title: string;
+  description: string;
+};
+
+const ProjectBanner = ({ thumbnail, title, description }: ProjectBannerProps) => {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-16  w-full px-8 sm:px-16">
-          {  challenge &&  <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
-              <h3 className="text-2xl font-bold text-[30px]">CHALLENGE</h3>
-              <p className="text-gray-700 text-center md:text-start text-[18px] ">
-                {challenge}
-              </p>
-            </div>}
-            
-           {  solution && <div className="flex flex-col items-center justify- h-full gap-8 md:gap-8">
-              <h3 className="text-2xl font-bold text-[30px]">SOLUTIONS</h3>
-              <p className="text-gray-700 text-center md:text-start text-[18px] bg">
-                {solution}
-              </p>
-            </div>
-            }
-      </div>
+          <section className="relative h-[350px] bg-black border- border-gray-200 flex items-center justify-center">
+       <img 
+          src={thumbnail} 
+          alt={title} 
+          className="absolute  w-full h-full object-cover"
+          loading="lazy"
+        />
+         <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <div className="text-white flex flex-col items-center justify-center z-20 relative text-center px-4">
+          <motion.h1
+            initial={{ opacity: 0,  }}
+            animate={{ opacity: 1,  }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+
+            className="text-2xl md:text-4xl font-bold mb-4">
+            {title}
+          </motion.h1>
+          <p className=" text-sm md:text-lg max-w-2xl " >
+            {description}
+          </p>
+        </div>
+    </section>
     );
-  }
+}
