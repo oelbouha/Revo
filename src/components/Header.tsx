@@ -105,7 +105,7 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
                         <button onClick={() => handleNavigation('home')} className={linkStyle}>Home</button>
                         <button onClick={() => handleNavigation('about')} className={linkStyle}>Who we are</button>
                         <button onClick={() => handleNavigation('portfolio')} className={linkStyle}>Our work</button>
-                        <button onClick={() => handleNavigation('footer')} className={linkStyle}>Contact Us</button>
+                        <button onClick={() => handleNavigation('footer')} className={linkStyle}>Contact us</button>
                       </motion.div>
                     )}
                   {/* </AnimatePresence> */}

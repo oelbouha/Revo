@@ -113,16 +113,16 @@ const LogoSection = () => {
             </div>
             <div className="flex items-center gap-8 md:gap-12 ">
                 <div>
-                  <h3  onClick={() => handleNavigation('home')} className={linkStyle}>Agence</h3>
+                  <h3  onClick={() => handleNavigation('home')} className={linkStyle}>Home</h3>
                 </div>
                 <div>
-                  <h3  onClick={() => handleNavigation('about')} className={linkStyle}>Expertises</h3>
+                  <h3  onClick={() => handleNavigation('about')} className={linkStyle}>Who we are</h3>
                 </div>
                 <div>
-                  <h3  onClick={() => handleNavigation('portfolio')} className={linkStyle}>Works</h3>
+                  <h3  onClick={() => handleNavigation('portfolio')} className={linkStyle}>Our work</h3>
                 </div>
                 <div>
-                  <h3   onClick={() => handleNavigation('home')} className={linkStyle}>Studio</h3>
+                  <h3   onClick={() => handleNavigation('footer')} className={linkStyle}>Contact us</h3>
                 </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ const LogoSection = () => {
 const AddressSection = () => {
   return (
       <div className="flex flex-col gap-2">
-        <h3 className='text-l md:text-lg lg:text-2xl font-semibold text-white mb-2'>Adresse</h3>
+        <h3 className='text-l md:text-lg lg:text-2xl font-semibold text-white mb-2'>Address</h3>
         <p className="text-gray-300 leading-relaxed text-sm md:text-base font-medium">
          Rue Abou Hayane Attaouhidi, Espace majorelles, 5ème étage N11 - Casablanca
         </p>
@@ -145,7 +145,7 @@ const AddressSection = () => {
 const SocialMediaSection = () => {
   return (
      <div className="flex flex-col gap-2">
-        <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Suivez-nous</h3>
+        <h3 className="text-l md:text-lg lg:text-2xl font-semibold text-white mb-2">Follow us</h3>
         <div className="flex items-start  ">
           <a 
             href="https://www.linkedin.com/company/revo-advertising-casablanca/" 

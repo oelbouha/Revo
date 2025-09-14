@@ -75,13 +75,13 @@ const PortfolioSection = () => {
 
   const filters = [
     'All',
-    'Brand strategy',
-    'Operational',
-    'Audiovisual Production',
+    'Branding',
+    'Print',
+    'Packaging',
+    'Outdoor campaign',
     'Digital & Social Media',
-    'Event & PR',
-    // 'Print',
-    'Production vidéo',
+    // 'Event & PR',
+    'Vidéo production',
     // 'Campagne',
   ];
 
@@ -154,7 +154,7 @@ const getFilteredItems = () => {
               >
                 {filter}
               </button>
-              {filter !== 'Production vidéo' && <div className="text-gray-600 h-1 w-1 bg-gray-600 rounded-full"></div>}
+              {filter !== 'Vidéo production' && <div className="text-gray-600 h-1 w-1 bg-gray-600 rounded-full"></div>}
             </div>
           ))}
         </div>

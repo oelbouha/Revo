@@ -113,7 +113,7 @@ const rawPortfolioItems  = [
     challenge: "Give a strong and distinctive identity to a concrete panel brand, transforming a raw material into a visual universe of aesthetics and modernity.",
     thumbnail: '/5.png',
     solutions: "A sober and contemporary visual identity, inspired by the material itself, conveying robustness, reliability, and architectural design.",
-    categories: ['Brand strategy', 'Audiovisual Production', 'Operational'],
+    categories: ['Branding', 'Audiovisual Production', 'Operational'],
     photos: [       
         "/1.png",
         "/2.png",
@@ -132,7 +132,7 @@ const rawPortfolioItems  = [
     challenge: "Reinvent the image of a leading Moroccan floral art brand, enhancing its heritage while anchoring it in a contemporary aesthetic.",
     thumbnail: '/7.png',
     solutions: "A complete rebranding, blending elegance and modernity, to express the refined universe of Vita Art Floral, strengthen its premium positioning, and attract a demanding clientele.",
-    categories: ['Brand strategy', 'Operational'],
+    categories: ['Branding', 'Operational'],
     photos: [       
         "/7.png",
         "/8.png",
@@ -151,7 +151,7 @@ const rawPortfolioItems  = [
     thumbnail:'/20.png',
     solutions: "An elegant and sophisticated identity, reflecting luxury and exclusivity.",
     subtitle: 'Brand strategy',
-    categories: ['Brand strategy', 'Operational', 'Audiovisual Production'],
+    categories: ['Branding', 'Operational', 'Audiovisual Production'],
     photos: [       
          "/21.png",
         "/22.png",
@@ -195,16 +195,16 @@ const rawPortfolioItems  = [
   },
   {
     id: 12,
-    image: '/24.png',
+    image: '/244.jpg',
     title: 'SHAPE AND SHADE',
     subtitle: 'Brand Identity',
     classement: "6",
     challenge: "Redefine the image of a brand specialized in concrete design.",
     thumbnail: '/24.png',
     solutions: "A complete rebranding, combining modernity, minimalism, and architectural elegance.",
-    categories: ['Brand strategy'],
+    categories: ['Branding'],
     photos: [ 
-        "shape.gif",
+        "shape.jpg",
         // "25.png",
         // "26.png",
         // "27.png",
@@ -273,7 +273,7 @@ const rawPortfolioItems  = [
     challenge: "Launch a new bakery brand in Morocco with a distinctive identity.",
     thumbnail: '/31.png',
     solutions: "Creation of a refined brand universe, combining artisanal tradition and modernity.",
-    categories: ['Brand strategy'],
+    categories: ['Branding'],
     photos: [       
          "/30.png",
          "/29.png",
@@ -291,7 +291,7 @@ const rawPortfolioItems  = [
     title: "PROVIDENCE VERTE CORPORATE FILM",
     subtitle: 'Corporate film',
     classement: "4",
-    categories: ['Production vidéo'],
+    categories: ['Vidéo production'],
     description: "Shooting and production of a corporate film for Providence Verte",
     
     videos: [
@@ -308,7 +308,7 @@ const rawPortfolioItems  = [
     image: "/videos/zouitinaa.mp4",
     title: "ZOUITINA CORPORATE FILM",
     subtitle: 'Video Production',
-    categories: ['Production vidéo'],
+    categories: ['Vidéo production'],
     description: "Shooting and production of a corporate film for Zouitina",
     
     videos: [
@@ -329,7 +329,7 @@ const rawPortfolioItems  = [
     image: "/videos/csdm.mp4",
     title: "UM6P/DEO",
     subtitle: 'Video Production',
-    categories: ['Production vidéo'],
+    categories: ['Vidéo production'],
     classement: "1",
     description: "Presentation videos of the DEO/UM6P departments for the Digital Day event",
     
@@ -366,7 +366,7 @@ const rawPortfolioItems  = [
     thumbnail: '/zouitina/004.png',
     solutions: "Design of refined promotional visuals, combining aesthetics and readability, to create a distinctive graphic universe and strengthen the brand’s impact on visitors.",
     challenge: "Highlight Zouitina’s glass range in a highly competitive environment, attracting attention while asserting a premium identity.",
-    categories: ['Brand strategy'],
+    categories: ['Branding'],
     classement: "5",
     description: "Booth design – Promotional visuals – Agricultural fairs",
     photos: [       
@@ -385,7 +385,7 @@ const rawPortfolioItems  = [
     solutions: "Production of a series of video capsules and creation of a corporate film reflecting the universe and quality of the brand.",
     challenge: "Create inspiring and immersive digital content capable of strengthening consumer engagement.",
     webImage: '/zouitina/163.png',
-    categories: ['Brand strategy'],
+    categories: ['Branding'],
    
     description: "Recipe capsules – Corporate film – Social media",
     photos: [       
