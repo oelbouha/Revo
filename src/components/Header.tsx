@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { IoMdClose } from "react-icons/io";
-import { AiOutlineMenu } from "react-icons/ai";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 
@@ -13,7 +10,6 @@ const Header = ()  => {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-
 
     const handleNavigation = (sectionId: string) => {
     setIsMenuOpen(false);
@@ -54,10 +50,8 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
               className='w-[7rem] sm:w-24 md:w-32 lg:w-48 xl:w-56 '
             />
           </div>
-          <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-           <MenuButton />
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} >
+            <MenuButton />
           </button>
         </div>
       </div>
@@ -75,40 +69,39 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
               duration: 0.3,
               ease: 'easeInOut',
             }}
-            className="origin-top bg-[#000016] object-cover  px-8 md:px-16 pt-10  flex flex-col items-end justify-start h-screen w-screen fixed top-0 left-0 z-[9999]">
-            <img 
-              src='/menu.png'
-              alt="Revo Logo"
-              className=' absolute w-full object-cover top-0 left-0 z-[998]'
-            />
-             
-            <div className='relative z-[9999] flex flex-col items-end'>
-                <button 
-                  className=""
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                >
-                  {isMenuOpen  && <CloseButton />}
-                </button>
-                
-                <nav className="w-full  overflow-hidden  mt-10 md:mt-16 ">
-                  {/* <AnimatePresence> */}
-                    {isMenuOpen && (
-                      <motion.div
-                        key="menu-items"
-                        initial={{ opacity: 0.2 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3, delay: 0.3, ease: 'easeInOut' }}
-                        className="flex flex-col items-end font-bold space-y-4"
-                      >
-                        <button onClick={() => handleNavigation('home')} className={linkStyle}>Home</button>
-                        <button onClick={() => handleNavigation('about')} className={linkStyle}>Who we are</button>
-                        <button onClick={() => handleNavigation('portfolio')} className={linkStyle}>Our work</button>
-                        <button onClick={() => handleNavigation('footer')} className={linkStyle}>Contact us</button>
-                      </motion.div>
-                    )}
-                  {/* </AnimatePresence> */}
-                </nav>
+            className="origin-top bg-[#000016] object-cover  px-8 md:px-16 py-10  flex flex-col items-end justify-start h-screen w-screen fixed top-0 left-0 z-[9999]">
+              <img 
+                src='/menu.png'
+                alt="Revo Logo"
+                className=' absolute w-full object-cover top-0 left-0 z-[998]'
+              />
+            <div className='relative h-full z-[9999] flex flex-col items-end  justify-between '>
+                <div className='flex flex-col gap-8 md:gap-16 items-end '>
+                  <button  onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    {isMenuOpen  && <CloseButton />}
+                  </button>
+                  
+                  <nav className="w-full  overflow-hidden">
+                    {/* <AnimatePresence> */}
+                      {isMenuOpen && (
+                        <motion.div
+                          key="menu-items"
+                          initial={{ opacity: 0.2 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3, delay: 0.3, ease: 'easeInOut' }}
+                          className="flex flex-col items-end font-bold space-y-4"
+                        >
+                          <button onClick={() => handleNavigation('home')} className={linkStyle}>Home</button>
+                          <button onClick={() => handleNavigation('about')} className={linkStyle}>Who we are</button>
+                          <button onClick={() => handleNavigation('portfolio')} className={linkStyle}>Our work</button>
+                          <button onClick={() => handleNavigation('footer')} className={linkStyle}>Contact us</button>
+                        </motion.div>
+                      )}
+                    {/* </AnimatePresence> */}
+                  </nav>
+                 </div>
+              
             </div>
           </motion.div>
         )}
