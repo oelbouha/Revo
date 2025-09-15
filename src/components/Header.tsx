@@ -43,11 +43,10 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
 
   return (
     <header className="w-full bg-transparent py-6 md:py-8  z-[990] absolute top-0 left-0 ">
-      <div className="w-full px-4 sm:px-10 md:px-12 ">
+      <div className="w-full px-8 md:px-16  ">
         <div className="flex justify-between w-full min-h-[60px] items-center">
-          
           {/* Logo */}
-          <div className="px-4 cursor-pointer" onClick={() => navigate('/')}>
+          <div className=" cursor-pointer" onClick={() => navigate('/')}>
             <img 
               src='/Group 7.svg'
               alt="Revo Logo"
@@ -55,7 +54,6 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
             />
           </div>
           <button 
-            className="block  p-2  items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
            <MenuButton />
@@ -76,7 +74,7 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
               duration: 0.3,
               ease: 'easeInOut',
             }}
-            className="origin-top bg-[#000016] object-cover pt-4 pb-10 pl-6 pr-4 md:pr-16 flex flex-col items-end justify-start h-screen w-screen fixed top-0 left-0 z-[9999]">
+            className="origin-top bg-[#000016] object-cover  px-8 md:px-16 py-6 md:py-8 flex flex-col items-end justify-start h-screen w-screen fixed top-0 left-0 z-[9999]">
             <img 
               src='/menu.png'
               alt="Revo Logo"
@@ -85,13 +83,13 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
              
             <div className='relative z-[9999] flex flex-col items-end'>
                 <button 
-                  className="p-8  sm:p-8  px-4 sm:px-8 md:px"
+                  className=""
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                   {isMenuOpen  && <CloseButton />}
                 </button>
                 
-                <nav className="w-full px-4 sm:px-8 md:px- overflow-hidden mt-8 ">
+                <nav className="w-full  overflow-hidden mt-8 ">
                   {/* <AnimatePresence> */}
                     {isMenuOpen && (
                       <motion.div

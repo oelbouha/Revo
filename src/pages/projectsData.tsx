@@ -205,9 +205,6 @@ const rawPortfolioItems  = [
     categories: ['Branding'],
     photos: [ 
         "shape.jpg",
-        // "25.png",
-        // "26.png",
-        // "27.png",
       ],
     description: "Complete rebranding of a Moroccan brand specialized in concrete design"
   },
@@ -268,7 +265,7 @@ const rawPortfolioItems  = [
     id: 19,
     image: '/31.png',
     title: "JEAN MICHEL MUSIA",
-     classement: "7",
+    classement: "7",
     subtitle: 'Brand strategy',
     challenge: "Launch a new bakery brand in Morocco with a distinctive identity.",
     thumbnail: '/31.png',

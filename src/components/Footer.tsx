@@ -104,14 +104,14 @@ const LogoSection = () => {
   };
   return (
       <div className=" max-w-7xl mx-auto py-16 px-8 md:px-4 lg:px-0  border-b border-[#FFFFFF30] ">
-        <div className="w-full  flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
+        <div className="w-full  flex flex-col md:flex-row  justify-between gap-12 md:gap-24">
             <div className="space-y-6">
-              <div className="text-3xl font-bold flex items-center gap-4 justify-center md:justify-start">
+              <div className="flex items-center  gap-4  ">
                 <img src="/Group 7.svg" alt="Revo Logo"  className="filter  h-10 md:h-12 lg:h-16" />
               </div>
              
             </div>
-            <div className="flex items-center gap-8 md:gap-12 ">
+            <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12 ">
                 <div>
                   <h3  onClick={() => handleNavigation('home')} className={linkStyle}>Home</h3>
                 </div>
