@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IoMdClose } from "react-icons/io";
 import { AiOutlineMenu } from "react-icons/ai";
+import { RiCloseLargeFill } from "react-icons/ri";
 
 
 
@@ -74,7 +75,7 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
               duration: 0.3,
               ease: 'easeInOut',
             }}
-            className="origin-top bg-[#000016] object-cover  px-8 md:px-16 py-6 md:py-8 flex flex-col items-end justify-start h-screen w-screen fixed top-0 left-0 z-[9999]">
+            className="origin-top bg-[#000016] object-cover  px-8 md:px-16 pt-10  flex flex-col items-end justify-start h-screen w-screen fixed top-0 left-0 z-[9999]">
             <img 
               src='/menu.png'
               alt="Revo Logo"
@@ -89,7 +90,7 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
                   {isMenuOpen  && <CloseButton />}
                 </button>
                 
-                <nav className="w-full  overflow-hidden mt-8 ">
+                <nav className="w-full  overflow-hidden  mt-10 md:mt-16 ">
                   {/* <AnimatePresence> */}
                     {isMenuOpen && (
                       <motion.div
@@ -120,15 +121,11 @@ const linkStyle = "text-left text-[32px] sm:text-2xl md:text-5xl lg:text-[74px] 
 export default Header;
 
 
-
-
 const CloseButton = () => {
   return (
-     <div className="flex items-center space-x-3 ">
+     <div className="flex items-center space-x-3">
         <span className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-medium text-white" >Close</span>
-        <div className='flex items-center justify-center '>
-          <X className={`items-end w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white }`} />
-        </div>
+        <RiCloseLargeFill className='w-6 h-6 md:w-10 md:h-10  text-white'/>
       </div>
   );
 }
