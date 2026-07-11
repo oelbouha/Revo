@@ -396,6 +396,26 @@ const rawPortfolioItems  = [
         "/zouitina/130.png",
       ]
   },
+  {
+    id: 31,
+    image: '/atlasbook/atlas.jpeg',
+    title: 'atlas book',
+    subtitle: 'Brand Packaging',
+    thumbnail: '/atlasbook/atlas.jpeg',
+    solutions: "Production of a series of video capsules and creation of a corporate film reflecting the universe and quality of the brand.",
+    challenge: "Create inspiring and immersive digital content capable of strengthening consumer engagement.",
+    webImage: '/atlasbook/atlas.jpeg',
+    categories: ['packaging'],
+   
+    description: "Recipe capsules – Corporate film – Social media",
+    photos: [       
+      "/atlasbook/atlas.jpeg",
+      "/atlasbook/atlas.jpeg",
+      "/atlasbook/atlas.jpeg",
+      "/atlasbook/atlas.jpeg",
+      
+      ]
+  },
 ];
 
 export const portfolioItems = rawPortfolioItems.map((item, index) => ({
